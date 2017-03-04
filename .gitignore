@@ -1,0 +1,10 @@
+/target/
+/target/*
+/.settings/
+*.classpath
+*.project
+/bin/
+idea
+.idea
+*.iml
+mail.properties

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bestcfm.dao.FoodEvaluationDao">
+  <resultMap id="BaseResultMap" type="com.bestcfm.bean.FoodEvaluation">
+    <!--
+    @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="foodId" jdbcType="INTEGER" property="foodId" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="evaScore" jdbcType="INTEGER" property="evaScore" />
+    <result column="evaTime" jdbcType="TIMESTAMP" property="evaTime" />
+    <result column="userAccount" jdbcType="INTEGER" property="userAccount" />
+    <result column="evaIsDelete" jdbcType="INTEGER" property="evaIsDelete" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+    @mbggenerated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+    @mbggenerated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+    @mbggenerated
+    -->
+    id, foodId, content, evaScore, evaTime, userAccount, evaIsDelete
+  </sql>
+  <select id="selectByExample" parameterType="com.bestcfm.bean.FoodEvaluationExample" resultMap="BaseResultMap">
+    <!--
+    @mbggenerated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from foodevaluation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+    @mbggenerated
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from foodevaluation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+    @mbggenerated
+    -->
+    delete from foodevaluation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bestcfm.bean.FoodEvaluationExample">
+    <!--
+    @mbggenerated
+    -->
+    delete from foodevaluation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bestcfm.bean.FoodEvaluation">
+    <!--
+    @mbggenerated
+    -->
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into foodevaluation (foodId, content, evaScore, 
+      evaTime, userAccount, evaIsDelete
+      )
+    values (#{foodId,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, #{evaScore,jdbcType=INTEGER}, 
+      #{evaTime,jdbcType=TIMESTAMP}, #{userAccount,jdbcType=INTEGER}, #{evaIsDelete,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bestcfm.bean.FoodEvaluation">
+    <!--
+    @mbggenerated
+    -->
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into foodevaluation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="foodId != null">
+        foodId,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="evaScore != null">
+        evaScore,
+      </if>
+      <if test="evaTime != null">
+        evaTime,
+      </if>
+      <if test="userAccount != null">
+        userAccount,
+      </if>
+      <if test="evaIsDelete != null">
+        evaIsDelete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="foodId != null">
+        #{foodId,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="evaScore != null">
+        #{evaScore,jdbcType=INTEGER},
+      </if>
+      <if test="evaTime != null">
+        #{evaTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userAccount != null">
+        #{userAccount,jdbcType=INTEGER},
+      </if>
+      <if test="evaIsDelete != null">
+        #{evaIsDelete,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bestcfm.bean.FoodEvaluationExample" resultType="java.lang.Integer">
+    <!--
+    @mbggenerated
+    -->
+    select count(*) from foodevaluation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+    @mbggenerated
+    -->
+    update foodevaluation
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.foodId != null">
+        foodId = #{record.foodId,jdbcType=INTEGER},
+      </if>
+      <if test="record.content != null">
+        content = #{record.content,jdbcType=VARCHAR},
+      </if>
+      <if test="record.evaScore != null">
+        evaScore = #{record.evaScore,jdbcType=INTEGER},
+      </if>
+      <if test="record.evaTime != null">
+        evaTime = #{record.evaTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.userAccount != null">
+        userAccount = #{record.userAccount,jdbcType=INTEGER},
+      </if>
+      <if test="record.evaIsDelete != null">
+        evaIsDelete = #{record.evaIsDelete,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+    @mbggenerated
+    -->
+    update foodevaluation
+    set id = #{record.id,jdbcType=INTEGER},
+      foodId = #{record.foodId,jdbcType=INTEGER},
+      content = #{record.content,jdbcType=VARCHAR},
+      evaScore = #{record.evaScore,jdbcType=INTEGER},
+      evaTime = #{record.evaTime,jdbcType=TIMESTAMP},
+      userAccount = #{record.userAccount,jdbcType=INTEGER},
+      evaIsDelete = #{record.evaIsDelete,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bestcfm.bean.FoodEvaluation">
+    <!--
+    @mbggenerated
+    -->
+    update foodevaluation
+    <set>
+      <if test="foodId != null">
+        foodId = #{foodId,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="evaScore != null">
+        evaScore = #{evaScore,jdbcType=INTEGER},
+      </if>
+      <if test="evaTime != null">
+        evaTime = #{evaTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userAccount != null">
+        userAccount = #{userAccount,jdbcType=INTEGER},
+      </if>
+      <if test="evaIsDelete != null">
+        evaIsDelete = #{evaIsDelete,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bestcfm.bean.FoodEvaluation">
+    <!--
+    @mbggenerated
+    -->
+    update foodevaluation
+    set foodId = #{foodId,jdbcType=INTEGER},
+      content = #{content,jdbcType=VARCHAR},
+      evaScore = #{evaScore,jdbcType=INTEGER},
+      evaTime = #{evaTime,jdbcType=TIMESTAMP},
+      userAccount = #{userAccount,jdbcType=INTEGER},
+      evaIsDelete = #{evaIsDelete,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

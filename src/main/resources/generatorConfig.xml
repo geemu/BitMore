@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!-- 数据库配置文件 -->
+	<properties resource="db.properties" />
+	
+	<context id="context1">
+		<property name="javaFileEncoding" value="UTF-8" />
+		<property name="autoDelimitKeywords" value="true" />
+		<property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
+		<property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter" />
+		
+		<!-- 注释生成规则 -->
+		<commentGenerator type="org.mybatis.generator.internal.HairyCommentGenerator">
+			<property name="suppressAllComments" value="false" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		
+		<!-- 数据库连接 -->
+		<jdbcConnection driverClass="${driver}" connectionURL="${url}" userId="${user}" password="${password}" />
+
+		<!-- 数据库的生成配置 -->
+		<javaModelGenerator targetPackage="com.bestcfm.bean" targetProject="${project.dir}/src/main/java" />
+		<sqlMapGenerator targetPackage="com.bestcfm.dao" targetProject="${project.dir}/src/main/resources" />
+		<javaClientGenerator targetPackage="com.bestcfm.dao" targetProject="${project.dir}/src/main/java" type="XMLMAPPER" />
+		
+		<!-- 以上部分配置固定，无需改动，此处往下开始项目设置 -->
+		
+		<!-- appointment表 -->
+		<table tableName="appointment" domainObjectName="Appointment">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="appointId" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+		</table>
+		
+		<!-- desk表 -->
+		<table tableName="desk" domainObjectName="Desk">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="deskId" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+		</table>
+		
+		<!-- food表 -->
+		<table tableName="food" domainObjectName="Food">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="foodId" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+		</table>
+		
+		<!-- foodevaluation表 -->
+		<table tableName="foodevaluation" domainObjectName="FoodEvaluation">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+		</table>
+		
+		<!-- foodorder表 -->
+		<table tableName="foodorder" domainObjectName="FoodOrder">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+		</table>
+		
+		<!-- foodimage表 -->
+		<table tableName="foodimage" domainObjectName="FoodImage">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+		</table>
+		
+		<!-- foodtype表 -->
+		<table tableName="foodtype" domainObjectName="FoodType">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="foodTypeId" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+		</table>
+		
+		<!-- user表 -->
+		<table tableName="user" domainObjectName="User">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="userAccount" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+		</table>
+		
+	</context>
+</generatorConfiguration>
