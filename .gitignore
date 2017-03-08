@@ -8,3 +8,5 @@ idea
 .idea
 *.iml
 mail.properties
+[credential]    
+    helper = store
