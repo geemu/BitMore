@@ -1,6 +1,6 @@
 package com.bestcfm.bean;
 /**
- * 
+ * dasd
  */
 import java.util.Date;
 
