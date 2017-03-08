@@ -1,5 +1,7 @@
 package com.bestcfm.bean;
-
+/**
+ * 
+ */
 import java.util.Date;
 
 public class Appointment {
