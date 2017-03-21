@@ -31,9 +31,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="container-liquid">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<a href="skip/toLogin" class="btn btn-default btn-primary btn-block">login.jsp</a>
-			<a href="skip/toRegister" class="btn btn-default btn-primary btn-block">register.jsp</a>
-			<a href="skip/toIndex" class="btn btn-default btn-primary btn-block">index.jsp</a>
+			<a href="skip/toAdminCenter" class="btn btn-default btn-primary btn-block">管理员中心</a>
+			<a href="skip/toCookCenter" class="btn btn-default btn-primary btn-block">厨师中心</a>
+			<a href="skip/toCustomerCenter" class="btn btn-default btn-primary btn-block">客户中心</a>
+			<a href="skip/toIndex" class="btn btn-default btn-primary btn-block">首页</a>
+			<a href="skip/toLogin" class="btn btn-default btn-primary btn-block">登陆</a>
+			<a href="skip/torToRegisterOk" class="btn btn-default btn-primary btn-block">注册成功</a>
+			<a href="skip/toRegister" class="btn btn-default btn-primary btn-block">注册</a>
+			<a href="skip/toWaiterCenter" class="btn btn-default btn-primary btn-block">服务员中心</a>
 		</div>
 	</div>
 </div>

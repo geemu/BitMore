@@ -21,12 +21,57 @@ public class InitController {
 	} 
 	
 	/**
+	 * 管理员中心
+	 * @return
+	 */
+	@RequestMapping("/toAdminCenter")
+	public String toAdminCenter(){
+		return "adminCenter";
+	}
+	
+	/**
+	 * 厨师中心
+	 * @return
+	 */
+	@RequestMapping("/toCookCenter")
+	public String toCookCenter(){
+		return "cookCenter";
+	}
+	
+	/**
+	 * 客户中心
+	 * @return
+	 */
+	@RequestMapping("/toCustomerCenter")
+	public String toCustomerCenter(){
+		return "customerCenter";
+	}
+	
+	/**
+	 * 首页
+	 * @return
+	 */
+	@RequestMapping("/toIndex")  
+	public String toIndex() { 
+	    return "index";  
+	} 
+	
+	/**
 	 * 登录页面
 	 * @return
 	 */
 	@RequestMapping("/toLogin")  
 	public String toLogin() { 
 	    return "login";  
+	} 
+	
+	/**
+	 * 注册成功页面
+	 * @return
+	 */
+	@RequestMapping("/torToRegisterOk")  
+	public String torToRegisterOk() { 
+	    return "register_ok";  
 	} 
 	
 	/**
@@ -39,12 +84,14 @@ public class InitController {
 	} 
 	
 	/**
-	 * 主页面
+	 * 注册页面
 	 * @return
 	 */
-	@RequestMapping("/toIndex")  
-	public String toIndex() { 
-	    return "index";  
+	@RequestMapping("/toWaiterCenter")  
+	public String toWaiterCenter() { 
+	    return "waiterCenter";  
 	} 
+	
+	
 
 }
