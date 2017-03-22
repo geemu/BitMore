@@ -140,6 +140,12 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.22</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.6</version>
+		</dependency>
 
 	</dependencies>
 </project>
