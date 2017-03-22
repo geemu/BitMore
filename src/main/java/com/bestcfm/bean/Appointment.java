@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Appointment {
     /**
-     * 主键
+     * 主键 测试一下是不是乱码
      * 表字段 : appointment.appointId
      */
     private Integer appointId;
