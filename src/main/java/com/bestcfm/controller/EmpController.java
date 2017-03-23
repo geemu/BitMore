@@ -20,18 +20,18 @@ public class EmpController {
 	
 	@RequestMapping("/doLogin")
 	public String doLogin(@RequestParam("phone")String phone,@RequestParam("empPassword")String empPassword,ModelMap map) {
-		Emp loginEmp = empService.queryUserByPhoneAndPassword(phone, empPassword);
+		Emp loginEmp = empService.queryEmpByPhoneAndPassword(phone, empPassword);
 		if(loginEmp == null){
 			map.put("error", "用户名或密码错误");
 			return "login";
 		}
 		else {
 			map.put("loginEmp", loginEmp);
-			int userRoot = loginEmp.getEmpRoot();
-			if(userRoot == 0){
+			int empRoot = loginEmp.getEmpRoot();
+			if(empRoot == 0){
 				return "cookCenter";
 			}
-			else if(userRoot == 1){
+			else if(empRoot == 1){
 				return "waiterCenter";
 			}
 			else{

@@ -16,7 +16,7 @@ public class EmpService {
 	@Autowired
 	private EmpDao empDao;
 	
-	public Emp queryUserByPhoneAndPassword(String phone,String userPassword){
+	public Emp queryEmpByPhoneAndPassword(String phone,String userPassword){
 		EmpExample  example = new EmpExample();
 		EmpExample.Criteria criteria = example.createCriteria();
 		criteria.andPhoneEqualTo(phone);
@@ -29,6 +29,27 @@ public class EmpService {
 		}
 		System.out.println(JSONObject.toJSONString(emp));
 		return emp;
+	}
+	
+	public boolean saveEmp(Emp emp){
+		int result = 0;
+		//更新
+		if(emp.getId() > 0){
+			result = empDao.updateByPrimaryKeySelective(emp);
+		}
+		//新增
+		else{
+			result = empDao.insertSelective(emp);
+		}
+		return result > 0;
+	}
+	
+	public boolean deleteEmp(int id){
+		Emp emp = new Emp();
+		emp.setId(id);
+		emp.setDataFlag(1);
+		int result = empDao.updateByPrimaryKeySelective(emp);
+		return result > 0;
 	}
 	
 }
