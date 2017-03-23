@@ -29,19 +29,19 @@
 		<!-- appointment表 -->
 		<table tableName="appointment" domainObjectName="Appointment">
 			<property name="useActualColumnNames" value="true" />
-			<generatedKey column="appointId" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>
 		
 		<!-- desk表 -->
 		<table tableName="desk" domainObjectName="Desk">
 			<property name="useActualColumnNames" value="true" />
-			<generatedKey column="deskId" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>
 		
 		<!-- food表 -->
 		<table tableName="food" domainObjectName="Food">
 			<property name="useActualColumnNames" value="true" />
-			<generatedKey column="foodId" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>
 		
 		<!-- foodevaluation表 -->
@@ -68,10 +68,10 @@
 			<generatedKey column="foodTypeId" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>
 		
-		<!-- user表 -->
-		<table tableName="user" domainObjectName="User">
+		<!-- emp表 -->
+		<table tableName="emp" domainObjectName="Emp">
 			<property name="useActualColumnNames" value="true" />
-			<generatedKey column="userAccount" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>
 		
 	</context>

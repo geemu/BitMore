@@ -58,13 +58,13 @@ $(document).ready(function(){
 
 
 		<div class="w main">
-			<form id="frm_login" method="post" action="../user/doLogin">
+			<form id="frm_login" method="post" action="../emp/doLogin">
 				<div class="item item-username">
-					<input id="username" class="txt-input txt-username" type="text" placeholder="请输入用户名/手机号" value="" name="username"> 
+					<input id="username" class="txt-input txt-username" type="text" placeholder="请输入手机号" value="" name="phone"> 
 					<b class="input-close" style="display: none;"></b>
 				</div>
 				<div class="item item-password">
-					<input id="password" class="txt-input txt-password ciphertext" type="password" placeholder="请输入密码" name="password" style="display: inline;"> 
+					<input id="password" class="txt-input txt-password ciphertext" type="password" placeholder="请输入密码" name="empPassword" style="display: inline;"> 
 					<input id="ptext" class="txt-input txt-password plaintext" type="text" placeholder="请输入密码" style="display: none;" name="ptext"> 
 					<b class="tp-btn btn-off"></b>
 				</div>

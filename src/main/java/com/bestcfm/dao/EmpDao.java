@@ -1,22 +1,22 @@
 package com.bestcfm.dao;
 
-import com.bestcfm.bean.FoodImage;
-import com.bestcfm.bean.FoodImageExample;
+import com.bestcfm.bean.Emp;
+import com.bestcfm.bean.EmpExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface FoodImageDao {
+public interface EmpDao {
     /**
      *
      * @param example
      */
-    int countByExample(FoodImageExample example);
+    int countByExample(EmpExample example);
 
     /**
      *
      * @param example
      */
-    int deleteByExample(FoodImageExample example);
+    int deleteByExample(EmpExample example);
 
     /**
      * 根据主键删除数据库的记录
@@ -30,51 +30,51 @@ public interface FoodImageDao {
      *
      * @param record
      */
-    int insert(FoodImage record);
+    int insert(Emp record);
 
     /**
      *
      * @param record
      */
-    int insertSelective(FoodImage record);
+    int insertSelective(Emp record);
 
     /**
      *
      * @param example
      */
-    List<FoodImage> selectByExample(FoodImageExample example);
+    List<Emp> selectByExample(EmpExample example);
 
     /**
      * 根据主键获取一条数据库记录
      *
      * @param id
      */
-    FoodImage selectByPrimaryKey(Integer id);
+    Emp selectByPrimaryKey(Integer id);
 
     /**
      *
      * @param record
      * @param example
      */
-    int updateByExampleSelective(@Param("record") FoodImage record, @Param("example") FoodImageExample example);
+    int updateByExampleSelective(@Param("record") Emp record, @Param("example") EmpExample example);
 
     /**
      *
      * @param record
      * @param example
      */
-    int updateByExample(@Param("record") FoodImage record, @Param("example") FoodImageExample example);
+    int updateByExample(@Param("record") Emp record, @Param("example") EmpExample example);
 
     /**
      *
      * @param record
      */
-    int updateByPrimaryKeySelective(FoodImage record);
+    int updateByPrimaryKeySelective(Emp record);
 
     /**
      * 根据主键来更新数据库记录
      *
      * @param record
      */
-    int updateByPrimaryKey(FoodImage record);
+    int updateByPrimaryKey(Emp record);
 }
