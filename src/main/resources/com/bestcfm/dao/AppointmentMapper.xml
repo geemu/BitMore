@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bestcfm.dao.AppointmentDao">
+  <resultMap id="BaseResultMap" type="com.bestcfm.bean.Appointment">
+    <!--
+    @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="phoneNum" jdbcType="VARCHAR" property="phoneNum" />
+    <result column="peopleCount" jdbcType="INTEGER" property="peopleCount" />
+    <result column="earliestTime" jdbcType="TIMESTAMP" property="earliestTime" />
+    <result column="latestTime" jdbcType="TIMESTAMP" property="latestTime" />
+    <result column="dataFlag" jdbcType="INTEGER" property="dataFlag" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+    @mbggenerated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+    @mbggenerated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+    @mbggenerated
+    -->
+    id, phoneNum, peopleCount, earliestTime, latestTime, dataFlag
+  </sql>
+  <select id="selectByExample" parameterType="com.bestcfm.bean.AppointmentExample" resultMap="BaseResultMap">
+    <!--
+    @mbggenerated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from appointment
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+    @mbggenerated
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from appointment
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+    @mbggenerated
+    -->
+    delete from appointment
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bestcfm.bean.AppointmentExample">
+    <!--
+    @mbggenerated
+    -->
+    delete from appointment
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bestcfm.bean.Appointment">
+    <!--
+    @mbggenerated
+    -->
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into appointment (phoneNum, peopleCount, earliestTime, 
+      latestTime, dataFlag)
+    values (#{phoneNum,jdbcType=VARCHAR}, #{peopleCount,jdbcType=INTEGER}, #{earliestTime,jdbcType=TIMESTAMP}, 
+      #{latestTime,jdbcType=TIMESTAMP}, #{dataFlag,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bestcfm.bean.Appointment">
+    <!--
+    @mbggenerated
+    -->
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into appointment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="phoneNum != null">
+        phoneNum,
+      </if>
+      <if test="peopleCount != null">
+        peopleCount,
+      </if>
+      <if test="earliestTime != null">
+        earliestTime,
+      </if>
+      <if test="latestTime != null">
+        latestTime,
+      </if>
+      <if test="dataFlag != null">
+        dataFlag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="phoneNum != null">
+        #{phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="peopleCount != null">
+        #{peopleCount,jdbcType=INTEGER},
+      </if>
+      <if test="earliestTime != null">
+        #{earliestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="latestTime != null">
+        #{latestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dataFlag != null">
+        #{dataFlag,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bestcfm.bean.AppointmentExample" resultType="java.lang.Integer">
+    <!--
+    @mbggenerated
+    -->
+    select count(*) from appointment
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+    @mbggenerated
+    -->
+    update appointment
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.phoneNum != null">
+        phoneNum = #{record.phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.peopleCount != null">
+        peopleCount = #{record.peopleCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.earliestTime != null">
+        earliestTime = #{record.earliestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.latestTime != null">
+        latestTime = #{record.latestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.dataFlag != null">
+        dataFlag = #{record.dataFlag,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+    @mbggenerated
+    -->
+    update appointment
+    set id = #{record.id,jdbcType=INTEGER},
+      phoneNum = #{record.phoneNum,jdbcType=VARCHAR},
+      peopleCount = #{record.peopleCount,jdbcType=INTEGER},
+      earliestTime = #{record.earliestTime,jdbcType=TIMESTAMP},
+      latestTime = #{record.latestTime,jdbcType=TIMESTAMP},
+      dataFlag = #{record.dataFlag,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bestcfm.bean.Appointment">
+    <!--
+    @mbggenerated
+    -->
+    update appointment
+    <set>
+      <if test="phoneNum != null">
+        phoneNum = #{phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="peopleCount != null">
+        peopleCount = #{peopleCount,jdbcType=INTEGER},
+      </if>
+      <if test="earliestTime != null">
+        earliestTime = #{earliestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="latestTime != null">
+        latestTime = #{latestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dataFlag != null">
+        dataFlag = #{dataFlag,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bestcfm.bean.Appointment">
+    <!--
+    @mbggenerated
+    -->
+    update appointment
+    set phoneNum = #{phoneNum,jdbcType=VARCHAR},
+      peopleCount = #{peopleCount,jdbcType=INTEGER},
+      earliestTime = #{earliestTime,jdbcType=TIMESTAMP},
+      latestTime = #{latestTime,jdbcType=TIMESTAMP},
+      dataFlag = #{dataFlag,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
