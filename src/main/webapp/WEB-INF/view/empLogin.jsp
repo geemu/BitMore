@@ -2,19 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<link href="../static/css/bootstrap.css" rel="stylesheet">
 <link href="../static/css/login.css" rel="stylesheet">
 <link href="../static/css/login-box-new.css" rel="stylesheet">
 <link href="../static/css/empLogin.css" rel="stylesheet">
-<link href="../static/font/font-awesome.css" rel="stylesheet">
 
 <style type="text/css">
-.container-myContainer {
-	padding-left: 0px;
-	padding-right: 0px;
-	margin-left: auto;
-	margin-right: auto;
-}
+
 </style>
 
 <title>员工登陆</title>
@@ -22,7 +16,7 @@
 
 <body>
 	<!-- 容器 -->
-	<div class="main-container">
+	<div class="">
 		<div class="table-wrapper">
 			<p>
 				<span class="authority-login selected">统一权限账号登录</span> 
