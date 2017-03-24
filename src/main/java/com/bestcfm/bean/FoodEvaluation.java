@@ -10,10 +10,10 @@ public class FoodEvaluation {
     private Integer id;
 
     /**
-     * 用户标识
-     * 表字段 : foodevaluation.userMark
+     * 用户编号
+     * 表字段 : foodevaluation.userId
      */
-    private String userMark;
+    private Integer userId;
 
     /**
      * 菜品编号
@@ -67,24 +67,24 @@ public class FoodEvaluation {
     }
 
     /**
-     * 获取：用户标识
-     * 表字段：foodevaluation.userMark
+     * 获取：用户编号
+     * 表字段：foodevaluation.userId
      *
-     * @return foodevaluation.userMark：用户标识
+     * @return foodevaluation.userId：用户编号
      */
-    public String getUserMark() {
-        return userMark;
+    public Integer getUserId() {
+        return userId;
     }
 
     /**
-     * 设置：用户标识
-     * 表字段：foodevaluation.userMark
+     * 设置：用户编号
+     * 表字段：foodevaluation.userId
      *
-     * @param userMark
-     *            foodevaluation.userMark：用户标识
+     * @param userId
+     *            foodevaluation.userId：用户编号
      */
-    public void setUserMark(String userMark) {
-        this.userMark = userMark;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     /**

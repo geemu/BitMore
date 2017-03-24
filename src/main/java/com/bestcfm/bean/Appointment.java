@@ -10,10 +10,10 @@ public class Appointment {
     private Integer id;
 
     /**
-     * 手机号
-     * 表字段 : appointment.phoneNum
+     * 用户编号
+     * 表字段 : appointment.userId
      */
-    private String phoneNum;
+    private Integer userId;
 
     /**
      * 人数
@@ -61,24 +61,24 @@ public class Appointment {
     }
 
     /**
-     * 获取：手机号
-     * 表字段：appointment.phoneNum
+     * 获取：用户编号
+     * 表字段：appointment.userId
      *
-     * @return appointment.phoneNum：手机号
+     * @return appointment.userId：用户编号
      */
-    public String getPhoneNum() {
-        return phoneNum;
+    public Integer getUserId() {
+        return userId;
     }
 
     /**
-     * 设置：手机号
-     * 表字段：appointment.phoneNum
+     * 设置：用户编号
+     * 表字段：appointment.userId
      *
-     * @param phoneNum
-     *            appointment.phoneNum：手机号
+     * @param userId
+     *            appointment.userId：用户编号
      */
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     /**

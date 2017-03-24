@@ -6,7 +6,7 @@
     @mbggenerated
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="userMark" jdbcType="VARCHAR" property="userMark" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
     <result column="foodId" jdbcType="INTEGER" property="foodId" />
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="evaScore" jdbcType="INTEGER" property="evaScore" />
@@ -81,7 +81,7 @@
     <!--
     @mbggenerated
     -->
-    id, userMark, foodId, content, evaScore, createTime, dataFlag
+    id, userId, foodId, content, evaScore, createTime, dataFlag
   </sql>
   <select id="selectByExample" parameterType="com.bestcfm.bean.FoodEvaluationExample" resultMap="BaseResultMap">
     <!--
@@ -132,10 +132,10 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into foodevaluation (userMark, foodId, content, 
+    insert into foodevaluation (userId, foodId, content, 
       evaScore, createTime, dataFlag
       )
-    values (#{userMark,jdbcType=VARCHAR}, #{foodId,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, 
+    values (#{userId,jdbcType=INTEGER}, #{foodId,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, 
       #{evaScore,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{dataFlag,jdbcType=INTEGER}
       )
   </insert>
@@ -148,8 +148,8 @@
     </selectKey>
     insert into foodevaluation
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userMark != null">
-        userMark,
+      <if test="userId != null">
+        userId,
       </if>
       <if test="foodId != null">
         foodId,
@@ -168,8 +168,8 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userMark != null">
-        #{userMark,jdbcType=VARCHAR},
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
       </if>
       <if test="foodId != null">
         #{foodId,jdbcType=INTEGER},
@@ -206,8 +206,8 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.userMark != null">
-        userMark = #{record.userMark,jdbcType=VARCHAR},
+      <if test="record.userId != null">
+        userId = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.foodId != null">
         foodId = #{record.foodId,jdbcType=INTEGER},
@@ -235,7 +235,7 @@
     -->
     update foodevaluation
     set id = #{record.id,jdbcType=INTEGER},
-      userMark = #{record.userMark,jdbcType=VARCHAR},
+      userId = #{record.userId,jdbcType=INTEGER},
       foodId = #{record.foodId,jdbcType=INTEGER},
       content = #{record.content,jdbcType=VARCHAR},
       evaScore = #{record.evaScore,jdbcType=INTEGER},
@@ -251,8 +251,8 @@
     -->
     update foodevaluation
     <set>
-      <if test="userMark != null">
-        userMark = #{userMark,jdbcType=VARCHAR},
+      <if test="userId != null">
+        userId = #{userId,jdbcType=INTEGER},
       </if>
       <if test="foodId != null">
         foodId = #{foodId,jdbcType=INTEGER},
@@ -277,7 +277,7 @@
     @mbggenerated
     -->
     update foodevaluation
-    set userMark = #{userMark,jdbcType=VARCHAR},
+    set userId = #{userId,jdbcType=INTEGER},
       foodId = #{foodId,jdbcType=INTEGER},
       content = #{content,jdbcType=VARCHAR},
       evaScore = #{evaScore,jdbcType=INTEGER},

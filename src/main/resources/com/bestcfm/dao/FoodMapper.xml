@@ -14,6 +14,7 @@
     <result column="typeId" jdbcType="INTEGER" property="typeId" />
     <result column="signiture" jdbcType="INTEGER" property="signiture" />
     <result column="dataFlag" jdbcType="INTEGER" property="dataFlag" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -83,7 +84,7 @@
     <!--
     @mbggenerated
     -->
-    id, foodName, price, store, sales, introduce, typeId, signiture, dataFlag
+    id, foodName, price, store, sales, introduce, typeId, signiture, dataFlag, createTime
   </sql>
   <select id="selectByExample" parameterType="com.bestcfm.bean.FoodExample" resultMap="BaseResultMap">
     <!--
@@ -136,10 +137,12 @@
     </selectKey>
     insert into food (foodName, price, store, 
       sales, introduce, typeId, 
-      signiture, dataFlag)
+      signiture, dataFlag, createTime
+      )
     values (#{foodName,jdbcType=VARCHAR}, #{price,jdbcType=REAL}, #{store,jdbcType=INTEGER}, 
       #{sales,jdbcType=INTEGER}, #{introduce,jdbcType=VARCHAR}, #{typeId,jdbcType=INTEGER}, 
-      #{signiture,jdbcType=INTEGER}, #{dataFlag,jdbcType=INTEGER})
+      #{signiture,jdbcType=INTEGER}, #{dataFlag,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.bestcfm.bean.Food">
     <!--
@@ -174,6 +177,9 @@
       <if test="dataFlag != null">
         dataFlag,
       </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="foodName != null">
@@ -199,6 +205,9 @@
       </if>
       <if test="dataFlag != null">
         #{dataFlag,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -244,6 +253,9 @@
       <if test="record.dataFlag != null">
         dataFlag = #{record.dataFlag,jdbcType=INTEGER},
       </if>
+      <if test="record.createTime != null">
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -262,7 +274,8 @@
       introduce = #{record.introduce,jdbcType=VARCHAR},
       typeId = #{record.typeId,jdbcType=INTEGER},
       signiture = #{record.signiture,jdbcType=INTEGER},
-      dataFlag = #{record.dataFlag,jdbcType=INTEGER}
+      dataFlag = #{record.dataFlag,jdbcType=INTEGER},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -297,6 +310,9 @@
       <if test="dataFlag != null">
         dataFlag = #{dataFlag,jdbcType=INTEGER},
       </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -312,7 +328,8 @@
       introduce = #{introduce,jdbcType=VARCHAR},
       typeId = #{typeId,jdbcType=INTEGER},
       signiture = #{signiture,jdbcType=INTEGER},
-      dataFlag = #{dataFlag,jdbcType=INTEGER}
+      dataFlag = #{dataFlag,jdbcType=INTEGER},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

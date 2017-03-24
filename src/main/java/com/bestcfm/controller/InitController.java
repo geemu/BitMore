@@ -3,7 +3,7 @@ package com.bestcfm.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 /**
- * 初始化的控制器  即用于跳转的控制器
+ * 用于跳转的控制器
  * @author cfm
  *
  */
@@ -84,12 +84,21 @@ public class InitController {
 	} 
 	
 	/**
-	 * 注册页面
+	 * 服务员页面
 	 * @return
 	 */
 	@RequestMapping("/toWaiterCenter")  
 	public String toWaiterCenter() { 
 	    return "waiterCenter";  
+	} 
+	
+	/**
+	 * 员工登陆页面
+	 * @return
+	 */
+	@RequestMapping("/toEmpLogin")  
+	public String toEmpLogin() { 
+	    return "empLogin";  
 	} 
 	
 	

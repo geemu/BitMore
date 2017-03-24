@@ -38,6 +38,12 @@
 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>
 		
+		<!-- emp表 -->
+		<table tableName="emp" domainObjectName="Emp">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+		</table>
+		
 		<!-- food表 -->
 		<table tableName="food" domainObjectName="Food">
 			<property name="useActualColumnNames" value="true" />
@@ -50,14 +56,20 @@
 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>
 		
-		<!-- foodorder表 -->
-		<table tableName="foodorder" domainObjectName="FoodOrder">
+		<!-- foodimage表 -->
+		<table tableName="foodimage" domainObjectName="FoodImage">
 			<property name="useActualColumnNames" value="true" />
 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>
 		
-		<!-- foodimage表 -->
-		<table tableName="foodimage" domainObjectName="FoodImage">
+		<!-- foodorderdetail表 -->
+		<table tableName="foodorderdetail" domainObjectName="FoodOrderDetail">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+		</table>
+		
+		<!-- foodorderrecords表 -->
+		<table tableName="foodorderdetail" domainObjectName="FoodOrderRecords">
 			<property name="useActualColumnNames" value="true" />
 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>
@@ -68,11 +80,13 @@
 			<generatedKey column="foodTypeId" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>
 		
-		<!-- emp表 -->
-		<table tableName="emp" domainObjectName="Emp">
+		<!-- user表 -->
+		<table tableName="user" domainObjectName="User">
 			<property name="useActualColumnNames" value="true" />
 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>
+		
+		
 		
 	</context>
 </generatorConfiguration>

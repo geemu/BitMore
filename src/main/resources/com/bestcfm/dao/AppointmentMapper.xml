@@ -6,7 +6,7 @@
     @mbggenerated
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="phoneNum" jdbcType="VARCHAR" property="phoneNum" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
     <result column="peopleCount" jdbcType="INTEGER" property="peopleCount" />
     <result column="earliestTime" jdbcType="TIMESTAMP" property="earliestTime" />
     <result column="latestTime" jdbcType="TIMESTAMP" property="latestTime" />
@@ -80,7 +80,7 @@
     <!--
     @mbggenerated
     -->
-    id, phoneNum, peopleCount, earliestTime, latestTime, dataFlag
+    id, userId, peopleCount, earliestTime, latestTime, dataFlag
   </sql>
   <select id="selectByExample" parameterType="com.bestcfm.bean.AppointmentExample" resultMap="BaseResultMap">
     <!--
@@ -131,9 +131,9 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into appointment (phoneNum, peopleCount, earliestTime, 
+    insert into appointment (userId, peopleCount, earliestTime, 
       latestTime, dataFlag)
-    values (#{phoneNum,jdbcType=VARCHAR}, #{peopleCount,jdbcType=INTEGER}, #{earliestTime,jdbcType=TIMESTAMP}, 
+    values (#{userId,jdbcType=INTEGER}, #{peopleCount,jdbcType=INTEGER}, #{earliestTime,jdbcType=TIMESTAMP}, 
       #{latestTime,jdbcType=TIMESTAMP}, #{dataFlag,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.bestcfm.bean.Appointment">
@@ -145,8 +145,8 @@
     </selectKey>
     insert into appointment
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="phoneNum != null">
-        phoneNum,
+      <if test="userId != null">
+        userId,
       </if>
       <if test="peopleCount != null">
         peopleCount,
@@ -162,8 +162,8 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="phoneNum != null">
-        #{phoneNum,jdbcType=VARCHAR},
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
       </if>
       <if test="peopleCount != null">
         #{peopleCount,jdbcType=INTEGER},
@@ -197,8 +197,8 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.phoneNum != null">
-        phoneNum = #{record.phoneNum,jdbcType=VARCHAR},
+      <if test="record.userId != null">
+        userId = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.peopleCount != null">
         peopleCount = #{record.peopleCount,jdbcType=INTEGER},
@@ -223,7 +223,7 @@
     -->
     update appointment
     set id = #{record.id,jdbcType=INTEGER},
-      phoneNum = #{record.phoneNum,jdbcType=VARCHAR},
+      userId = #{record.userId,jdbcType=INTEGER},
       peopleCount = #{record.peopleCount,jdbcType=INTEGER},
       earliestTime = #{record.earliestTime,jdbcType=TIMESTAMP},
       latestTime = #{record.latestTime,jdbcType=TIMESTAMP},
@@ -238,8 +238,8 @@
     -->
     update appointment
     <set>
-      <if test="phoneNum != null">
-        phoneNum = #{phoneNum,jdbcType=VARCHAR},
+      <if test="userId != null">
+        userId = #{userId,jdbcType=INTEGER},
       </if>
       <if test="peopleCount != null">
         peopleCount = #{peopleCount,jdbcType=INTEGER},
@@ -261,7 +261,7 @@
     @mbggenerated
     -->
     update appointment
-    set phoneNum = #{phoneNum,jdbcType=VARCHAR},
+    set userId = #{userId,jdbcType=INTEGER},
       peopleCount = #{peopleCount,jdbcType=INTEGER},
       earliestTime = #{earliestTime,jdbcType=TIMESTAMP},
       latestTime = #{latestTime,jdbcType=TIMESTAMP},

@@ -170,73 +170,63 @@ public class FoodEvaluationExample {
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkIsNull() {
-            addCriterion("userMark is null");
+        public Criteria andUserIdIsNull() {
+            addCriterion("userId is null");
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkIsNotNull() {
-            addCriterion("userMark is not null");
+        public Criteria andUserIdIsNotNull() {
+            addCriterion("userId is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkEqualTo(String value) {
-            addCriterion("userMark =", value, "userMark");
+        public Criteria andUserIdEqualTo(Integer value) {
+            addCriterion("userId =", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkNotEqualTo(String value) {
-            addCriterion("userMark <>", value, "userMark");
+        public Criteria andUserIdNotEqualTo(Integer value) {
+            addCriterion("userId <>", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkGreaterThan(String value) {
-            addCriterion("userMark >", value, "userMark");
+        public Criteria andUserIdGreaterThan(Integer value) {
+            addCriterion("userId >", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkGreaterThanOrEqualTo(String value) {
-            addCriterion("userMark >=", value, "userMark");
+        public Criteria andUserIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("userId >=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkLessThan(String value) {
-            addCriterion("userMark <", value, "userMark");
+        public Criteria andUserIdLessThan(Integer value) {
+            addCriterion("userId <", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkLessThanOrEqualTo(String value) {
-            addCriterion("userMark <=", value, "userMark");
+        public Criteria andUserIdLessThanOrEqualTo(Integer value) {
+            addCriterion("userId <=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkLike(String value) {
-            addCriterion("userMark like", value, "userMark");
+        public Criteria andUserIdIn(List<Integer> values) {
+            addCriterion("userId in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkNotLike(String value) {
-            addCriterion("userMark not like", value, "userMark");
+        public Criteria andUserIdNotIn(List<Integer> values) {
+            addCriterion("userId not in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkIn(List<String> values) {
-            addCriterion("userMark in", values, "userMark");
+        public Criteria andUserIdBetween(Integer value1, Integer value2) {
+            addCriterion("userId between", value1, value2, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUserMarkNotIn(List<String> values) {
-            addCriterion("userMark not in", values, "userMark");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMarkBetween(String value1, String value2) {
-            addCriterion("userMark between", value1, value2, "userMark");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMarkNotBetween(String value1, String value2) {
-            addCriterion("userMark not between", value1, value2, "userMark");
+        public Criteria andUserIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("userId not between", value1, value2, "userId");
             return (Criteria) this;
         }
 

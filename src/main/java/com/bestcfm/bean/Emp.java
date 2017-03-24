@@ -28,22 +28,10 @@ public class Emp {
     private String empName;
 
     /**
-     * 员工性别 1 男 2 女
-     * 表字段 : emp.sex
-     */
-    private Integer sex;
-
-    /**
      * 员工权限；0为厨师，1为服务员，2为管理员
      * 表字段 : emp.empRoot
      */
     private Integer empRoot;
-
-    /**
-     * 出生日期
-     * 表字段 : emp.birthday
-     */
-    private Date birthday;
 
     /**
      * 员工头像
@@ -148,27 +136,6 @@ public class Emp {
     }
 
     /**
-     * 获取：员工性别 1 男 2 女
-     * 表字段：emp.sex
-     *
-     * @return emp.sex：员工性别 1 男 2 女
-     */
-    public Integer getSex() {
-        return sex;
-    }
-
-    /**
-     * 设置：员工性别 1 男 2 女
-     * 表字段：emp.sex
-     *
-     * @param sex
-     *            emp.sex：员工性别 1 男 2 女
-     */
-    public void setSex(Integer sex) {
-        this.sex = sex;
-    }
-
-    /**
      * 获取：员工权限；0为厨师，1为服务员，2为管理员
      * 表字段：emp.empRoot
      *
@@ -187,27 +154,6 @@ public class Emp {
      */
     public void setEmpRoot(Integer empRoot) {
         this.empRoot = empRoot;
-    }
-
-    /**
-     * 获取：出生日期
-     * 表字段：emp.birthday
-     *
-     * @return emp.birthday：出生日期
-     */
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    /**
-     * 设置：出生日期
-     * 表字段：emp.birthday
-     *
-     * @param birthday
-     *            emp.birthday：出生日期
-     */
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
     }
 
     /**

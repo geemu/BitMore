@@ -1,5 +1,7 @@
 package com.bestcfm.bean;
 
+import java.util.Date;
+
 public class Food {
     /**
      * 菜品编号
@@ -54,6 +56,12 @@ public class Food {
      * 表字段 : food.dataFlag
      */
     private Integer dataFlag;
+
+    /**
+     * 创建时间
+     * 表字段 : food.createTime
+     */
+    private Date createTime;
 
     /**
      * 获取：菜品编号
@@ -242,5 +250,26 @@ public class Food {
      */
     public void setDataFlag(Integer dataFlag) {
         this.dataFlag = dataFlag;
+    }
+
+    /**
+     * 获取：创建时间
+     * 表字段：food.createTime
+     *
+     * @return food.createTime：创建时间
+     */
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    /**
+     * 设置：创建时间
+     * 表字段：food.createTime
+     *
+     * @param createTime
+     *            food.createTime：创建时间
+     */
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

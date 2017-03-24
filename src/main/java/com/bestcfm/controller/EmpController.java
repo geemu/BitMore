@@ -22,7 +22,7 @@ public class EmpController {
 	public String doLogin(@RequestParam("phone")String phone,@RequestParam("empPassword")String empPassword,ModelMap map) {
 		Emp loginEmp = empService.queryEmpByPhoneAndPassword(phone, empPassword);
 		if(loginEmp == null){
-			map.put("error", "用户名或密码错误");
+			map.put("error", "用户名或密码错误dadad");
 			return "login";
 		}
 		else {

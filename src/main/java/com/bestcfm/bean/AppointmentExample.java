@@ -170,73 +170,63 @@ public class AppointmentExample {
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumIsNull() {
-            addCriterion("phoneNum is null");
+        public Criteria andUserIdIsNull() {
+            addCriterion("userId is null");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumIsNotNull() {
-            addCriterion("phoneNum is not null");
+        public Criteria andUserIdIsNotNull() {
+            addCriterion("userId is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumEqualTo(String value) {
-            addCriterion("phoneNum =", value, "phoneNum");
+        public Criteria andUserIdEqualTo(Integer value) {
+            addCriterion("userId =", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumNotEqualTo(String value) {
-            addCriterion("phoneNum <>", value, "phoneNum");
+        public Criteria andUserIdNotEqualTo(Integer value) {
+            addCriterion("userId <>", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumGreaterThan(String value) {
-            addCriterion("phoneNum >", value, "phoneNum");
+        public Criteria andUserIdGreaterThan(Integer value) {
+            addCriterion("userId >", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumGreaterThanOrEqualTo(String value) {
-            addCriterion("phoneNum >=", value, "phoneNum");
+        public Criteria andUserIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("userId >=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumLessThan(String value) {
-            addCriterion("phoneNum <", value, "phoneNum");
+        public Criteria andUserIdLessThan(Integer value) {
+            addCriterion("userId <", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumLessThanOrEqualTo(String value) {
-            addCriterion("phoneNum <=", value, "phoneNum");
+        public Criteria andUserIdLessThanOrEqualTo(Integer value) {
+            addCriterion("userId <=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumLike(String value) {
-            addCriterion("phoneNum like", value, "phoneNum");
+        public Criteria andUserIdIn(List<Integer> values) {
+            addCriterion("userId in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumNotLike(String value) {
-            addCriterion("phoneNum not like", value, "phoneNum");
+        public Criteria andUserIdNotIn(List<Integer> values) {
+            addCriterion("userId not in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumIn(List<String> values) {
-            addCriterion("phoneNum in", values, "phoneNum");
+        public Criteria andUserIdBetween(Integer value1, Integer value2) {
+            addCriterion("userId between", value1, value2, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNumNotIn(List<String> values) {
-            addCriterion("phoneNum not in", values, "phoneNum");
-            return (Criteria) this;
-        }
-
-        public Criteria andPhoneNumBetween(String value1, String value2) {
-            addCriterion("phoneNum between", value1, value2, "phoneNum");
-            return (Criteria) this;
-        }
-
-        public Criteria andPhoneNumNotBetween(String value1, String value2) {
-            addCriterion("phoneNum not between", value1, value2, "phoneNum");
+        public Criteria andUserIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("userId not between", value1, value2, "userId");
             return (Criteria) this;
         }
 

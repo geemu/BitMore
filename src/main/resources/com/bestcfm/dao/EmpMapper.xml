@@ -9,9 +9,7 @@
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="empPassword" jdbcType="VARCHAR" property="empPassword" />
     <result column="empName" jdbcType="VARCHAR" property="empName" />
-    <result column="sex" jdbcType="INTEGER" property="sex" />
     <result column="empRoot" jdbcType="INTEGER" property="empRoot" />
-    <result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
     <result column="headImage" jdbcType="VARCHAR" property="headImage" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
     <result column="dataFlag" jdbcType="INTEGER" property="dataFlag" />
@@ -84,7 +82,7 @@
     <!--
     @mbggenerated
     -->
-    id, phone, empPassword, empName, sex, empRoot, birthday, headImage, createTime, dataFlag
+    id, phone, empPassword, empName, empRoot, headImage, createTime, dataFlag
   </sql>
   <select id="selectByExample" parameterType="com.bestcfm.bean.EmpExample" resultMap="BaseResultMap">
     <!--
@@ -136,13 +134,11 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into emp (phone, empPassword, empName, 
-      sex, empRoot, birthday, 
-      headImage, createTime, dataFlag
-      )
+      empRoot, headImage, createTime, 
+      dataFlag)
     values (#{phone,jdbcType=VARCHAR}, #{empPassword,jdbcType=VARCHAR}, #{empName,jdbcType=VARCHAR}, 
-      #{sex,jdbcType=INTEGER}, #{empRoot,jdbcType=INTEGER}, #{birthday,jdbcType=TIMESTAMP}, 
-      #{headImage,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{dataFlag,jdbcType=INTEGER}
-      )
+      #{empRoot,jdbcType=INTEGER}, #{headImage,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{dataFlag,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.bestcfm.bean.Emp">
     <!--
@@ -162,14 +158,8 @@
       <if test="empName != null">
         empName,
       </if>
-      <if test="sex != null">
-        sex,
-      </if>
       <if test="empRoot != null">
         empRoot,
-      </if>
-      <if test="birthday != null">
-        birthday,
       </if>
       <if test="headImage != null">
         headImage,
@@ -191,14 +181,8 @@
       <if test="empName != null">
         #{empName,jdbcType=VARCHAR},
       </if>
-      <if test="sex != null">
-        #{sex,jdbcType=INTEGER},
-      </if>
       <if test="empRoot != null">
         #{empRoot,jdbcType=INTEGER},
-      </if>
-      <if test="birthday != null">
-        #{birthday,jdbcType=TIMESTAMP},
       </if>
       <if test="headImage != null">
         #{headImage,jdbcType=VARCHAR},
@@ -238,14 +222,8 @@
       <if test="record.empName != null">
         empName = #{record.empName,jdbcType=VARCHAR},
       </if>
-      <if test="record.sex != null">
-        sex = #{record.sex,jdbcType=INTEGER},
-      </if>
       <if test="record.empRoot != null">
         empRoot = #{record.empRoot,jdbcType=INTEGER},
-      </if>
-      <if test="record.birthday != null">
-        birthday = #{record.birthday,jdbcType=TIMESTAMP},
       </if>
       <if test="record.headImage != null">
         headImage = #{record.headImage,jdbcType=VARCHAR},
@@ -270,9 +248,7 @@
       phone = #{record.phone,jdbcType=VARCHAR},
       empPassword = #{record.empPassword,jdbcType=VARCHAR},
       empName = #{record.empName,jdbcType=VARCHAR},
-      sex = #{record.sex,jdbcType=INTEGER},
       empRoot = #{record.empRoot,jdbcType=INTEGER},
-      birthday = #{record.birthday,jdbcType=TIMESTAMP},
       headImage = #{record.headImage,jdbcType=VARCHAR},
       createTime = #{record.createTime,jdbcType=TIMESTAMP},
       dataFlag = #{record.dataFlag,jdbcType=INTEGER}
@@ -295,14 +271,8 @@
       <if test="empName != null">
         empName = #{empName,jdbcType=VARCHAR},
       </if>
-      <if test="sex != null">
-        sex = #{sex,jdbcType=INTEGER},
-      </if>
       <if test="empRoot != null">
         empRoot = #{empRoot,jdbcType=INTEGER},
-      </if>
-      <if test="birthday != null">
-        birthday = #{birthday,jdbcType=TIMESTAMP},
       </if>
       <if test="headImage != null">
         headImage = #{headImage,jdbcType=VARCHAR},
@@ -324,9 +294,7 @@
     set phone = #{phone,jdbcType=VARCHAR},
       empPassword = #{empPassword,jdbcType=VARCHAR},
       empName = #{empName,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=INTEGER},
       empRoot = #{empRoot,jdbcType=INTEGER},
-      birthday = #{birthday,jdbcType=TIMESTAMP},
       headImage = #{headImage,jdbcType=VARCHAR},
       createTime = #{createTime,jdbcType=TIMESTAMP},
       dataFlag = #{dataFlag,jdbcType=INTEGER}
