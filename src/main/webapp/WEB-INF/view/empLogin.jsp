@@ -1,70 +1,83 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="../static/css/bootstrap.css" rel="stylesheet">
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<link href="../static/css/login.css" rel="stylesheet">
+<link href="../static/css/login-box-new.css" rel="stylesheet">
+<link href="../static/css/empLogin.css" rel="stylesheet">
+<link href="../static/font/font-awesome.css" rel="stylesheet">
 
 <style type="text/css">
 .container-myContainer {
-	  padding-left: 0px;
-	  padding-right: 0px;
-	  margin-left: auto;
-	  margin-right: auto;
-	}
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
 </style>
 
 <title>员工登陆</title>
 </head>
 
-<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>登录</title>
-		<!-- CSS -->
-		<link rel="stylesheet" href="<c:url value='/css/bootstrap.css'/>"/>
-		<link rel="stylesheet" href="<c:url value='/css/login_register.css'/>"/>
-		<link rel="shortcut icon"  href="<c:url value='/img/favicon.png'/>"/>
-	</head>
-
 <body>
-		<div class="container" style="margin-top: 30px;">
-			<div class="row">
-				<div class="col-sm-6 form-box">
-					<form role="form" action="login" method="post" class="registration-form">
-						<fieldset>
-							<div class="form-top">
-								<div class="form-top-left">
-									<h3>用户登录</h3>
-								</div>
-								<div class="form-top-right">
-									<i class="glyphicon glyphicon-user"></i>
-								</div>
-							</div>
-							<div class="form-bottom">
-								<div class="form-group">
-									<label class="mlabel"></label>
-									<input type="text" name="userName" placeholder="输入用户名" class="form-control" id="login_username">
-								</div>
-								<div class="form-group" style="margin-bottom: 15px;">
-									<label class="mlabel"></label>
-									<input type="password" name="password" placeholder="输入密码" class="form-control" id="login_password">
-								</div>
-								<button type="submit" class="btn btn-block" id="popup-submit">登&nbsp;录</button>
-								<div id="popup-captcha"></div>
-							</div>
-						</fieldset>
-					</form>
-				</div>
+	<!-- 容器 -->
+	<div class="main-container">
+		<div class="table-wrapper">
+			<p>
+				<span class="authority-login selected">统一权限账号登录</span> 
+				<span class="dynamic-login">动态密码登陆</span>
+			</p>
+			<div class="login-wrapper">
+				<form action="" id="" method="post">
+					<ul>
+						<li class="fill-line">
+							<label class="fa fa-user"></label> 
+							<input name="username" id="username" placeholder="请填写手机号">
+						</li>
+						<li class="fill-line">
+							<label class="fa fa-lock"></label> 
+							<input name="password" id="password" type="password" placeholder="请输入密码">
+						</li>
+					</ul>
+					<div class="remember-line">
+						<label>
+							<input name="autoLogin" id="autoLogin" type="checkbox"><span>一周内免登录</span>
+						</label>
+						<a href="http://authority.17usoft.com/Help" target="_blank">无法访问账户？</a>
+					</div>
+					<div class="login-line">
+						<button type="button" id="authorityLoginBtn"
+							onclick="authorityLogin()" data-spmtype="btn"
+							data-spmcontrolid="authority_login" data-spmvalue="1"
+							data-spminitialized="true">登录</button>
+					</div>
+					<br> <span style="color: red;" id="login_error"></span> <input
+						type="hidden" name="loginIp" id="loginIp" value="10.101.44.14">
+				</form>
+			</div>
+
+			<div class="login-wrapper none">
+				<form action="http://tccommon.17usoft.com/oauth/dynamic-password-login" id="dynamicLoginForm" method="post">
+					<ul>
+						<li class="fill-line">
+							<label class="fa fa-user"></label> 
+							<input name="username" id="dynamicUsername" placeholder="请填写手机号">
+						</li>
+						<li class="fill-line">
+							<label class="fa fa-lock"></label> 
+							<input name="dynamicPassword" id="dynamicPassword" placeholder="请输入动态密码" >
+						</li>
+						<li class="remember-line"><a id="dynamicGuide">如何获取动态口令？</a>
+						</li>
+					</ul>
+					<div class="login-line wechat-submit">
+						<button type="button" id="dynamicLoginBtn" onclick="dynamicLogin()" data-spmtype="btn" data-spmcontrolid="dynamic_login" data-spmvalue="2" data-spminitialized="true">登录</button>
+					</div>
+					<br> <span style="color: red;" id="dynamic_login_error"></span>
+				</form>
 			</div>
 		</div>
-		<!-- Javascript -->
-		<script src="<c:url value='/js/jquery.js'/>"></script>
-		<script src="<c:url value='/js/bootstrap.js'/>"></script>
-		<script src="<c:url value='/js/jquery.backstretch.min.js'/>"></script>
-		<script src="<c:url value='/js/login_register.js'/>"></script>
-		<script src="<c:url value='/js/login_validate.js'/>"></script>
-		<script src="http://static.geetest.com/static/tools/gt.js"></script>
-	</body>
+	</div>
+</body>
 </html>
