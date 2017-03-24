@@ -6,7 +6,7 @@
     @mbggenerated
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="userMark" jdbcType="INTEGER" property="userMark" />
+    <result column="userMark" jdbcType="VARCHAR" property="userMark" />
     <result column="foodId" jdbcType="INTEGER" property="foodId" />
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="evaScore" jdbcType="INTEGER" property="evaScore" />
@@ -135,7 +135,7 @@
     insert into foodevaluation (userMark, foodId, content, 
       evaScore, createTime, dataFlag
       )
-    values (#{userMark,jdbcType=INTEGER}, #{foodId,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, 
+    values (#{userMark,jdbcType=VARCHAR}, #{foodId,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, 
       #{evaScore,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{dataFlag,jdbcType=INTEGER}
       )
   </insert>
@@ -169,7 +169,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="userMark != null">
-        #{userMark,jdbcType=INTEGER},
+        #{userMark,jdbcType=VARCHAR},
       </if>
       <if test="foodId != null">
         #{foodId,jdbcType=INTEGER},
@@ -207,7 +207,7 @@
         id = #{record.id,jdbcType=INTEGER},
       </if>
       <if test="record.userMark != null">
-        userMark = #{record.userMark,jdbcType=INTEGER},
+        userMark = #{record.userMark,jdbcType=VARCHAR},
       </if>
       <if test="record.foodId != null">
         foodId = #{record.foodId,jdbcType=INTEGER},
@@ -235,7 +235,7 @@
     -->
     update foodevaluation
     set id = #{record.id,jdbcType=INTEGER},
-      userMark = #{record.userMark,jdbcType=INTEGER},
+      userMark = #{record.userMark,jdbcType=VARCHAR},
       foodId = #{record.foodId,jdbcType=INTEGER},
       content = #{record.content,jdbcType=VARCHAR},
       evaScore = #{record.evaScore,jdbcType=INTEGER},
@@ -252,7 +252,7 @@
     update foodevaluation
     <set>
       <if test="userMark != null">
-        userMark = #{userMark,jdbcType=INTEGER},
+        userMark = #{userMark,jdbcType=VARCHAR},
       </if>
       <if test="foodId != null">
         foodId = #{foodId,jdbcType=INTEGER},
@@ -277,7 +277,7 @@
     @mbggenerated
     -->
     update foodevaluation
-    set userMark = #{userMark,jdbcType=INTEGER},
+    set userMark = #{userMark,jdbcType=VARCHAR},
       foodId = #{foodId,jdbcType=INTEGER},
       content = #{content,jdbcType=VARCHAR},
       evaScore = #{evaScore,jdbcType=INTEGER},

@@ -13,7 +13,7 @@ public class FoodOrder {
      * 用户标识
      * 表字段 : foodorder.userMark
      */
-    private Integer userMark;
+    private String userMark;
 
     /**
      * 桌号
@@ -96,7 +96,7 @@ public class FoodOrder {
      *
      * @return foodorder.userMark：用户标识
      */
-    public Integer getUserMark() {
+    public String getUserMark() {
         return userMark;
     }
 
@@ -107,7 +107,7 @@ public class FoodOrder {
      * @param userMark
      *            foodorder.userMark：用户标识
      */
-    public void setUserMark(Integer userMark) {
+    public void setUserMark(String userMark) {
         this.userMark = userMark;
     }
 
