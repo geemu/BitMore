@@ -419,63 +419,44 @@ $(function() {
 	/* 菜单json */
 	var menu = [ {
 		"id" : "1",
-		"name" : "餐厅管理",
+		"name" : "订单管理",
 		"parentId" : "0",
 		"url" : "",
 		"icon" : "",
 		"order" : "1",
 		"isHeader" : "1",
-		"childMenus" : [ {
+		"childMenus" : [{
 			"id" : "1",
-			"name" : "仓储管理",
+			"name" : "餐厅座位",
 			"parentId" : "1",
-			"url" : "",
+			"url" : "dada大大.jsp",
+			"icon" : "&#xe602;",
+			"order" : "1",
+			"isHeader" : "0",
+			"childMenus" :""
+		} , {
+			"id" : "2",
+			"name" : "新订单",
+			"parentId" : "1",
+			"url" : "dsadsa.jsp",
 			"icon" : "&#xe604;",
 			"order" : "1",
 			"isHeader" : "0",
-			"childMenus" : [ {
-				"id" : "1",
-				"name" : "菜品管理",
-				"parentId" : "3",
-				"url" : "test1.jsp",
-				"icon" : "",
-				"order" : "1",
-				"isHeader" : "0",
-				"childMenus" : ""
-			}, {
-				"id" : "2",
-				"name" : "类别管理",
-				"parentId" : "3",
-				"url" : "test2.jsp",
-				"icon" : "",
-				"order" : "1",
-				"isHeader" : "0",
-				"childMenus" : ""
-			} ]
+			"childMenus" : ""
 		}, {
-			"id" : "2",
-			"name" : "员工管理",
+			"id" : "3",
+			"name" : "制作中",
 			"parentId" : "",
 			"url" : "test9.jsp",
 			"icon" : "&#xe602;",
 			"order" : "1",
 			"isHeader" : "0",
 			"childMenus" : ""
-		},
-		{
-			"id" : "3",
-			"name" : "座位管理",
-			"parentId" : "1",
-			"url" : "dadas.jsp",
-			"icon" : "&#xe602;",
-			"order" : "1",
-			"isHeader" : "0",
-			"childMenus" :""
 		},{
 			"id" : "4",
-			"name" : "绩效统计",
+			"name" : "已派送",
 			"parentId" : "1",
-			"url" : "dadas4545.jsp",
+			"url" : "dadas.jsp",
 			"icon" : "&#xe602;",
 			"order" : "1",
 			"isHeader" : "0",
@@ -489,7 +470,7 @@ $(function() {
 			"order" : "1",
 			"isHeader" : "0",
 			"childMenus" :""
-		} ]
+		}]
 	} ];
 	initMenu(menu, $(".side-menu"));
 	$(".side-menu > li").addClass("menu-item");

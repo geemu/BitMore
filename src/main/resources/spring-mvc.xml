@@ -13,7 +13,7 @@
 	<context:component-scan base-package="com.bestcfm.controller" />
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="prefix" value="/WEB-INF/page/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 </beans>
