@@ -14,7 +14,7 @@
 		<div class="login_logo">
 			<img src="../static/images/web/logo.png" width="196" height="46">
 		</div>
-		<form id="empLoginForm" method="post" action="../emp/doLogin" onsubmit="return empLoginValidate()">
+		<form id="empLoginForm" method="post" action="../emp/doEmpLogin" onsubmit="return empLoginValidate()">
 			<div class="login_boder">
 				<div class="login_padding">
 					<h2>用户名</h2>

@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -26,7 +25,7 @@ $(document).ready(function(){
 			closeBtn: false,
 			shadeClose: false,
 			offset: '25%',
-			content: "<div class='no_login_show'><h1>亲！您还没登录点多多哦！</h1><a href='login.html'>马上登录</a><a href='register.html'>免费注册</a><a href='javascript:layer.closeAll();'>取消</a></div>"
+			content: "<div class='no_login_show'><h1>亲！您还没登录点多多哦！</h1><a href='../skip/toUserLogin'>马上登录</a><a href='../skip/toRegister'>免费注册</a><a href='javascript:layer.closeAll();'>取消</a></div>"
 		});
 	});
 	$("#msg_bijia").click(function(){
@@ -39,7 +38,6 @@ $(document).ready(function(){
 <body>
 	<div class="mobile">
 	
-		<!--头部-->
 		<header>
 			<div class="header">
 				<h2>点多多</h2>
@@ -170,13 +168,9 @@ $(document).ready(function(){
 		
 		<div class="m_user w">
 			<!--<a href="user.html">忆乡人***</a><a href="#">退出</a>-->
-			<a href="login.html">登录</a> <a href="register.html">注册</a> <a
-				href="javascript:void(0);" class="backtop">返回顶部</a>
-		</div>
-		<div class="footer w">
-			<a href="#"><div class="ico_img"><img src="../images/178hui-app.png"></div><span style="color: #00bb9c">客户端</span></a>
-			<a href="index.html"><div class="ico_img"><img src="../images/178hui-shouji.png"></div><span style="color: #eb4f38">触摸版</span></a> 
-			<a href="#"><div class="ico_img"><img src="../images/178hui-diannao.png"></div><span>电脑版</span></a>
+			<a href="#">登录</a> 
+			<a href="register.html">注册</a> 
+			<a href="javascript:void(0);" class="backtop">返回顶部</a>
 		</div>
 		<div class="copyright">Copyright © 2012-2015 点多多 www.bestcfm.com 版权所有</div>
 	</div>

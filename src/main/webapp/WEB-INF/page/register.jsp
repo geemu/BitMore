@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*"
+	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,78 +8,63 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="applicable-device" content="mobile" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <title>点多多注册</title>
 <link href="../css/public.css" rel="stylesheet" type="text/css" />
-<link href="../css/login.css" rel="stylesheet" type="text/css">
+<link href="../css/userLogin.css" rel="stylesheet" type="text/css">
 <script src="../js/jquery-1.8.3.min.js"></script>
-<script>
-$(window).load(function() {
-	$("#status").fadeOut();
-	$("#preloader").delay(350).fadeOut("slow");
-})
-</script>
+
 </head>
 
 <body>
-<div class="mobile">
+	<div class="mobile">
 
-		<div id="preloader">
-			<div id="status">
-				<p class="center-text">
-					<span>拼命加载中···</span>
-				</p>
-			</div>
-		</div>
-
-		<!--header -->
 		<header>
 			<div class="header">
-				<a class="new-a-back" href="javascript:history.back();"> <span><img
-						src="../images/iconfont-fanhui.png"></span>
+				<a class="new-a-back" href="javascript:history.back();"> 
+					<span><img src="../images/iconfont-fanhui.png"></span>
 				</a>
-				<h2>点多多·注册</h2>
+				<h2>注册</h2>
 			</div>
 		</header>
-
-
 		<div class="w main">
-  	<form id="frm_login" method="post" action="">
-  		<div class="item item-password">
-          <input id="password" class="txt-input txt-password ciphertext" type="password" placeholder="请输入密码" name="password" style="display: inline;">
-          <input id="ptext" class="txt-input txt-password plaintext" type="text" placeholder="请输入密码" style="display: none;" name="ptext">
-          <b class="tp-btn btn-off"></b> </div>
-        <div class="item item-password">
-          <input id="password_PwdTwo" class="txt-input txt-password_PwdTwo ciphertext_PwdTwo" type="password" placeholder="确认密码" name="password_PwdTwo" style="display: inline;">
-          <input id="ptext_PwdTwo" class="txt-input txt-password_PwdTwo plaintext_PwdTwo" type="text" placeholder="确认密码" style="display: none;" name="ptext_PwdTwo">
-          <b class="tp-btn_PwdTwo btn-off_PwdTwo"></b> </div>
-        <div class="item item-username">
-          <input id="username" class="txt-input txt-username" type="text" placeholder="请输入手机号" value="" name="username">
-          <b class="input-close" style="display: none;"></b> </div>
-        <div class="item item-username">
-          <input id="username" class="txt-input txt-username" type="text" placeholder="请输入手机验证码" value="" name="username">
-          <b class="input-close" style="display:none;"></b> </div>
-        <div class="item item-captcha">
-          <div class="input-info">
-            <input id="validateCode" class="txt-input txt-captcha" type="text" placeholder="验证码" autocomplete="off" maxlength="6" size="11">
-            <b id="validateCodeclose" class="input-close" onClick="validateCodeclose();" style="display: block; margin-right:15px;"></b> <span id="captcha-img"> <img id="code" src="../images/code.jpg" style="width:63px;height:25px;" onClick="closeAndFlush();"> </span> </div>
-          <div class="err-tips"> 注册即视为同意 <a target="_blank" href="#">用户服务协议</a> </div>
-        </div>
-        <div class="ui-btn-wrap"> <a class="ui-btn-lg ui-btn-primary" href="#">用户注册</a> </div>
-        <div class="ui-btn-wrap"> <a class="ui-btn-lg ui-btn-danger" href="login.html">已有账号？立即登录</a> </div>
-      </form>
-  </div>
-	
-  <div class="footer w">
-  	<a href="#"><div class="ico_img"><img src="../images/178hui-app.png"></div><span style="color:#00bb9c">客户端</span></a>
-    <a href="index.html"><div class="ico_img"><img src="../images/178hui-shouji.png"></div><span style="color:#eb4f38">触摸版</span></a>
-    <a href="#"><div class="ico_img"><img src="../images/178hui-diannao.png"></div><span>电脑版</span></a>
-  </div>
-  <div class="copyright">Copyright © 2012-2015 点多多 www.bestcfm.com 版权所有</div>
-</div>
+			<form id="frm_login" method="post" action="">
+				<div class="item item-username">
+					<input id="username" class="txt-input txt-username" type="text" placeholder="请输入手机号" value="" name="username"> 
+					<b class="input-close" style="display: none;"></b>
+				</div>
+				<div class="item item-password">
+					<input id="password" class="txt-input txt-password ciphertext" type="password" placeholder="请设置密码" name="password" style="display: inline;"> 
+						<input id="ptext" class="txt-input txt-password plaintext" type="text" placeholder="请输入密码" style="display: none;" name="ptext"> 
+						<b class="tp-btn btn-off"></b>
+				</div>
+				<div class="item item-captcha">
+					<div class="input-info">
+						<input id="validateCode" class="txt-input txt-captcha" type="text" placeholder="验证码" autocomplete="off" maxlength="6" size="11">
+						<b id="validateCodeclose" class="input-close" style="display: block; margin-right: 15px;"></b> 
+							<span class="getCode"> <a href="#">获取验证码</a></span>
+					</div>
+				</div>
+				<div class="item item-username">
+					<input id="username" class="txt-input txt-username" type="text" placeholder="请输入手机验证码" value="" name="username"> 
+					<b class="input-close" style="display: none;"></b>
+				</div>
+
+				<div class="ui-btn-wrap">
+					<a class="ui-btn-lg ui-btn-primary" href="#">用户注册</a>
+				</div>
+				<div class="ui-btn-wrap">
+					<a class="ui-btn-lg ui-btn-danger" href="../skip/toUserLogin">已有账号？立即登录</a>
+				</div>
+			</form>
+		</div>
+
+		<div class="copyright">Copyright © 2016-2017 点多多 www.bestcfm.com 版权所有</div>
+	</div>
 </body>
 </html>
-<script type="text/javascript" >
+<script type="text/javascript">
     $(function() {
 		$(".input-close").hide();
 		displayPwd();
@@ -171,4 +157,4 @@ $(window).load(function() {
 			$(this).siblings(".input-close").hide();
 		}
     });
-</script> 
+</script>

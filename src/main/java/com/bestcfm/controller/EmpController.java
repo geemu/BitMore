@@ -18,13 +18,8 @@ public class EmpController {
 	@Autowired
 	private EmpService empService;
 	
-	@RequestMapping("/doLogin")
-	public String doLogin(@RequestParam("phone")String phone,@RequestParam("empPassword")String empPassword,ModelMap map) {
-		System.out.println(phone+empPassword);
-		if(phone == null || empPassword == null){
-			map.put("error", "无效的请求参数！");
-			return "empLogin";
-		}
+	@RequestMapping("/doEmpLogin")
+	public String doEmpLogin(@RequestParam("phone")String phone,@RequestParam("empPassword")String empPassword,ModelMap map) {
 		Emp loginEmp = empService.queryEmpByPhoneAndPassword(phone, empPassword);
 		if(loginEmp == null){
 			map.put("error", "用户名或密码错误");

@@ -20,16 +20,16 @@ public class EmpService {
 	@Autowired
 	private EmpDao empDao;
 	
-	public Emp queryEmpByPhoneAndPassword(String phone,String userPassword){
+	public Emp queryEmpByPhoneAndPassword(String phone,String empPassword){
 		EmpExample  example = new EmpExample();
 		EmpExample.Criteria criteria = example.createCriteria();
 		criteria.andPhoneEqualTo(phone);
-		criteria.andEmpPasswordEqualTo(userPassword);
+		criteria.andEmpPasswordEqualTo(empPassword);
 		criteria.andDataFlagEqualTo(0);
-		List<Emp> userList = empDao.selectByExample(example);
+		List<Emp> empList = empDao.selectByExample(example);
 		Emp emp = null;
-		if(!userList.isEmpty()){
-			emp = userList.get(0);
+		if(!empList.isEmpty()){
+			emp = empList.get(0);
 		}
 		System.out.println("EmpService.queryEmpByPhoneAndPassword:"+JSONObject.toJSONString(emp));
 		return emp;

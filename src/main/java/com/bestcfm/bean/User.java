@@ -1,5 +1,7 @@
 package com.bestcfm.bean;
 
+import java.util.Date;
+
 public class User {
     /**
      * 用户编号
@@ -24,6 +26,18 @@ public class User {
      * 表字段 : user.headImage
      */
     private String headImage;
+
+    /**
+     * 创建时间
+     * 表字段 : user.createTime
+     */
+    private Date createTime;
+
+    /**
+     * 是否有效 0有效1无效
+     * 表字段 : user.dataFlag
+     */
+    private Integer dataFlag;
 
     /**
      * 获取：用户编号
@@ -107,5 +121,47 @@ public class User {
      */
     public void setHeadImage(String headImage) {
         this.headImage = headImage;
+    }
+
+    /**
+     * 获取：创建时间
+     * 表字段：user.createTime
+     *
+     * @return user.createTime：创建时间
+     */
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    /**
+     * 设置：创建时间
+     * 表字段：user.createTime
+     *
+     * @param createTime
+     *            user.createTime：创建时间
+     */
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    /**
+     * 获取：是否有效 0有效1无效
+     * 表字段：user.dataFlag
+     *
+     * @return user.dataFlag：是否有效 0有效1无效
+     */
+    public Integer getDataFlag() {
+        return dataFlag;
+    }
+
+    /**
+     * 设置：是否有效 0有效1无效
+     * 表字段：user.dataFlag
+     *
+     * @param dataFlag
+     *            user.dataFlag：是否有效 0有效1无效
+     */
+    public void setDataFlag(Integer dataFlag) {
+        this.dataFlag = dataFlag;
     }
 }

@@ -1,6 +1,7 @@
 package com.bestcfm.bean;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class UserExample {
@@ -376,6 +377,126 @@ public class UserExample {
 
         public Criteria andHeadImageNotBetween(String value1, String value2) {
             addCriterion("headImage not between", value1, value2, "headImage");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNull() {
+            addCriterion("createTime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNotNull() {
+            addCriterion("createTime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeEqualTo(Date value) {
+            addCriterion("createTime =", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotEqualTo(Date value) {
+            addCriterion("createTime <>", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThan(Date value) {
+            addCriterion("createTime >", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("createTime >=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThan(Date value) {
+            addCriterion("createTime <", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("createTime <=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIn(List<Date> values) {
+            addCriterion("createTime in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotIn(List<Date> values) {
+            addCriterion("createTime not in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+            addCriterion("createTime between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("createTime not between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagIsNull() {
+            addCriterion("dataFlag is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagIsNotNull() {
+            addCriterion("dataFlag is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagEqualTo(Integer value) {
+            addCriterion("dataFlag =", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagNotEqualTo(Integer value) {
+            addCriterion("dataFlag <>", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagGreaterThan(Integer value) {
+            addCriterion("dataFlag >", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagGreaterThanOrEqualTo(Integer value) {
+            addCriterion("dataFlag >=", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagLessThan(Integer value) {
+            addCriterion("dataFlag <", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagLessThanOrEqualTo(Integer value) {
+            addCriterion("dataFlag <=", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagIn(List<Integer> values) {
+            addCriterion("dataFlag in", values, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagNotIn(List<Integer> values) {
+            addCriterion("dataFlag not in", values, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagBetween(Integer value1, Integer value2) {
+            addCriterion("dataFlag between", value1, value2, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagNotBetween(Integer value1, Integer value2) {
+            addCriterion("dataFlag not between", value1, value2, "dataFlag");
             return (Criteria) this;
         }
     }

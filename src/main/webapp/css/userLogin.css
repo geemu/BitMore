@@ -119,8 +119,12 @@
 .ui-btn-danger:visited{background-clip: padding-box;background-color: #de3b8a;border-color: #de3b8a;color: #fff;}
 .main .item-captcha {margin-bottom: 10px;}
 .main .item-captcha .input-info {margin-bottom: 10px;}
-.main .item-captcha .input-close {right: 79px;}
-.main .item-captcha #captcha-img { border-left: 1px solid #d7d7d7;height: 25px; padding-left: 7px; position: absolute;right: 0;top: 9px;width: 79px;}
+.main .item-captcha .input-close {right: 100px;}
+.main .item-captcha .captcha-img { border-left: 1px solid #d7d7d7;height: 25px; padding-left: 7px; position: absolute;right: 0;top: 9px;width: 79px;}
+.main .item-captcha .getCode { border-left: 1px solid #d7d7d7;height: 25px; padding-left: 7px; position: absolute;right: 0;top: 9px;width: 90px;}
+.main .item-captcha .getCode a{color: #333; text-decoration:none; }
+.main .item-captcha .getCode a:hover{color: #ff8000;}
+.main .item-captcha .getCodea cite{font-style: normal; *cursor:pointer;}
 .main .item-captcha .err-tips {
 	color: #848689;
 	font-size: 12px;
