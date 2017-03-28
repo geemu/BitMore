@@ -7,8 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<link rel="stylesheet" href="../static/common/css/sccl.css">
-<link rel="stylesheet" type="text/css" href="../static/common/skin/qingxin/skin.css" id="layout-skin"/>
+<link rel="stylesheet" href="../static/admin/common/css/sccl.css">
+<link rel="stylesheet" type="text/css" href="../static/admin/common/skin/qingxin/skin.css" id="layout-skin"/>
 
 
 <title>管理员个人中心</title>
@@ -64,7 +64,7 @@
 		<div class="layout-footer">@2016 0.1 www.mycodes.net</div>
 	</div>
   </body>
-<script type="text/javascript" src="../static/common/lib/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="../static/common/js/sccl.js"></script>
-<script type="text/javascript" src="../static/common/js/sccl-util.js"></script>
+<script type="text/javascript" src="../static/admin/common/lib/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="../static/admin/common/js/sccl.js"></script>
+<script type="text/javascript" src="../static/admin/common/js/sccl-util.js"></script>
 </html>
