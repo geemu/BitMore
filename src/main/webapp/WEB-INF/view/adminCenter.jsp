@@ -7,8 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<link rel="stylesheet" href="../static/admin/common/css/sccl.css">
-<link rel="stylesheet" type="text/css" href="../static/admin/common/skin/qingxin/skin.css" id="layout-skin"/>
+<link rel="stylesheet" href="../static/common/css/sccl.css">
+<link rel="stylesheet" type="text/css" href="../static/common/skin/qingxin/skin.css" id="layout-skin"/>
 
 
 <title>管理员个人中心</title>
@@ -19,11 +19,10 @@
 			<span class="header-logo">系统框架</span> 
 			<a class="header-menu-btn" href="javascript:;"><i class="icon-font">&#xe600;</i></a>
 			<ul class="header-bar">
-				<li class="header-bar-role"><a href="javascript:;">超级管理员</a></li>
+				<li class="header-bar-role"><a href="javascript:;">管理员</a></li>
 				<li class="header-bar-nav">
 					<a href="javascript:;">admin<i class="icon-font" style="margin-left:5px;">&#xe60c;</i></a>
 					<ul class="header-dropdown-menu">
-						<li><a href="javascript:;">个人信息</a></li>
 						<li><a href="javascript:;">切换账户</a></li>
 						<li><a href="javascript:;">退出</a></li>
 					</ul>
@@ -64,7 +63,7 @@
 		<div class="layout-footer">@2016 0.1 www.mycodes.net</div>
 	</div>
   </body>
-<script type="text/javascript" src="../static/admin/common/lib/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="../static/admin/common/js/sccl.js"></script>
-<script type="text/javascript" src="../static/admin/common/js/sccl-util.js"></script>
+<script type="text/javascript" src="../static/common/lib/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="../static/common/js/adminsccl.js"></script>
+<script type="text/javascript" src="../static/common/js/sccl-util.js"></script>
 </html>
