@@ -101,6 +101,5 @@ public class InitController {
 	    return "empLogin";  
 	} 
 	
-	
 
 }
