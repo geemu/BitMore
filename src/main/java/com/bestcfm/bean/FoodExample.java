@@ -610,63 +610,73 @@ public class FoodExample {
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagIsNull() {
-            addCriterion("dataFlag is null");
+        public Criteria andFoodImageIsNull() {
+            addCriterion("foodImage is null");
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagIsNotNull() {
-            addCriterion("dataFlag is not null");
+        public Criteria andFoodImageIsNotNull() {
+            addCriterion("foodImage is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagEqualTo(Integer value) {
-            addCriterion("dataFlag =", value, "dataFlag");
+        public Criteria andFoodImageEqualTo(String value) {
+            addCriterion("foodImage =", value, "foodImage");
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagNotEqualTo(Integer value) {
-            addCriterion("dataFlag <>", value, "dataFlag");
+        public Criteria andFoodImageNotEqualTo(String value) {
+            addCriterion("foodImage <>", value, "foodImage");
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagGreaterThan(Integer value) {
-            addCriterion("dataFlag >", value, "dataFlag");
+        public Criteria andFoodImageGreaterThan(String value) {
+            addCriterion("foodImage >", value, "foodImage");
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagGreaterThanOrEqualTo(Integer value) {
-            addCriterion("dataFlag >=", value, "dataFlag");
+        public Criteria andFoodImageGreaterThanOrEqualTo(String value) {
+            addCriterion("foodImage >=", value, "foodImage");
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagLessThan(Integer value) {
-            addCriterion("dataFlag <", value, "dataFlag");
+        public Criteria andFoodImageLessThan(String value) {
+            addCriterion("foodImage <", value, "foodImage");
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagLessThanOrEqualTo(Integer value) {
-            addCriterion("dataFlag <=", value, "dataFlag");
+        public Criteria andFoodImageLessThanOrEqualTo(String value) {
+            addCriterion("foodImage <=", value, "foodImage");
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagIn(List<Integer> values) {
-            addCriterion("dataFlag in", values, "dataFlag");
+        public Criteria andFoodImageLike(String value) {
+            addCriterion("foodImage like", value, "foodImage");
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagNotIn(List<Integer> values) {
-            addCriterion("dataFlag not in", values, "dataFlag");
+        public Criteria andFoodImageNotLike(String value) {
+            addCriterion("foodImage not like", value, "foodImage");
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagBetween(Integer value1, Integer value2) {
-            addCriterion("dataFlag between", value1, value2, "dataFlag");
+        public Criteria andFoodImageIn(List<String> values) {
+            addCriterion("foodImage in", values, "foodImage");
             return (Criteria) this;
         }
 
-        public Criteria andDataFlagNotBetween(Integer value1, Integer value2) {
-            addCriterion("dataFlag not between", value1, value2, "dataFlag");
+        public Criteria andFoodImageNotIn(List<String> values) {
+            addCriterion("foodImage not in", values, "foodImage");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodImageBetween(String value1, String value2) {
+            addCriterion("foodImage between", value1, value2, "foodImage");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodImageNotBetween(String value1, String value2) {
+            addCriterion("foodImage not between", value1, value2, "foodImage");
             return (Criteria) this;
         }
 
@@ -727,6 +737,66 @@ public class FoodExample {
 
         public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
             addCriterion("createTime not between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagIsNull() {
+            addCriterion("dataFlag is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagIsNotNull() {
+            addCriterion("dataFlag is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagEqualTo(Integer value) {
+            addCriterion("dataFlag =", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagNotEqualTo(Integer value) {
+            addCriterion("dataFlag <>", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagGreaterThan(Integer value) {
+            addCriterion("dataFlag >", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagGreaterThanOrEqualTo(Integer value) {
+            addCriterion("dataFlag >=", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagLessThan(Integer value) {
+            addCriterion("dataFlag <", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagLessThanOrEqualTo(Integer value) {
+            addCriterion("dataFlag <=", value, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagIn(List<Integer> values) {
+            addCriterion("dataFlag in", values, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagNotIn(List<Integer> values) {
+            addCriterion("dataFlag not in", values, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagBetween(Integer value1, Integer value2) {
+            addCriterion("dataFlag between", value1, value2, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andDataFlagNotBetween(Integer value1, Integer value2) {
+            addCriterion("dataFlag not between", value1, value2, "dataFlag");
             return (Criteria) this;
         }
     }

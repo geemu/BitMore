@@ -13,8 +13,9 @@
     <result column="introduce" jdbcType="VARCHAR" property="introduce" />
     <result column="typeId" jdbcType="INTEGER" property="typeId" />
     <result column="signiture" jdbcType="INTEGER" property="signiture" />
-    <result column="dataFlag" jdbcType="INTEGER" property="dataFlag" />
+    <result column="foodImage" jdbcType="VARCHAR" property="foodImage" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="dataFlag" jdbcType="INTEGER" property="dataFlag" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -84,7 +85,8 @@
     <!--
     @mbggenerated
     -->
-    id, foodName, price, store, sales, introduce, typeId, signiture, dataFlag, createTime
+    id, foodName, price, store, sales, introduce, typeId, signiture, foodImage, createTime, 
+    dataFlag
   </sql>
   <select id="selectByExample" parameterType="com.bestcfm.bean.FoodExample" resultMap="BaseResultMap">
     <!--
@@ -137,12 +139,12 @@
     </selectKey>
     insert into food (foodName, price, store, 
       sales, introduce, typeId, 
-      signiture, dataFlag, createTime
-      )
+      signiture, foodImage, createTime, 
+      dataFlag)
     values (#{foodName,jdbcType=VARCHAR}, #{price,jdbcType=REAL}, #{store,jdbcType=INTEGER}, 
       #{sales,jdbcType=INTEGER}, #{introduce,jdbcType=VARCHAR}, #{typeId,jdbcType=INTEGER}, 
-      #{signiture,jdbcType=INTEGER}, #{dataFlag,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
-      )
+      #{signiture,jdbcType=INTEGER}, #{foodImage,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{dataFlag,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.bestcfm.bean.Food">
     <!--
@@ -174,11 +176,14 @@
       <if test="signiture != null">
         signiture,
       </if>
-      <if test="dataFlag != null">
-        dataFlag,
+      <if test="foodImage != null">
+        foodImage,
       </if>
       <if test="createTime != null">
         createTime,
+      </if>
+      <if test="dataFlag != null">
+        dataFlag,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -203,11 +208,14 @@
       <if test="signiture != null">
         #{signiture,jdbcType=INTEGER},
       </if>
-      <if test="dataFlag != null">
-        #{dataFlag,jdbcType=INTEGER},
+      <if test="foodImage != null">
+        #{foodImage,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dataFlag != null">
+        #{dataFlag,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -250,11 +258,14 @@
       <if test="record.signiture != null">
         signiture = #{record.signiture,jdbcType=INTEGER},
       </if>
-      <if test="record.dataFlag != null">
-        dataFlag = #{record.dataFlag,jdbcType=INTEGER},
+      <if test="record.foodImage != null">
+        foodImage = #{record.foodImage,jdbcType=VARCHAR},
       </if>
       <if test="record.createTime != null">
         createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.dataFlag != null">
+        dataFlag = #{record.dataFlag,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -274,8 +285,9 @@
       introduce = #{record.introduce,jdbcType=VARCHAR},
       typeId = #{record.typeId,jdbcType=INTEGER},
       signiture = #{record.signiture,jdbcType=INTEGER},
-      dataFlag = #{record.dataFlag,jdbcType=INTEGER},
-      createTime = #{record.createTime,jdbcType=TIMESTAMP}
+      foodImage = #{record.foodImage,jdbcType=VARCHAR},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      dataFlag = #{record.dataFlag,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -307,11 +319,14 @@
       <if test="signiture != null">
         signiture = #{signiture,jdbcType=INTEGER},
       </if>
-      <if test="dataFlag != null">
-        dataFlag = #{dataFlag,jdbcType=INTEGER},
+      <if test="foodImage != null">
+        foodImage = #{foodImage,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dataFlag != null">
+        dataFlag = #{dataFlag,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -328,8 +343,9 @@
       introduce = #{introduce,jdbcType=VARCHAR},
       typeId = #{typeId,jdbcType=INTEGER},
       signiture = #{signiture,jdbcType=INTEGER},
-      dataFlag = #{dataFlag,jdbcType=INTEGER},
-      createTime = #{createTime,jdbcType=TIMESTAMP}
+      foodImage = #{foodImage,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      dataFlag = #{dataFlag,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

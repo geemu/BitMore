@@ -57,12 +57,12 @@ public class InitController {
 	} 
 	
 	/**
-	 * 登录页面
+	 * 客户登录页面
 	 * @return
 	 */
-	@RequestMapping("/toLogin")  
-	public String toLogin() { 
-	    return "login";  
+	@RequestMapping("/toUserLogin")  
+	public String toUserLogin() { 
+	    return "userLogin";  
 	} 
 	
 	/**

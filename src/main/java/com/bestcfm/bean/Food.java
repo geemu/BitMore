@@ -52,16 +52,22 @@ public class Food {
     private Integer signiture;
 
     /**
-     * 是0有效  1无效
-     * 表字段 : food.dataFlag
+     * 图片
+     * 表字段 : food.foodImage
      */
-    private Integer dataFlag;
+    private String foodImage;
 
     /**
      * 创建时间
      * 表字段 : food.createTime
      */
     private Date createTime;
+
+    /**
+     * 是0有效  1无效
+     * 表字段 : food.dataFlag
+     */
+    private Integer dataFlag;
 
     /**
      * 获取：菜品编号
@@ -232,24 +238,24 @@ public class Food {
     }
 
     /**
-     * 获取：是0有效  1无效
-     * 表字段：food.dataFlag
+     * 获取：图片
+     * 表字段：food.foodImage
      *
-     * @return food.dataFlag：是0有效  1无效
+     * @return food.foodImage：图片
      */
-    public Integer getDataFlag() {
-        return dataFlag;
+    public String getFoodImage() {
+        return foodImage;
     }
 
     /**
-     * 设置：是0有效  1无效
-     * 表字段：food.dataFlag
+     * 设置：图片
+     * 表字段：food.foodImage
      *
-     * @param dataFlag
-     *            food.dataFlag：是0有效  1无效
+     * @param foodImage
+     *            food.foodImage：图片
      */
-    public void setDataFlag(Integer dataFlag) {
-        this.dataFlag = dataFlag;
+    public void setFoodImage(String foodImage) {
+        this.foodImage = foodImage;
     }
 
     /**
@@ -271,5 +277,26 @@ public class Food {
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    /**
+     * 获取：是0有效  1无效
+     * 表字段：food.dataFlag
+     *
+     * @return food.dataFlag：是0有效  1无效
+     */
+    public Integer getDataFlag() {
+        return dataFlag;
+    }
+
+    /**
+     * 设置：是0有效  1无效
+     * 表字段：food.dataFlag
+     *
+     * @param dataFlag
+     *            food.dataFlag：是0有效  1无效
+     */
+    public void setDataFlag(Integer dataFlag) {
+        this.dataFlag = dataFlag;
     }
 }

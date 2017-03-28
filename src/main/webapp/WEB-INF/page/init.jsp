@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<a href="skip/toCookCenter" class="btn btn-default btn-primary btn-block">厨师中心</a>
 			<a href="skip/toCustomerCenter" class="btn btn-default btn-primary btn-block">客户中心</a>
 			<a href="skip/toIndex" class="btn btn-default btn-primary btn-block">首页</a>
-			<a href="skip/toLogin" class="btn btn-default btn-primary btn-block">登陆</a>
+			<a href="skip/toUserLogin" class="btn btn-default btn-primary btn-block">客户登陆</a>
 			<a href="skip/torToRegisterOk" class="btn btn-default btn-primary btn-block">注册成功</a>
 			<a href="skip/toRegister" class="btn btn-default btn-primary btn-block">注册</a>
 			<a href="skip/toWaiterCenter" class="btn btn-default btn-primary btn-block">服务员中心</a>
