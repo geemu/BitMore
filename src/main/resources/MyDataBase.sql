@@ -81,8 +81,9 @@ CREATE TABLE `food` (
   `introduce` varchar(200) NOT NULL DEFAULT '' COMMENT '菜品介绍',
   `typeId` int(11) NOT NULL DEFAULT '0' COMMENT '类别编号',
   `signiture` int(11) NOT NULL DEFAULT '0' COMMENT '招牌菜 0不是 1是',
-  `dataFlag` int(11) NOT NULL DEFAULT '0' COMMENT '是0有效  1无效',
+  `foodImage` varchar(100) NOT NULL DEFAULT '' COMMENT '图片',
   `createTime` datetime NOT NULL DEFAULT '1970-01-01 00:00:00' COMMENT '创建时间',
+  `dataFlag` int(11) NOT NULL DEFAULT '0' COMMENT '是0有效  1无效',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -104,21 +105,6 @@ CREATE TABLE `foodevaluation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `foodevaluation` */
-
-/*Table structure for table `foodimage` */
-
-DROP TABLE IF EXISTS `foodimage`;
-
-CREATE TABLE `foodimage` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `foodId` int(11) NOT NULL DEFAULT '0' COMMENT '菜品编号',
-  `foodImage` varchar(100) NOT NULL DEFAULT '' COMMENT '菜品图片',
-  `createTime` datetime NOT NULL DEFAULT '1970-01-01 00:00:00' COMMENT '创建时间',
-  `dataFlag` int(11) NOT NULL DEFAULT '0' COMMENT '0有效 1无效',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Data for the table `foodimage` */
 
 /*Table structure for table `foodorderdetail` */
 
@@ -183,10 +169,14 @@ CREATE TABLE `user` (
   `phone` varchar(11) NOT NULL DEFAULT '' COMMENT '手机号',
   `userPassword` varchar(16) NOT NULL DEFAULT '' COMMENT '密码',
   `headImage` varchar(100) NOT NULL DEFAULT '' COMMENT '头像',
+  `createTime` datetime NOT NULL DEFAULT '1970-01-01 00:00:00' COMMENT '创建时间',
+  `dataFlag` int(11) NOT NULL DEFAULT '0' COMMENT '是否有效 0有效1无效',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
+
+insert  into `user`(`id`,`phone`,`userPassword`,`headImage`,`createTime`,`dataFlag`) values (1,'1','1','1','1970-01-01 00:00:00',0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
