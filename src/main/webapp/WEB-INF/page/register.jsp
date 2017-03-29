@@ -8,8 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="applicable-device" content="mobile" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <title>点多多注册</title>
 <link href="../css/public.css" rel="stylesheet" type="text/css" />
 <link href="../css/userLogin.css" rel="stylesheet" type="text/css">
@@ -43,16 +42,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="input-info">
 						<input id="validateCode" class="txt-input txt-captcha" type="text" placeholder="验证码" autocomplete="off" maxlength="6" size="11">
 						<b id="validateCodeclose" class="input-close" style="display: block; margin-right: 15px;"></b> 
-							<span class="getCode"> <a href="#">获取验证码</a></span>
+						<span class="getCode"><a id="getValidateCode" href="javascript:void(0)">获取验证码</a></span>
 					</div>
 				</div>
-				<div class="item item-username">
-					<input id="username" class="txt-input txt-username" type="text" placeholder="请输入手机验证码" value="" name="username"> 
-					<b class="input-close" style="display: none;"></b>
-				</div>
-
+				
 				<div class="ui-btn-wrap">
-					<a class="ui-btn-lg ui-btn-primary" href="#">用户注册</a>
+					<a class="ui-btn-lg ui-btn-primary" href="#">注册</a>
 				</div>
 				<div class="ui-btn-wrap">
 					<a class="ui-btn-lg ui-btn-danger" href="../skip/toUserLogin">已有账号？立即登录</a>
@@ -65,6 +60,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </body>
 </html>
 <script type="text/javascript">
+	/* 获取验证码  */
+	$("#getValidateCode").click(function(){
+		alert(1);
+	});
+
     $(function() {
 		$(".input-close").hide();
 		displayPwd();

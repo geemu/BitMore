@@ -39,12 +39,15 @@
 			</ul>
 		</header>
 		<aside class="layout-side">
-			<ul class="side-menu">
-			  
+			<ul class="side-menu"> 
 			</ul>
 		</aside>
 		
-		<div class="layout-side-arrow"><div class="layout-side-arrow-icon"><i class="icon-font">&#xe60d;</i></div></div>
+		<div class="layout-side-arrow">
+			<div class="layout-side-arrow-icon">
+				<i class="icon-font">&#xe60d;</i>
+			</div>
+		</div>
 		
 		<section class="layout-main">
 			<div class="layout-main-tab">
