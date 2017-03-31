@@ -9,6 +9,12 @@
 <body>
 ws1
 <div id="msg"></div>
+<form method="post" action="http://www.iqshw.com/e/member/ajaxlogin/">
+<input type="text" name="username" value="cfmiqshw">
+<input type="text" name="password" value="chen1436863821">
+<input type="text" name="enews" value="login">
+<button type="submit">tijiao </button>
+</form>
 <input type="text" id="txt"/>
 <button id="send">send</button>
 
