@@ -18,17 +18,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <body>
 	<div class="mobile">
-
 		<header>
 			<div class="header">
-				<a class="new-a-back" href="javascript:history.back();"> 
-					<span><img src="../images/iconfont-fanhui.png"></span>
-				</a>
+				<a class="new-a-back" href="javascript:history.back();"><span><img src="../images/iconfont-fanhui.png"></span></a>
 				<h2>注册</h2>
 			</div>
 		</header>
 		<div class="w main">
-			<form id="frm_login" method="post" action="">
+			<form id="frm_login" method="post" action="/user/doUserRegister">
 				<div class="item item-username">
 					<input id="username" class="txt-input txt-username" type="text" placeholder="请输入手机号" value="" name="username"> 
 					<b class="input-close" style="display: none;"></b>
@@ -40,29 +37,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="item item-captcha">
 					<div class="input-info">
-						<input id="validateCode" class="txt-input txt-captcha" type="text" placeholder="验证码" autocomplete="off" maxlength="6" size="11">
+						<input id="validateCode" name="validateCode" class="txt-input txt-captcha" type="text" placeholder="验证码" autocomplete="off" maxlength="6" size="11">
 						<b id="validateCodeclose" class="input-close" style="display: block; margin-right: 15px;"></b> 
 						<span class="getCode"><a id="getValidateCode" href="javascript:void(0)">获取验证码</a></span>
 					</div>
 				</div>
 				
 				<div class="ui-btn-wrap">
-					<a class="ui-btn-lg ui-btn-primary" href="#">注册</a>
+					<a id="doUserRegister"  class="ui-btn-lg ui-btn-primary" href="javacsript:void(0)">注册</a>
 				</div>
 				<div class="ui-btn-wrap">
 					<a class="ui-btn-lg ui-btn-danger" href="../skip/toUserLogin">已有账号？立即登录</a>
 				</div>
 			</form>
 		</div>
-
+<div id="error"></div>
 		<div class="copyright">Copyright © 2016-2017 点多多 www.bestcfm.com 版权所有</div>
 	</div>
 </body>
 </html>
 <script type="text/javascript">
-	/* 获取验证码  */
+
+/* 提交表单  */
+$("#doUserRegister").click(function(){
+	$.ajax({
+        type: "POST",
+        data:$('#frm_login').serialize(),
+        url:"../user/doUserRegister",
+        success: function() {
+        	console.log("请求成功");
+        },
+        error: function(){
+        	console.log("请求失败");
+        }
+    });
+});
+	/* 获取手机验证码  */
 	$("#getValidateCode").click(function(){
-		alert(1);
+		$.ajax({
+            type: "POST",
+            data:$('#frm_login').serialize(),
+            url:"../user/ajaxGetVerifyCode",
+            success: function(data) {
+            	console.log("请求成功");
+            	alert(data);
+            },
+            error: function(){
+            	console.log("请求失败");
+            }
+        });
 	});
 
     $(function() {
@@ -80,9 +103,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 		if(document.getElementById("password").value != ''){
 			$(".ciphertext").siblings(".input-close").show();
-		}
-		if(document.getElementById("password_PwdTwo").value != ''){
-			$(".ciphertext_PwdTwo").siblings(".input-close").show();
 		}
 	}
 

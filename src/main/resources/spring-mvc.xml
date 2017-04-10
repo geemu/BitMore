@@ -11,9 +11,17 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 	<!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
 	<context:component-scan base-package="com.bestcfm.controller" />
-
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/page/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	<mvc:annotation-driven >  
+        <!-- 消息转换器 -->  
+        <mvc:message-converters register-defaults="true">  
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">  
+                <property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>  
+            </bean>  
+        </mvc:message-converters>  
+    </mvc:annotation-driven>  
 </beans>

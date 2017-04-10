@@ -65,14 +65,6 @@ public class InitController {
 	    return "userLogin";  
 	} 
 	
-	/**
-	 * 注册成功页面
-	 * @return
-	 */
-	@RequestMapping("/torToRegisterOk")  
-	public String torToRegisterOk() { 
-	    return "register_ok";  
-	} 
 	
 	/**
 	 * 注册页面

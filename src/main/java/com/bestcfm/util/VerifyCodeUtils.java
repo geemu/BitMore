@@ -259,10 +259,8 @@ public class VerifyCodeUtils{
 	public static void main(String[] args) throws IOException{
 		File dir = new File("D:/verifies");
 		int w = 200, h = 80;
-		for(int i = 0; i < 50; i++){
-			String verifyCode = generateVerifyCode(4);
-			File file = new File(dir, verifyCode + ".jpg");
-			outputImage(w, h, file, verifyCode);
-		}
+		String verifyCode = generateVerifyCode(4);
+		File file = new File(dir, verifyCode + ".jpg");
+		outputImage(w, h, file, verifyCode);
 	}
 }

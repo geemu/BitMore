@@ -59,7 +59,7 @@ $(document).ready(function(){
 			</div>
 			<!-- 类目栏 -->
 			<div class="m_nav">
-				<a href="#" id="customerCenter"><img src="images/m-index_27.png"><span>会员中心</span></a>
+				<a href="javascript:void(0)" id="customerCenter"><img src="images/m-index_27.png"><span>会员中心</span></a>
 				<a href="skip/toShoppgingCar"><img src="images/m-index_26.png"><span>购物车</span></a>
 				<a href="skip/toFoodAssortment"><img src="images/m-index_26.png"><span>菜品分类</span></a>
 				<a href="skip/toNotice"><img src="images/m-index_26.png"><span>店铺公告</span></a>
@@ -73,7 +73,7 @@ $(document).ready(function(){
 			</div>
 			<div class="mall_list">
 				<a href="#" class="mall">
-					<span class="mall_logo"> <img src="images/foodImages/www.jd.com.png" /></span><br/>
+					<span class="mall_logo"><img src="images/foodImages/www.jd.com.png" /></span><br/>
 					<span>菜名</span><br/>
 					<span><i>加入购物车</i></span>
 				</a> 

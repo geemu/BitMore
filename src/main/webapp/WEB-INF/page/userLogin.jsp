@@ -9,8 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="applicable-device" content="mobile" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <title>用户登录</title>
 
 <link href="../css/public.css" rel="stylesheet" type="text/css" />
@@ -24,7 +23,7 @@
 			var username = $.trim($("#username").val());
 			var password = $.trim($("#password").val());
 			if (username == '') {
-				layer.tips('请输入用户名/手机号码', '#username', {
+				layer.tips('请输入手机号码', '#username', {
 					tips : 1
 				});
 				return false;
@@ -40,12 +39,9 @@
 <body>
 	<div class="mobile">
 
-		<!--header -->
 		<header>
 			<div class="header">
-				<a class="new-a-back" href="javascript:history.back();"> <span><img
-						src="../images/iconfont-fanhui.png"></span>
-				</a>
+				<a class="new-a-back" href="javascript:history.back();"><span><img src="../images/iconfont-fanhui.png"></span></a>
 				<h2>登录</h2>
 			</div>
 		</header>
@@ -81,7 +77,7 @@
 					<dl>
 						<dt>其它登录方式</dt>
 						<dd>
-							<a class="qq" href="#"> <span><img alt="" src="../images/login_qq.png" width="40" height="40"></span></a>
+							<a class="qq" href="javascript:void(0)"> <span><img alt="" src="../images/login_qq.png" width="40" height="40"></span></a>
 						</dd>
 					</dl>
 				</div>
