@@ -1,12 +1,7 @@
 package com.bestcfm.bean;
 
 import java.util.Date;
-/**
- * 
- * Author:陈方明
- * Email:cfmmail@sina.com
- * Created on 2017 	下午4:14:18
- */
+
 public class Appointment {
     /**
      * 主键 预约id
