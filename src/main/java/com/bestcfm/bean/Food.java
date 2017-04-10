@@ -22,12 +22,6 @@ public class Food {
     private Float price;
 
     /**
-     * 库存
-     * 表字段 : food.store
-     */
-    private Integer store;
-
-    /**
      * 销量
      * 表字段 : food.sales
      */
@@ -130,27 +124,6 @@ public class Food {
      */
     public void setPrice(Float price) {
         this.price = price;
-    }
-
-    /**
-     * 获取：库存
-     * 表字段：food.store
-     *
-     * @return food.store：库存
-     */
-    public Integer getStore() {
-        return store;
-    }
-
-    /**
-     * 设置：库存
-     * 表字段：food.store
-     *
-     * @param store
-     *            food.store：库存
-     */
-    public void setStore(Integer store) {
-        this.store = store;
     }
 
     /**

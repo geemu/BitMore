@@ -9,9 +9,10 @@ import com.bestcfm.bean.User;
 import com.bestcfm.bean.UserExample;
 import com.bestcfm.dao.UserDao;
 /**
- * 用户
- * @author cfm44850
- *
+ * 
+ * Author:陈方明
+ * Email:cfmmail@sina.com
+ * Created on 2017 	下午2:07:49
  */
 @Service
 public class UserService {

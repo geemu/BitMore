@@ -8,7 +8,6 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="foodName" jdbcType="VARCHAR" property="foodName" />
     <result column="price" jdbcType="REAL" property="price" />
-    <result column="store" jdbcType="INTEGER" property="store" />
     <result column="sales" jdbcType="INTEGER" property="sales" />
     <result column="introduce" jdbcType="VARCHAR" property="introduce" />
     <result column="typeId" jdbcType="INTEGER" property="typeId" />
@@ -85,7 +84,7 @@
     <!--
     @mbggenerated
     -->
-    id, foodName, price, store, sales, introduce, typeId, signiture, foodImage, createTime, 
+    id, foodName, price, sales, introduce, typeId, signiture, foodImage, createTime, 
     dataFlag
   </sql>
   <select id="selectByExample" parameterType="com.bestcfm.bean.FoodExample" resultMap="BaseResultMap">
@@ -137,14 +136,14 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into food (foodName, price, store, 
-      sales, introduce, typeId, 
-      signiture, foodImage, createTime, 
-      dataFlag)
-    values (#{foodName,jdbcType=VARCHAR}, #{price,jdbcType=REAL}, #{store,jdbcType=INTEGER}, 
-      #{sales,jdbcType=INTEGER}, #{introduce,jdbcType=VARCHAR}, #{typeId,jdbcType=INTEGER}, 
-      #{signiture,jdbcType=INTEGER}, #{foodImage,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{dataFlag,jdbcType=INTEGER})
+    insert into food (foodName, price, sales, 
+      introduce, typeId, signiture, 
+      foodImage, createTime, dataFlag
+      )
+    values (#{foodName,jdbcType=VARCHAR}, #{price,jdbcType=REAL}, #{sales,jdbcType=INTEGER}, 
+      #{introduce,jdbcType=VARCHAR}, #{typeId,jdbcType=INTEGER}, #{signiture,jdbcType=INTEGER}, 
+      #{foodImage,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{dataFlag,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.bestcfm.bean.Food">
     <!--
@@ -160,9 +159,6 @@
       </if>
       <if test="price != null">
         price,
-      </if>
-      <if test="store != null">
-        store,
       </if>
       <if test="sales != null">
         sales,
@@ -192,9 +188,6 @@
       </if>
       <if test="price != null">
         #{price,jdbcType=REAL},
-      </if>
-      <if test="store != null">
-        #{store,jdbcType=INTEGER},
       </if>
       <if test="sales != null">
         #{sales,jdbcType=INTEGER},
@@ -243,9 +236,6 @@
       <if test="record.price != null">
         price = #{record.price,jdbcType=REAL},
       </if>
-      <if test="record.store != null">
-        store = #{record.store,jdbcType=INTEGER},
-      </if>
       <if test="record.sales != null">
         sales = #{record.sales,jdbcType=INTEGER},
       </if>
@@ -280,7 +270,6 @@
     set id = #{record.id,jdbcType=INTEGER},
       foodName = #{record.foodName,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=REAL},
-      store = #{record.store,jdbcType=INTEGER},
       sales = #{record.sales,jdbcType=INTEGER},
       introduce = #{record.introduce,jdbcType=VARCHAR},
       typeId = #{record.typeId,jdbcType=INTEGER},
@@ -303,9 +292,6 @@
       </if>
       <if test="price != null">
         price = #{price,jdbcType=REAL},
-      </if>
-      <if test="store != null">
-        store = #{store,jdbcType=INTEGER},
       </if>
       <if test="sales != null">
         sales = #{sales,jdbcType=INTEGER},
@@ -338,7 +324,6 @@
     update food
     set foodName = #{foodName,jdbcType=VARCHAR},
       price = #{price,jdbcType=REAL},
-      store = #{store,jdbcType=INTEGER},
       sales = #{sales,jdbcType=INTEGER},
       introduce = #{introduce,jdbcType=VARCHAR},
       typeId = #{typeId,jdbcType=INTEGER},

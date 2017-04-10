@@ -300,66 +300,6 @@ public class FoodExample {
             return (Criteria) this;
         }
 
-        public Criteria andStoreIsNull() {
-            addCriterion("store is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStoreIsNotNull() {
-            addCriterion("store is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStoreEqualTo(Integer value) {
-            addCriterion("store =", value, "store");
-            return (Criteria) this;
-        }
-
-        public Criteria andStoreNotEqualTo(Integer value) {
-            addCriterion("store <>", value, "store");
-            return (Criteria) this;
-        }
-
-        public Criteria andStoreGreaterThan(Integer value) {
-            addCriterion("store >", value, "store");
-            return (Criteria) this;
-        }
-
-        public Criteria andStoreGreaterThanOrEqualTo(Integer value) {
-            addCriterion("store >=", value, "store");
-            return (Criteria) this;
-        }
-
-        public Criteria andStoreLessThan(Integer value) {
-            addCriterion("store <", value, "store");
-            return (Criteria) this;
-        }
-
-        public Criteria andStoreLessThanOrEqualTo(Integer value) {
-            addCriterion("store <=", value, "store");
-            return (Criteria) this;
-        }
-
-        public Criteria andStoreIn(List<Integer> values) {
-            addCriterion("store in", values, "store");
-            return (Criteria) this;
-        }
-
-        public Criteria andStoreNotIn(List<Integer> values) {
-            addCriterion("store not in", values, "store");
-            return (Criteria) this;
-        }
-
-        public Criteria andStoreBetween(Integer value1, Integer value2) {
-            addCriterion("store between", value1, value2, "store");
-            return (Criteria) this;
-        }
-
-        public Criteria andStoreNotBetween(Integer value1, Integer value2) {
-            addCriterion("store not between", value1, value2, "store");
-            return (Criteria) this;
-        }
-
         public Criteria andSalesIsNull() {
             addCriterion("sales is null");
             return (Criteria) this;

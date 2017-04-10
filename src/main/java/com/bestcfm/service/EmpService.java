@@ -10,9 +10,10 @@ import com.bestcfm.bean.Emp;
 import com.bestcfm.bean.EmpExample;
 import com.bestcfm.dao.EmpDao;
 /**
- * 员工表
- * @author cfm44850
- *
+ * 
+ * Author:陈方明
+ * Email:cfmmail@sina.com
+ * Created on 2017 	下午2:07:59
  */
 @Service
 public class EmpService {

@@ -101,5 +101,32 @@ public class InitController {
 	    return "empLogin";  
 	} 
 	
+	/**
+	 * 购物车
+	 * @return
+	 */
+	@RequestMapping("/toShoppgingCar")  
+	public String toShoppgingCar() { 
+	    return "shoppingCar";  
+	} 
+	
+	/**
+	 * 分类
+	 * @return
+	 */
+	@RequestMapping("/toFoodAssortment")  
+	public String toFoodAssortment() { 
+	    return "foodAssortment";  
+	}
+	
+	/**
+	 * 公告
+	 * @return
+	 */
+	@RequestMapping("/toNotice")  
+	public String toNotice() { 
+	    return "notice";  
+	}
+	
 
 }
