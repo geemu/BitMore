@@ -36,20 +36,11 @@
 					</div>
 				</div>
 		</div>	
-		<div id="username"></div>
 		</form>	
 	</div>
 </body>
 <script type="text/javascript">
 
-function empLoginValidate(){
-	/* var phone = $("phone").val();
-	var empPawwsord = $("empPassword").val();
-	var phoneRule = /^1[34578]\d{9}$/;
-	if(!phoneRule.test(phone)){
-		alert("手机号码格式错误！");
-		return false;
-	} */
-}
+
 </script>
 </html>

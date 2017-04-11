@@ -32,7 +32,6 @@ public class EmpService {
 		if(!empList.isEmpty()){
 			emp = empList.get(0);
 		}
-		System.out.println("EmpService.queryEmpByPhoneAndPassword:"+JSONObject.toJSONString(emp));
 		return emp;
 	}
 	
