@@ -64,8 +64,14 @@ $("#doUserRegister").click(function(){
         type: "POST",
         data:$('#frm_login').serialize(),
         url:"../user/doUserRegister",
-        success: function() {
-        	console.log("请求成功");
+        success: function(data) {
+        	if('' == data){
+        		debugger;
+        		window.location = "../"
+        	}
+        	else{
+        		alert(data);
+        	}
         },
         error: function(){
         	console.log("请求失败");
@@ -78,9 +84,13 @@ $("#doUserRegister").click(function(){
             type: "POST",
             data:$('#frm_login').serialize(),
             url:"../user/ajaxGetVerifyCode",
-            success: function(data) {
-            	console.log("请求成功");
-            	alert(data);
+            success: function(data) {	
+            		if('' == data){
+            			console.log("未被注册");
+            		}
+            		else{
+            			alert(data);
+            		}
             },
             error: function(){
             	console.log("请求失败");
