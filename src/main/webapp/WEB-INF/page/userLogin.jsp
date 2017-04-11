@@ -46,7 +46,7 @@
 		</header>
 
 		<div class="w main">
-			<form id="frm_login" method="post" action="../user/doUserLogin">
+			<form id="frm_login" method="post">
 				<div class="item item-username">
 					<input name="phone" id="username" class="txt-input txt-username" type="text"placeholder="请输入手机号" value="" > 
 					<b class="input-close" style="display: none;"></b>
@@ -63,11 +63,11 @@
 						</label>
 					</div>
 					<span class="retrieve-password"> 
-					<a href="#">找回密码</a>
+					<a href="#">找回密码</a>    
 					</span>
 				</div>
 				<div class="ui-btn-wrap">
-					<input name="" type="submit" value="用户登录" class="ui-btn-lg ui-btn-primary" />
+					<input type="submit" value="用户登录" class="ui-btn-lg ui-btn-primary" onclick="doUserLogin()" />
 				</div>
 				<div class="ui-btn-wrap">
 					<a class="ui-btn-lg ui-btn-danger" href="../skip/toRegister">没有账号？立即注册</a>
@@ -87,6 +87,26 @@
 </body>
 </html>
 <script type="text/javascript">
+/* 提交表单  */
+function doUserLogin(){
+	$.ajax({
+        type: "POST",
+        data:$('#frm_login').serialize(),
+        url:"../user/doUserLogin",
+        success: function(data) {  
+    		if("toUserLogin" == data){
+    			alert('用户名或密码错误');
+    			window.location = "/toUserLogin";
+    		}
+    		else{
+    			window.location = "../";
+    		}
+        },
+        error: function(data){
+        	console.log("请求失败");
+        }
+    });
+}
 	$(function() {
 		$(".input-close").hide();
 		displayPwd();

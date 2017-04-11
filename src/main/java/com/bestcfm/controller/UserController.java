@@ -31,14 +31,15 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping("/doUserLogin")
+	@ResponseBody
 	public String doUserLogin(@RequestParam("phone")String phone,@RequestParam("userPassword")String userPassword,ModelMap map) {
 		User loginUser = userService.queryUserByPhoneAndPassword(phone, userPassword);
 		if(loginUser == null){
 			map.put("error", "用户名或密码错误");
-			return "userLogin";
+			return "toUserLogin";
 		}
 		map.put("loginUser", loginUser);
-		return "customerCenter";
+		return "toCustomerCenter";
 	}
 	/**
 	 * 用户注册

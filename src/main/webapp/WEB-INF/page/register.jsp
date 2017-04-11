@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</header>
 		<div class="w main">
-			<form id="frm_login" method="post" action="/user/doUserRegister">
+			<form id="frm_login" method="post">
 				<div class="item item-username">
 					<input id="username" class="txt-input txt-username" type="text" placeholder="请输入手机号" value="" name="username"> 
 					<b class="input-close" style="display: none;"></b>
@@ -66,7 +66,6 @@ $("#doUserRegister").click(function(){
         url:"../user/doUserRegister",
         success: function(data) {
         	if('' == data){
-        		debugger;
         		window.location = "../"
         	}
         	else{
