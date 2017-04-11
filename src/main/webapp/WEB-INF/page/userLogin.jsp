@@ -38,7 +38,6 @@
 </script>
 <body>
 	<div class="mobile">
-
 		<header>
 			<div class="header">
 				<a class="new-a-back" href="javascript:history.back();"><span><img src="../images/iconfont-fanhui.png"></span></a>

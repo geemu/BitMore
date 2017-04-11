@@ -3,6 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,25 +18,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="layer/layer.js"></script>
 
 <script type="text/javascript">
+
 /* 触发用户登录 */
 $(document).ready(function(){
 	$("#customerCenter").click(function(){
-		var index = layer.open({
-			type: 1,
-			title: false,
-			closeBtn: false,
-			shadeClose: true,
-			offset: '25%',
-			content: "<div class='no_login_show'>"
-						+"<h1>亲！您还没登录点多多哦！</h1>"
-						+"<a href='skip/toUserLogin'>马上登录</a>"
-						+"<a href='skip/toRegister'>免费注册</a>"
-						+"<a href='javascript:layer.closeAll();'>取消</a>"
-					 +"</div>"
-		});
-	});
-	$("#msg_bijia").click(function(){
-		layer.tips('请耐心等待一下，我们正在拼命开发中···','#msg_bijia');
+		if('' == '${loginUser}' || '${loginUser}' == null){
+			var index = layer.open({
+				type: 1,
+				title: false,
+				closeBtn: false,
+				shadeClose: true,
+				offset: '25%',
+				content: "<div class='no_login_show'>"
+							+"<h1>亲！您还没登录点多多哦！</h1>"
+							+"<a href='skip/toUserLogin'>马上登录</a>"
+							+"<a href='skip/toRegister'>免费注册</a>"
+							+"<a href='javascript:layer.closeAll();'>取消</a>"
+						 +"</div>"
+			});
+		}
+		else{
+			window.location = "skip/toCustomerCenter";
+		}
+
+		
 	});
 });
 </script>
@@ -98,6 +104,6 @@ $(document).ready(function(){
 		</div>
 		<div class="copyright">Copyright © 2016-2017 点多多 www.bestcfm.com 版权所有</div>
 	</div>
-
+	
 </body>
 </html>

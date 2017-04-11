@@ -22,7 +22,7 @@ $(document).ready(function(){
 		layer.confirm('您确定要退出吗？',  {skin: 'layui-layer-molv',offset: '30%'}, function(index){
 			layer.close(index);
 			layer.msg('拜拜！欢迎下次光临！', {shift: 6, time: 1500},function(){
-				window.location='../skip/toIndex';
+				window.location='../';
 			});
 		});
 	});
@@ -41,7 +41,7 @@ $(document).ready(function(){
 				</a>
 				<h2>会员中心</h2>
 				<div class="header_right shaixuan">
-					<a href="../skip/toIndex"><img src="../images/iconfont-shouye.png"></a>
+					<a href="../"><img src="../images/iconfont-shouye.png"></a>
 				</div>
 			</div>
 		</header>
