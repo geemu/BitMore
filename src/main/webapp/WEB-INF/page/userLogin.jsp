@@ -44,13 +44,15 @@
 				<h2>登录</h2>
 			</div>
 		</header>
-
+		
 		<div class="w main">
-			<form id="frm_login" method="post">
+		
+			<form id="frm_login" method="post" action="../user/doUserLogin">
 				<div class="item item-username">
-					<input name="phone" id="username" class="txt-input txt-username" type="text"placeholder="请输入手机号" value="" > 
+					<input name="phone" onfocus="deleteErrorTips()" id="username" class="txt-input txt-username" type="text"placeholder="请输入手机号" value="" > 
 					<b class="input-close" style="display: none;"></b>
 				</div>
+				<span id ="errorTips">${error}</span>
 				<div class="item item-password">
 					<input name="userPassword" id="password" class="txt-input txt-password ciphertext" type="password" placeholder="请输入密码"  style="display: inline;"> 
 					<input id="ptext" class="txt-input txt-password plaintext" type="text" placeholder="请输入密码" style="display: none;" name="ptext"> 
@@ -67,7 +69,7 @@
 					</span>
 				</div>
 				<div class="ui-btn-wrap">
-					<input type="submit" value="用户登录" class="ui-btn-lg ui-btn-primary" onclick="doUserLogin()" />
+					<input type="submit" value="用户登录" class="ui-btn-lg ui-btn-primary"/>
 				</div>
 				<div class="ui-btn-wrap">
 					<a class="ui-btn-lg ui-btn-danger" href="../skip/toRegister">没有账号？立即注册</a>
@@ -87,25 +89,9 @@
 </body>
 </html>
 <script type="text/javascript">
-/* 提交表单  */
-function doUserLogin(){
-	$.ajax({
-        type: "POST",
-        data:$('#frm_login').serialize(),
-        url:"../user/doUserLogin",
-        success: function(data) {  
-    		if("toUserLogin" == data){
-    			alert('用户名或密码错误');
-    			window.location = "/toUserLogin";
-    		}
-    		else{
-    			window.location = "../";
-    		}
-        },
-        error: function(data){
-        	console.log("请求失败");
-        }
-    });
+
+function deleteErrorTips(){
+	$("#errorTips").html("");
 }
 	$(function() {
 		$(".input-close").hide();
