@@ -16,6 +16,12 @@ public class FoodOrderDetail {
     private Integer recordsId;
 
     /**
+     * 用户编号
+     * 表字段 : foodorderdetail.userId
+     */
+    private Integer userId;
+
+    /**
      * 菜品编号
      * 表字段 : foodorderdetail.foodId
      */
@@ -64,6 +70,18 @@ public class FoodOrderDetail {
     private Integer dataFlag;
 
     /**
+     * 单件价格
+     * 表字段 : foodorderdetail.singlePrice
+     */
+    private Integer singlePrice;
+
+    /**
+     * 单品价格
+     * 表字段 : foodorderdetail.total
+     */
+    private Integer total;
+
+    /**
      * 获取：主键
      * 表字段：foodorderdetail.id
      *
@@ -103,6 +121,27 @@ public class FoodOrderDetail {
      */
     public void setRecordsId(Integer recordsId) {
         this.recordsId = recordsId;
+    }
+
+    /**
+     * 获取：用户编号
+     * 表字段：foodorderdetail.userId
+     *
+     * @return foodorderdetail.userId：用户编号
+     */
+    public Integer getUserId() {
+        return userId;
+    }
+
+    /**
+     * 设置：用户编号
+     * 表字段：foodorderdetail.userId
+     *
+     * @param userId
+     *            foodorderdetail.userId：用户编号
+     */
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     /**
@@ -271,5 +310,47 @@ public class FoodOrderDetail {
      */
     public void setDataFlag(Integer dataFlag) {
         this.dataFlag = dataFlag;
+    }
+
+    /**
+     * 获取：单件价格
+     * 表字段：foodorderdetail.singlePrice
+     *
+     * @return foodorderdetail.singlePrice：单件价格
+     */
+    public Integer getSinglePrice() {
+        return singlePrice;
+    }
+
+    /**
+     * 设置：单件价格
+     * 表字段：foodorderdetail.singlePrice
+     *
+     * @param singlePrice
+     *            foodorderdetail.singlePrice：单件价格
+     */
+    public void setSinglePrice(Integer singlePrice) {
+        this.singlePrice = singlePrice;
+    }
+
+    /**
+     * 获取：单品价格
+     * 表字段：foodorderdetail.total
+     *
+     * @return foodorderdetail.total：单品价格
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    /**
+     * 设置：单品价格
+     * 表字段：foodorderdetail.total
+     *
+     * @param total
+     *            foodorderdetail.total：单品价格
+     */
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 }

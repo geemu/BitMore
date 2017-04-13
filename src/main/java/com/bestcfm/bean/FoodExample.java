@@ -250,52 +250,52 @@ public class FoodExample {
             return (Criteria) this;
         }
 
-        public Criteria andPriceEqualTo(Float value) {
+        public Criteria andPriceEqualTo(Integer value) {
             addCriterion("price =", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotEqualTo(Float value) {
+        public Criteria andPriceNotEqualTo(Integer value) {
             addCriterion("price <>", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceGreaterThan(Float value) {
+        public Criteria andPriceGreaterThan(Integer value) {
             addCriterion("price >", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceGreaterThanOrEqualTo(Float value) {
+        public Criteria andPriceGreaterThanOrEqualTo(Integer value) {
             addCriterion("price >=", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceLessThan(Float value) {
+        public Criteria andPriceLessThan(Integer value) {
             addCriterion("price <", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceLessThanOrEqualTo(Float value) {
+        public Criteria andPriceLessThanOrEqualTo(Integer value) {
             addCriterion("price <=", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceIn(List<Float> values) {
+        public Criteria andPriceIn(List<Integer> values) {
             addCriterion("price in", values, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotIn(List<Float> values) {
+        public Criteria andPriceNotIn(List<Integer> values) {
             addCriterion("price not in", values, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceBetween(Float value1, Float value2) {
+        public Criteria andPriceBetween(Integer value1, Integer value2) {
             addCriterion("price between", value1, value2, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotBetween(Float value1, Float value2) {
+        public Criteria andPriceNotBetween(Integer value1, Integer value2) {
             addCriterion("price not between", value1, value2, "price");
             return (Criteria) this;
         }
@@ -547,6 +547,66 @@ public class FoodExample {
 
         public Criteria andSignitureNotBetween(Integer value1, Integer value2) {
             addCriterion("signiture not between", value1, value2, "signiture");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendIsNull() {
+            addCriterion("recommend is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendIsNotNull() {
+            addCriterion("recommend is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendEqualTo(Integer value) {
+            addCriterion("recommend =", value, "recommend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendNotEqualTo(Integer value) {
+            addCriterion("recommend <>", value, "recommend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendGreaterThan(Integer value) {
+            addCriterion("recommend >", value, "recommend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendGreaterThanOrEqualTo(Integer value) {
+            addCriterion("recommend >=", value, "recommend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendLessThan(Integer value) {
+            addCriterion("recommend <", value, "recommend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendLessThanOrEqualTo(Integer value) {
+            addCriterion("recommend <=", value, "recommend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendIn(List<Integer> values) {
+            addCriterion("recommend in", values, "recommend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendNotIn(List<Integer> values) {
+            addCriterion("recommend not in", values, "recommend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendBetween(Integer value1, Integer value2) {
+            addCriterion("recommend between", value1, value2, "recommend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecommendNotBetween(Integer value1, Integer value2) {
+            addCriterion("recommend not between", value1, value2, "recommend");
             return (Criteria) this;
         }
 

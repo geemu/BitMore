@@ -1,7 +1,15 @@
 package com.bestcfm.controller;
 
+import java.util.LinkedList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.bestcfm.bean.Food;
+import com.bestcfm.service.FoodService;
 /**
  * 用于跳转的控制器
  * @author cfm
@@ -10,15 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/skip")
 public class InitController {
-	
-	/**
-	 * 初始页面
-	 * @return
-	 */
-	@RequestMapping("/init")  
-	public String init() { 
-	    return "init";  
-	} 
+	@Autowired
+	private FoodService foodService;
 	
 	/**
 	 * 管理员中心
@@ -52,7 +53,22 @@ public class InitController {
 	 * @return
 	 */
 	@RequestMapping("/toIndex")  
-	public String toIndex() { 
+	public String toIndex(ModelMap map) { 
+		List<Food> response = foodService.queryFavouriteFoodList();//食客最爱
+		List<Food> favouriteFoodList = new LinkedList<>();//食客最爱
+		if(response.size() >= 8){
+			for(int i = 0;i<=7;i++){
+				favouriteFoodList.add(response.get(i));
+			}
+		}
+		else{
+			for(int i = 0;i<response.size();i++){
+				response.add(response.get(i));
+			}
+		}
+		List<Food> recomendFoodList = foodService.queryRecommendFoodList();//小二推荐
+		map.put("favouriteFoodList", favouriteFoodList);
+		map.put("recomendFoodList", recomendFoodList);
 	    return "index";  
 	} 
 	

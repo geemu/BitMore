@@ -19,7 +19,7 @@ public class Food {
      * 菜品价格
      * 表字段 : food.price
      */
-    private Float price;
+    private Integer price;
 
     /**
      * 销量
@@ -44,6 +44,12 @@ public class Food {
      * 表字段 : food.signiture
      */
     private Integer signiture;
+
+    /**
+     * 是否推荐 0 不推荐 1 推荐
+     * 表字段 : food.recommend
+     */
+    private Integer recommend;
 
     /**
      * 图片
@@ -111,7 +117,7 @@ public class Food {
      *
      * @return food.price：菜品价格
      */
-    public Float getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
@@ -122,7 +128,7 @@ public class Food {
      * @param price
      *            food.price：菜品价格
      */
-    public void setPrice(Float price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
@@ -208,6 +214,27 @@ public class Food {
      */
     public void setSigniture(Integer signiture) {
         this.signiture = signiture;
+    }
+
+    /**
+     * 获取：是否推荐 0 不推荐 1 推荐
+     * 表字段：food.recommend
+     *
+     * @return food.recommend：是否推荐 0 不推荐 1 推荐
+     */
+    public Integer getRecommend() {
+        return recommend;
+    }
+
+    /**
+     * 设置：是否推荐 0 不推荐 1 推荐
+     * 表字段：food.recommend
+     *
+     * @param recommend
+     *            food.recommend：是否推荐 0 不推荐 1 推荐
+     */
+    public void setRecommend(Integer recommend) {
+        this.recommend = recommend;
     }
 
     /**

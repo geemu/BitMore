@@ -230,6 +230,66 @@ public class FoodOrderDetailExample {
             return (Criteria) this;
         }
 
+        public Criteria andUserIdIsNull() {
+            addCriterion("userId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdIsNotNull() {
+            addCriterion("userId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdEqualTo(Integer value) {
+            addCriterion("userId =", value, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdNotEqualTo(Integer value) {
+            addCriterion("userId <>", value, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdGreaterThan(Integer value) {
+            addCriterion("userId >", value, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("userId >=", value, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdLessThan(Integer value) {
+            addCriterion("userId <", value, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdLessThanOrEqualTo(Integer value) {
+            addCriterion("userId <=", value, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdIn(List<Integer> values) {
+            addCriterion("userId in", values, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdNotIn(List<Integer> values) {
+            addCriterion("userId not in", values, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdBetween(Integer value1, Integer value2) {
+            addCriterion("userId between", value1, value2, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("userId not between", value1, value2, "userId");
+            return (Criteria) this;
+        }
+
         public Criteria andFoodIdIsNull() {
             addCriterion("foodId is null");
             return (Criteria) this;
@@ -727,6 +787,126 @@ public class FoodOrderDetailExample {
 
         public Criteria andDataFlagNotBetween(Integer value1, Integer value2) {
             addCriterion("dataFlag not between", value1, value2, "dataFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceIsNull() {
+            addCriterion("singlePrice is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceIsNotNull() {
+            addCriterion("singlePrice is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceEqualTo(Integer value) {
+            addCriterion("singlePrice =", value, "singlePrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceNotEqualTo(Integer value) {
+            addCriterion("singlePrice <>", value, "singlePrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceGreaterThan(Integer value) {
+            addCriterion("singlePrice >", value, "singlePrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceGreaterThanOrEqualTo(Integer value) {
+            addCriterion("singlePrice >=", value, "singlePrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceLessThan(Integer value) {
+            addCriterion("singlePrice <", value, "singlePrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceLessThanOrEqualTo(Integer value) {
+            addCriterion("singlePrice <=", value, "singlePrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceIn(List<Integer> values) {
+            addCriterion("singlePrice in", values, "singlePrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceNotIn(List<Integer> values) {
+            addCriterion("singlePrice not in", values, "singlePrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceBetween(Integer value1, Integer value2) {
+            addCriterion("singlePrice between", value1, value2, "singlePrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andSinglePriceNotBetween(Integer value1, Integer value2) {
+            addCriterion("singlePrice not between", value1, value2, "singlePrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalIsNull() {
+            addCriterion("total is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalIsNotNull() {
+            addCriterion("total is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalEqualTo(Integer value) {
+            addCriterion("total =", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalNotEqualTo(Integer value) {
+            addCriterion("total <>", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalGreaterThan(Integer value) {
+            addCriterion("total >", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalGreaterThanOrEqualTo(Integer value) {
+            addCriterion("total >=", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalLessThan(Integer value) {
+            addCriterion("total <", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalLessThanOrEqualTo(Integer value) {
+            addCriterion("total <=", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalIn(List<Integer> values) {
+            addCriterion("total in", values, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalNotIn(List<Integer> values) {
+            addCriterion("total not in", values, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalBetween(Integer value1, Integer value2) {
+            addCriterion("total between", value1, value2, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalNotBetween(Integer value1, Integer value2) {
+            addCriterion("total not between", value1, value2, "total");
             return (Criteria) this;
         }
     }
