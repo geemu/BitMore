@@ -4,130 +4,67 @@ import java.util.Date;
 
 public class FoodOrderRecords {
     /**
-     * 主键
-     * 表字段 : foodorderdetail.id
+     * 主键 主表
+     * 表字段 : foodorderrecords.id
      */
     private Integer id;
 
     /**
-     * 主表的主键
-     * 表字段 : foodorderdetail.recordsId
-     */
-    private Integer recordsId;
-
-    /**
      * 用户编号
-     * 表字段 : foodorderdetail.userId
+     * 表字段 : foodorderrecords.userId
      */
     private Integer userId;
 
     /**
-     * 菜品编号
-     * 表字段 : foodorderdetail.foodId
+     * 总的订单号 唯一键
+     * 表字段 : foodorderrecords.recordsNo
      */
-    private Integer foodId;
+    private String recordsNo;
 
     /**
-     * 菜品名称
-     * 表字段 : foodorderdetail.foodName
+     * 桌号
+     * 表字段 : foodorderrecords.deskNo
      */
-    private String foodName;
-
-    /**
-     * 数量
-     * 表字段 : foodorderdetail.orderCount
-     */
-    private Integer orderCount;
-
-    /**
-     * 菜品状态 0 购物车 1待支付 2待后台支付 3后台确认支付 4制作中 5已派送 6已评价 7 退款中 8 已退款
-     * 表字段 : foodorderdetail.orderState
-     */
-    private Integer orderState;
-
-    /**
-     * 备注
-     * 表字段 : foodorderdetail.remark
-     */
-    private String remark;
+    private Integer deskNo;
 
     /**
      * 创建时间
-     * 表字段 : foodorderdetail.createTime
+     * 表字段 : foodorderrecords.createTime
      */
     private Date createTime;
 
     /**
-     * 失效时长
-     * 表字段 : foodorderdetail.closeSpaceTime
-     */
-    private Integer closeSpaceTime;
-
-    /**
-     * 0有效 1无效
-     * 表字段 : foodorderdetail.dataFlag
+     * 是否有效 0有效 1无效
+     * 表字段 : foodorderrecords.dataFlag
      */
     private Integer dataFlag;
 
     /**
-     * 单件价格
-     * 表字段 : foodorderdetail.singlePrice
-     */
-    private Integer singlePrice;
-
-    /**
-     * 单品价格
-     * 表字段 : foodorderdetail.total
-     */
-    private Integer total;
-
-    /**
-     * 获取：主键
-     * 表字段：foodorderdetail.id
+     * 获取：主键 主表
+     * 表字段：foodorderrecords.id
      *
-     * @return foodorderdetail.id：主键
+     * @return foodorderrecords.id：主键 主表
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * 设置：主键
-     * 表字段：foodorderdetail.id
+     * 设置：主键 主表
+     * 表字段：foodorderrecords.id
      *
      * @param id
-     *            foodorderdetail.id：主键
+     *            foodorderrecords.id：主键 主表
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * 获取：主表的主键
-     * 表字段：foodorderdetail.recordsId
-     *
-     * @return foodorderdetail.recordsId：主表的主键
-     */
-    public Integer getRecordsId() {
-        return recordsId;
-    }
-
-    /**
-     * 设置：主表的主键
-     * 表字段：foodorderdetail.recordsId
-     *
-     * @param recordsId
-     *            foodorderdetail.recordsId：主表的主键
-     */
-    public void setRecordsId(Integer recordsId) {
-        this.recordsId = recordsId;
-    }
-
-    /**
      * 获取：用户编号
-     * 表字段：foodorderdetail.userId
+     * 表字段：foodorderrecords.userId
      *
-     * @return foodorderdetail.userId：用户编号
+     * @return foodorderrecords.userId：用户编号
      */
     public Integer getUserId() {
         return userId;
@@ -135,125 +72,62 @@ public class FoodOrderRecords {
 
     /**
      * 设置：用户编号
-     * 表字段：foodorderdetail.userId
+     * 表字段：foodorderrecords.userId
      *
      * @param userId
-     *            foodorderdetail.userId：用户编号
+     *            foodorderrecords.userId：用户编号
      */
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
     /**
-     * 获取：菜品编号
-     * 表字段：foodorderdetail.foodId
+     * 获取：总的订单号 唯一键
+     * 表字段：foodorderrecords.recordsNo
      *
-     * @return foodorderdetail.foodId：菜品编号
+     * @return foodorderrecords.recordsNo：总的订单号 唯一键
      */
-    public Integer getFoodId() {
-        return foodId;
+    public String getRecordsNo() {
+        return recordsNo;
     }
 
     /**
-     * 设置：菜品编号
-     * 表字段：foodorderdetail.foodId
+     * 设置：总的订单号 唯一键
+     * 表字段：foodorderrecords.recordsNo
      *
-     * @param foodId
-     *            foodorderdetail.foodId：菜品编号
+     * @param recordsNo
+     *            foodorderrecords.recordsNo：总的订单号 唯一键
      */
-    public void setFoodId(Integer foodId) {
-        this.foodId = foodId;
+    public void setRecordsNo(String recordsNo) {
+        this.recordsNo = recordsNo;
     }
 
     /**
-     * 获取：菜品名称
-     * 表字段：foodorderdetail.foodName
+     * 获取：桌号
+     * 表字段：foodorderrecords.deskNo
      *
-     * @return foodorderdetail.foodName：菜品名称
+     * @return foodorderrecords.deskNo：桌号
      */
-    public String getFoodName() {
-        return foodName;
+    public Integer getDeskNo() {
+        return deskNo;
     }
 
     /**
-     * 设置：菜品名称
-     * 表字段：foodorderdetail.foodName
+     * 设置：桌号
+     * 表字段：foodorderrecords.deskNo
      *
-     * @param foodName
-     *            foodorderdetail.foodName：菜品名称
+     * @param deskNo
+     *            foodorderrecords.deskNo：桌号
      */
-    public void setFoodName(String foodName) {
-        this.foodName = foodName;
-    }
-
-    /**
-     * 获取：数量
-     * 表字段：foodorderdetail.orderCount
-     *
-     * @return foodorderdetail.orderCount：数量
-     */
-    public Integer getOrderCount() {
-        return orderCount;
-    }
-
-    /**
-     * 设置：数量
-     * 表字段：foodorderdetail.orderCount
-     *
-     * @param orderCount
-     *            foodorderdetail.orderCount：数量
-     */
-    public void setOrderCount(Integer orderCount) {
-        this.orderCount = orderCount;
-    }
-
-    /**
-     * 获取：菜品状态 0 购物车 1待支付 2待后台支付 3后台确认支付 4制作中 5已派送 6已评价 7 退款中 8 已退款
-     * 表字段：foodorderdetail.orderState
-     *
-     * @return foodorderdetail.orderState：菜品状态 0 购物车 1待支付 2待后台支付 3后台确认支付 4制作中 5已派送 6已评价 7 退款中 8 已退款
-     */
-    public Integer getOrderState() {
-        return orderState;
-    }
-
-    /**
-     * 设置：菜品状态 0 购物车 1待支付 2待后台支付 3后台确认支付 4制作中 5已派送 6已评价 7 退款中 8 已退款
-     * 表字段：foodorderdetail.orderState
-     *
-     * @param orderState
-     *            foodorderdetail.orderState：菜品状态 0 购物车 1待支付 2待后台支付 3后台确认支付 4制作中 5已派送 6已评价 7 退款中 8 已退款
-     */
-    public void setOrderState(Integer orderState) {
-        this.orderState = orderState;
-    }
-
-    /**
-     * 获取：备注
-     * 表字段：foodorderdetail.remark
-     *
-     * @return foodorderdetail.remark：备注
-     */
-    public String getRemark() {
-        return remark;
-    }
-
-    /**
-     * 设置：备注
-     * 表字段：foodorderdetail.remark
-     *
-     * @param remark
-     *            foodorderdetail.remark：备注
-     */
-    public void setRemark(String remark) {
-        this.remark = remark;
+    public void setDeskNo(Integer deskNo) {
+        this.deskNo = deskNo;
     }
 
     /**
      * 获取：创建时间
-     * 表字段：foodorderdetail.createTime
+     * 表字段：foodorderrecords.createTime
      *
-     * @return foodorderdetail.createTime：创建时间
+     * @return foodorderrecords.createTime：创建时间
      */
     public Date getCreateTime() {
         return createTime;
@@ -261,96 +135,33 @@ public class FoodOrderRecords {
 
     /**
      * 设置：创建时间
-     * 表字段：foodorderdetail.createTime
+     * 表字段：foodorderrecords.createTime
      *
      * @param createTime
-     *            foodorderdetail.createTime：创建时间
+     *            foodorderrecords.createTime：创建时间
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * 获取：失效时长
-     * 表字段：foodorderdetail.closeSpaceTime
+     * 获取：是否有效 0有效 1无效
+     * 表字段：foodorderrecords.dataFlag
      *
-     * @return foodorderdetail.closeSpaceTime：失效时长
-     */
-    public Integer getCloseSpaceTime() {
-        return closeSpaceTime;
-    }
-
-    /**
-     * 设置：失效时长
-     * 表字段：foodorderdetail.closeSpaceTime
-     *
-     * @param closeSpaceTime
-     *            foodorderdetail.closeSpaceTime：失效时长
-     */
-    public void setCloseSpaceTime(Integer closeSpaceTime) {
-        this.closeSpaceTime = closeSpaceTime;
-    }
-
-    /**
-     * 获取：0有效 1无效
-     * 表字段：foodorderdetail.dataFlag
-     *
-     * @return foodorderdetail.dataFlag：0有效 1无效
+     * @return foodorderrecords.dataFlag：是否有效 0有效 1无效
      */
     public Integer getDataFlag() {
         return dataFlag;
     }
 
     /**
-     * 设置：0有效 1无效
-     * 表字段：foodorderdetail.dataFlag
+     * 设置：是否有效 0有效 1无效
+     * 表字段：foodorderrecords.dataFlag
      *
      * @param dataFlag
-     *            foodorderdetail.dataFlag：0有效 1无效
+     *            foodorderrecords.dataFlag：是否有效 0有效 1无效
      */
     public void setDataFlag(Integer dataFlag) {
         this.dataFlag = dataFlag;
-    }
-
-    /**
-     * 获取：单件价格
-     * 表字段：foodorderdetail.singlePrice
-     *
-     * @return foodorderdetail.singlePrice：单件价格
-     */
-    public Integer getSinglePrice() {
-        return singlePrice;
-    }
-
-    /**
-     * 设置：单件价格
-     * 表字段：foodorderdetail.singlePrice
-     *
-     * @param singlePrice
-     *            foodorderdetail.singlePrice：单件价格
-     */
-    public void setSinglePrice(Integer singlePrice) {
-        this.singlePrice = singlePrice;
-    }
-
-    /**
-     * 获取：单品价格
-     * 表字段：foodorderdetail.total
-     *
-     * @return foodorderdetail.total：单品价格
-     */
-    public Integer getTotal() {
-        return total;
-    }
-
-    /**
-     * 设置：单品价格
-     * 表字段：foodorderdetail.total
-     *
-     * @param total
-     *            foodorderdetail.total：单品价格
-     */
-    public void setTotal(Integer total) {
-        this.total = total;
     }
 }

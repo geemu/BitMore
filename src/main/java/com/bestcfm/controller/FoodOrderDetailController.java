@@ -1,12 +1,17 @@
 package com.bestcfm.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.bestcfm.bean.FoodOrderDetail;
+import com.bestcfm.bean.User;
 import com.bestcfm.service.FoodOrderDetailService;
 
 /**
@@ -16,6 +21,7 @@ import com.bestcfm.service.FoodOrderDetailService;
  */
 
 @Controller
+@SessionAttributes("loginUser")
 @RequestMapping("/foodOrderDetail")
 public class FoodOrderDetailController {
 	 @Autowired
@@ -23,7 +29,15 @@ public class FoodOrderDetailController {
 	 
 	 @RequestMapping("/shoppingCar")
 	 public String ShoppingCar(@RequestParam("userId") int userId,ModelMap map){
-		map.put("myShoppingCarFoodList",foodOrderDetailService.queryFoodOrderDetailListByUserId(userId));
+		List<FoodOrderDetail> FoodOrderDetailList = foodOrderDetailService.queryFoodOrderDetailListByUserId(userId);
+		int sum = 0;
+		for(FoodOrderDetail e:FoodOrderDetailList){
+			sum += e.getTotal();
+		}
+		if(sum > 0){
+			map.put("money", sum+" ￥");
+		}
+		map.put("myShoppingCarFoodList",FoodOrderDetailList);
 		return "shoppingCar";	 
 	 }
 	 
@@ -41,5 +55,12 @@ public class FoodOrderDetailController {
 		 boolean result = foodOrderDetailService.operateCar(operateId, userId, operate);
 		 String data = result == true?"操作成功":"操作失败";
 		 return data;
+	 }
+	 
+	 @RequestMapping("/doPay")
+	 @ResponseBody
+	 public String doPay(ModelMap map,@RequestParam("deskNum") int deskNum){
+		 User loginUser = (User) map.get("loginUser");
+		 return foodOrderDetailService.doPay(loginUser.getId(), deskNum) == true?"支付成功":"支付失败";
 	 }
 }

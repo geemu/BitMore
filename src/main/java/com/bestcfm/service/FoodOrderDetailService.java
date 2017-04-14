@@ -1,9 +1,11 @@
 package com.bestcfm.service;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.bestcfm.bean.Food;
 import com.bestcfm.bean.FoodOrderDetail;
@@ -21,6 +23,9 @@ public class FoodOrderDetailService {
 	@Autowired
 	private FoodOrderDetailDao foodOrderDetailDao;
 	
+	 @Autowired
+	 private FoodOrderRecordsService  foodOrderRecordsService;
+	
 	@Autowired
 	private FoodService foodService;
 	/**
@@ -34,6 +39,8 @@ public class FoodOrderDetailService {
 		criteria.andDataFlagEqualTo(0);
 		criteria.andUserIdEqualTo(userId);
 		criteria.andOrderStateEqualTo(0);
+		criteria.andOrderCountGreaterThanOrEqualTo(1);
+		criteria.andRecordsIdEqualTo(0);
 		return foodOrderDetailDao.selectByExample(example);
 	}
 	/**
@@ -98,6 +105,51 @@ public class FoodOrderDetailService {
 			record.setOrderCount(num+operate);
 			return foodOrderDetailDao.updateByPrimaryKeySelective(record) > 0 ?true:false;
 		}
+	}
+	/**
+	 * 支付
+	 * @param userId
+	 * @return
+	 */
+	@Transactional
+	public boolean doPay(int userId,int deskNum){
+		//先根据用户编号查询状态为购物车的订单
+		FoodOrderDetailExample example = new FoodOrderDetailExample();
+		FoodOrderDetailExample.Criteria criteria = example.createCriteria();
+		criteria.andDataFlagEqualTo(0);
+		criteria.andOrderCountGreaterThanOrEqualTo(1);
+		criteria.andUserIdEqualTo(userId);
+		criteria.andOrderStateEqualTo(0);
+		criteria.andRecordsIdEqualTo(0);
+		List<FoodOrderDetail> existList = foodOrderDetailDao.selectByExample(example);
+		if(existList.isEmpty() || existList.size()<= 0){
+			return false;
+		}
+		else{
+			//找出所有的主键
+			List<Integer> idList = new LinkedList<>();
+			for(int i = 0 ;i < existList.size();i++ ){
+				idList.add(existList.get(i).getId());
+			}
+			//先生成总的订单
+			int recordsId = foodOrderRecordsService.createNewRecords(userId, deskNum);
+			//更新所有订单为支付成功 并把主表主键写入
+			for(int i = 0 ;i < existList.size();i++){
+				FoodOrderDetail record = new FoodOrderDetail();
+				record.setRecordsId(recordsId);
+				record.setOrderState(4);
+				record.setId(existList.get(i).getId());
+				int result = foodOrderDetailDao.updateByPrimaryKeySelective(record);
+				if(result <= 0){
+					try {
+						throw new Exception("支付失败");
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+		return true;	
 	}
 
 }

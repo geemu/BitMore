@@ -23,65 +23,50 @@
 <script type="text/javascript">
 
 
-	/* 触发用户登录 */
-	$(document)
-			.ready(
-					function() {
-						$("#customerCenter")
-								.click(
-										function() {
-											if ('' == '${loginUser}'
-													|| '${loginUser}' == null) {
-												var index = layer
-														.open({
-															type : 1,
-															title : false,
-															closeBtn : false,
-															shadeClose : true,
-															offset : '25%',
-															content : "<div class='no_login_show'>"
-																	+ "<h1>亲！您还没登录点多多哦！</h1>"
-																	+ "<a href='skip/toUserLogin'>马上登录</a>"
-																	+ "<a href='skip/toRegister'>免费注册</a>"
-																	+ "<a href='javascript:layer.closeAll();'>取消</a>"
-																	+ "</div>"
-														});
-											} else {
-												window.location = "skip/toCustomerCenter";
-											}
+/* 个人中心触发用户登录 */
+$(document).ready(function() {$("#customerCenter").click(function() {
+	if ('' == '${loginUser}' || '${loginUser}' == null) {
+		var index = layer.open(
+			{	type : 1,
+				title : false,
+				closeBtn : false,
+				shadeClose : true,
+				offset : '25%',
+				content : "<div class='no_login_show'>"
+				+ "<h1>亲！您还没登录点多多哦！</h1>"
+				+ "<a href='skip/toUserLogin'>马上登录</a>"
+				+ "<a href='skip/toRegister'>免费注册</a>"
+				+ "<a href='javascript:layer.closeAll();'>取消</a>"
+				+ "</div>"
+				});
+	} else {
+			window.location = "skip/toCustomerCenter";
+			}
+		});
+});
 
-										});
-					});
-	
-	/* 触发用户登录 */
-	$(document)
-			.ready(
-					function() {
-						$("#myShoppingCar")
-								.click(
-										function() {
-											if ('' == '${loginUser}'
-													|| '${loginUser}' == null) {
-												var index = layer
-														.open({
-															type : 1,
-															title : false,
-															closeBtn : false,
-															shadeClose : true,
-															offset : '25%',
-															content : "<div class='no_login_show'>"
-																	+ "<h1>亲！您还没登录点多多哦！</h1>"
-																	+ "<a href='skip/toUserLogin'>马上登录</a>"
-																	+ "<a href='skip/toRegister'>免费注册</a>"
-																	+ "<a href='javascript:layer.closeAll();'>取消</a>"
-																	+ "</div>"
-														});
-											} else {
-												window.location = "foodOrderDetail/shoppingCar?userId=${loginUser.id }";
-											}
+/* 购物车触发用户登录 */
+$(document).ready(function() {$("#myShoppingCar").click(function() {
+	if ('' == '${loginUser}' || '${loginUser}' == null) {
+		var index = layer.open(
+			{	type : 1,
+				title : false,
+				closeBtn : false,
+				shadeClose : true,
+				offset : '25%',
+				content : "<div class='no_login_show'>"
+				+ "<h1>亲！您还没登录点多多哦！</h1>"
+				+ "<a href='skip/toUserLogin'>马上登录</a>"
+				+ "<a href='skip/toRegister'>免费注册</a>"
+				+ "<a href='javascript:layer.closeAll();'>取消</a>"
+				+ "</div>"
+				});
+	} else {
+		window.location = "foodOrderDetail/shoppingCar?userId=${loginUser.id }";
+			}
+		});
+});
 
-										});
-					});
 </script>
 </head>
 

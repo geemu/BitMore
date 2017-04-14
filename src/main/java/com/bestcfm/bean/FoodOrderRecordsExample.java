@@ -67,7 +67,7 @@ public class FoodOrderRecordsExample {
     /**
      * 类注释
      * GeneratedCriteria
-     * 数据库表：foodorderdetail
+     * 数据库表：foodorderrecords
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -170,66 +170,6 @@ public class FoodOrderRecordsExample {
             return (Criteria) this;
         }
 
-        public Criteria andRecordsIdIsNull() {
-            addCriterion("recordsId is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecordsIdIsNotNull() {
-            addCriterion("recordsId is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecordsIdEqualTo(Integer value) {
-            addCriterion("recordsId =", value, "recordsId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecordsIdNotEqualTo(Integer value) {
-            addCriterion("recordsId <>", value, "recordsId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecordsIdGreaterThan(Integer value) {
-            addCriterion("recordsId >", value, "recordsId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecordsIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("recordsId >=", value, "recordsId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecordsIdLessThan(Integer value) {
-            addCriterion("recordsId <", value, "recordsId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecordsIdLessThanOrEqualTo(Integer value) {
-            addCriterion("recordsId <=", value, "recordsId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecordsIdIn(List<Integer> values) {
-            addCriterion("recordsId in", values, "recordsId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecordsIdNotIn(List<Integer> values) {
-            addCriterion("recordsId not in", values, "recordsId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecordsIdBetween(Integer value1, Integer value2) {
-            addCriterion("recordsId between", value1, value2, "recordsId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecordsIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("recordsId not between", value1, value2, "recordsId");
-            return (Criteria) this;
-        }
-
         public Criteria andUserIdIsNull() {
             addCriterion("userId is null");
             return (Criteria) this;
@@ -290,323 +230,133 @@ public class FoodOrderRecordsExample {
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdIsNull() {
-            addCriterion("foodId is null");
+        public Criteria andRecordsNoIsNull() {
+            addCriterion("recordsNo is null");
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdIsNotNull() {
-            addCriterion("foodId is not null");
+        public Criteria andRecordsNoIsNotNull() {
+            addCriterion("recordsNo is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdEqualTo(Integer value) {
-            addCriterion("foodId =", value, "foodId");
+        public Criteria andRecordsNoEqualTo(String value) {
+            addCriterion("recordsNo =", value, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdNotEqualTo(Integer value) {
-            addCriterion("foodId <>", value, "foodId");
+        public Criteria andRecordsNoNotEqualTo(String value) {
+            addCriterion("recordsNo <>", value, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdGreaterThan(Integer value) {
-            addCriterion("foodId >", value, "foodId");
+        public Criteria andRecordsNoGreaterThan(String value) {
+            addCriterion("recordsNo >", value, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("foodId >=", value, "foodId");
+        public Criteria andRecordsNoGreaterThanOrEqualTo(String value) {
+            addCriterion("recordsNo >=", value, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdLessThan(Integer value) {
-            addCriterion("foodId <", value, "foodId");
+        public Criteria andRecordsNoLessThan(String value) {
+            addCriterion("recordsNo <", value, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdLessThanOrEqualTo(Integer value) {
-            addCriterion("foodId <=", value, "foodId");
+        public Criteria andRecordsNoLessThanOrEqualTo(String value) {
+            addCriterion("recordsNo <=", value, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdIn(List<Integer> values) {
-            addCriterion("foodId in", values, "foodId");
+        public Criteria andRecordsNoLike(String value) {
+            addCriterion("recordsNo like", value, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdNotIn(List<Integer> values) {
-            addCriterion("foodId not in", values, "foodId");
+        public Criteria andRecordsNoNotLike(String value) {
+            addCriterion("recordsNo not like", value, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdBetween(Integer value1, Integer value2) {
-            addCriterion("foodId between", value1, value2, "foodId");
+        public Criteria andRecordsNoIn(List<String> values) {
+            addCriterion("recordsNo in", values, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("foodId not between", value1, value2, "foodId");
+        public Criteria andRecordsNoNotIn(List<String> values) {
+            addCriterion("recordsNo not in", values, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameIsNull() {
-            addCriterion("foodName is null");
+        public Criteria andRecordsNoBetween(String value1, String value2) {
+            addCriterion("recordsNo between", value1, value2, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameIsNotNull() {
-            addCriterion("foodName is not null");
+        public Criteria andRecordsNoNotBetween(String value1, String value2) {
+            addCriterion("recordsNo not between", value1, value2, "recordsNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameEqualTo(String value) {
-            addCriterion("foodName =", value, "foodName");
+        public Criteria andDeskNoIsNull() {
+            addCriterion("deskNo is null");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameNotEqualTo(String value) {
-            addCriterion("foodName <>", value, "foodName");
+        public Criteria andDeskNoIsNotNull() {
+            addCriterion("deskNo is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameGreaterThan(String value) {
-            addCriterion("foodName >", value, "foodName");
+        public Criteria andDeskNoEqualTo(Integer value) {
+            addCriterion("deskNo =", value, "deskNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameGreaterThanOrEqualTo(String value) {
-            addCriterion("foodName >=", value, "foodName");
+        public Criteria andDeskNoNotEqualTo(Integer value) {
+            addCriterion("deskNo <>", value, "deskNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameLessThan(String value) {
-            addCriterion("foodName <", value, "foodName");
+        public Criteria andDeskNoGreaterThan(Integer value) {
+            addCriterion("deskNo >", value, "deskNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameLessThanOrEqualTo(String value) {
-            addCriterion("foodName <=", value, "foodName");
+        public Criteria andDeskNoGreaterThanOrEqualTo(Integer value) {
+            addCriterion("deskNo >=", value, "deskNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameLike(String value) {
-            addCriterion("foodName like", value, "foodName");
+        public Criteria andDeskNoLessThan(Integer value) {
+            addCriterion("deskNo <", value, "deskNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameNotLike(String value) {
-            addCriterion("foodName not like", value, "foodName");
+        public Criteria andDeskNoLessThanOrEqualTo(Integer value) {
+            addCriterion("deskNo <=", value, "deskNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameIn(List<String> values) {
-            addCriterion("foodName in", values, "foodName");
+        public Criteria andDeskNoIn(List<Integer> values) {
+            addCriterion("deskNo in", values, "deskNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameNotIn(List<String> values) {
-            addCriterion("foodName not in", values, "foodName");
+        public Criteria andDeskNoNotIn(List<Integer> values) {
+            addCriterion("deskNo not in", values, "deskNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameBetween(String value1, String value2) {
-            addCriterion("foodName between", value1, value2, "foodName");
+        public Criteria andDeskNoBetween(Integer value1, Integer value2) {
+            addCriterion("deskNo between", value1, value2, "deskNo");
             return (Criteria) this;
         }
 
-        public Criteria andFoodNameNotBetween(String value1, String value2) {
-            addCriterion("foodName not between", value1, value2, "foodName");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountIsNull() {
-            addCriterion("orderCount is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountIsNotNull() {
-            addCriterion("orderCount is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountEqualTo(Integer value) {
-            addCriterion("orderCount =", value, "orderCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountNotEqualTo(Integer value) {
-            addCriterion("orderCount <>", value, "orderCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountGreaterThan(Integer value) {
-            addCriterion("orderCount >", value, "orderCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountGreaterThanOrEqualTo(Integer value) {
-            addCriterion("orderCount >=", value, "orderCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountLessThan(Integer value) {
-            addCriterion("orderCount <", value, "orderCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountLessThanOrEqualTo(Integer value) {
-            addCriterion("orderCount <=", value, "orderCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountIn(List<Integer> values) {
-            addCriterion("orderCount in", values, "orderCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountNotIn(List<Integer> values) {
-            addCriterion("orderCount not in", values, "orderCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountBetween(Integer value1, Integer value2) {
-            addCriterion("orderCount between", value1, value2, "orderCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderCountNotBetween(Integer value1, Integer value2) {
-            addCriterion("orderCount not between", value1, value2, "orderCount");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateIsNull() {
-            addCriterion("orderState is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateIsNotNull() {
-            addCriterion("orderState is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateEqualTo(Integer value) {
-            addCriterion("orderState =", value, "orderState");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateNotEqualTo(Integer value) {
-            addCriterion("orderState <>", value, "orderState");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateGreaterThan(Integer value) {
-            addCriterion("orderState >", value, "orderState");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateGreaterThanOrEqualTo(Integer value) {
-            addCriterion("orderState >=", value, "orderState");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateLessThan(Integer value) {
-            addCriterion("orderState <", value, "orderState");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateLessThanOrEqualTo(Integer value) {
-            addCriterion("orderState <=", value, "orderState");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateIn(List<Integer> values) {
-            addCriterion("orderState in", values, "orderState");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateNotIn(List<Integer> values) {
-            addCriterion("orderState not in", values, "orderState");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateBetween(Integer value1, Integer value2) {
-            addCriterion("orderState between", value1, value2, "orderState");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderStateNotBetween(Integer value1, Integer value2) {
-            addCriterion("orderState not between", value1, value2, "orderState");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkIsNull() {
-            addCriterion("remark is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkIsNotNull() {
-            addCriterion("remark is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkEqualTo(String value) {
-            addCriterion("remark =", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkNotEqualTo(String value) {
-            addCriterion("remark <>", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkGreaterThan(String value) {
-            addCriterion("remark >", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkGreaterThanOrEqualTo(String value) {
-            addCriterion("remark >=", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkLessThan(String value) {
-            addCriterion("remark <", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkLessThanOrEqualTo(String value) {
-            addCriterion("remark <=", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkLike(String value) {
-            addCriterion("remark like", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkNotLike(String value) {
-            addCriterion("remark not like", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkIn(List<String> values) {
-            addCriterion("remark in", values, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkNotIn(List<String> values) {
-            addCriterion("remark not in", values, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkBetween(String value1, String value2) {
-            addCriterion("remark between", value1, value2, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkNotBetween(String value1, String value2) {
-            addCriterion("remark not between", value1, value2, "remark");
+        public Criteria andDeskNoNotBetween(Integer value1, Integer value2) {
+            addCriterion("deskNo not between", value1, value2, "deskNo");
             return (Criteria) this;
         }
 
@@ -670,66 +420,6 @@ public class FoodOrderRecordsExample {
             return (Criteria) this;
         }
 
-        public Criteria andCloseSpaceTimeIsNull() {
-            addCriterion("closeSpaceTime is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCloseSpaceTimeIsNotNull() {
-            addCriterion("closeSpaceTime is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCloseSpaceTimeEqualTo(Integer value) {
-            addCriterion("closeSpaceTime =", value, "closeSpaceTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCloseSpaceTimeNotEqualTo(Integer value) {
-            addCriterion("closeSpaceTime <>", value, "closeSpaceTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCloseSpaceTimeGreaterThan(Integer value) {
-            addCriterion("closeSpaceTime >", value, "closeSpaceTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCloseSpaceTimeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("closeSpaceTime >=", value, "closeSpaceTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCloseSpaceTimeLessThan(Integer value) {
-            addCriterion("closeSpaceTime <", value, "closeSpaceTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCloseSpaceTimeLessThanOrEqualTo(Integer value) {
-            addCriterion("closeSpaceTime <=", value, "closeSpaceTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCloseSpaceTimeIn(List<Integer> values) {
-            addCriterion("closeSpaceTime in", values, "closeSpaceTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCloseSpaceTimeNotIn(List<Integer> values) {
-            addCriterion("closeSpaceTime not in", values, "closeSpaceTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCloseSpaceTimeBetween(Integer value1, Integer value2) {
-            addCriterion("closeSpaceTime between", value1, value2, "closeSpaceTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCloseSpaceTimeNotBetween(Integer value1, Integer value2) {
-            addCriterion("closeSpaceTime not between", value1, value2, "closeSpaceTime");
-            return (Criteria) this;
-        }
-
         public Criteria andDataFlagIsNull() {
             addCriterion("dataFlag is null");
             return (Criteria) this;
@@ -789,132 +479,12 @@ public class FoodOrderRecordsExample {
             addCriterion("dataFlag not between", value1, value2, "dataFlag");
             return (Criteria) this;
         }
-
-        public Criteria andSinglePriceIsNull() {
-            addCriterion("singlePrice is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSinglePriceIsNotNull() {
-            addCriterion("singlePrice is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSinglePriceEqualTo(Integer value) {
-            addCriterion("singlePrice =", value, "singlePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andSinglePriceNotEqualTo(Integer value) {
-            addCriterion("singlePrice <>", value, "singlePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andSinglePriceGreaterThan(Integer value) {
-            addCriterion("singlePrice >", value, "singlePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andSinglePriceGreaterThanOrEqualTo(Integer value) {
-            addCriterion("singlePrice >=", value, "singlePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andSinglePriceLessThan(Integer value) {
-            addCriterion("singlePrice <", value, "singlePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andSinglePriceLessThanOrEqualTo(Integer value) {
-            addCriterion("singlePrice <=", value, "singlePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andSinglePriceIn(List<Integer> values) {
-            addCriterion("singlePrice in", values, "singlePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andSinglePriceNotIn(List<Integer> values) {
-            addCriterion("singlePrice not in", values, "singlePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andSinglePriceBetween(Integer value1, Integer value2) {
-            addCriterion("singlePrice between", value1, value2, "singlePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andSinglePriceNotBetween(Integer value1, Integer value2) {
-            addCriterion("singlePrice not between", value1, value2, "singlePrice");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalIsNull() {
-            addCriterion("total is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalIsNotNull() {
-            addCriterion("total is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalEqualTo(Integer value) {
-            addCriterion("total =", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalNotEqualTo(Integer value) {
-            addCriterion("total <>", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalGreaterThan(Integer value) {
-            addCriterion("total >", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalGreaterThanOrEqualTo(Integer value) {
-            addCriterion("total >=", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalLessThan(Integer value) {
-            addCriterion("total <", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalLessThanOrEqualTo(Integer value) {
-            addCriterion("total <=", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalIn(List<Integer> values) {
-            addCriterion("total in", values, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalNotIn(List<Integer> values) {
-            addCriterion("total not in", values, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalBetween(Integer value1, Integer value2) {
-            addCriterion("total between", value1, value2, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalNotBetween(Integer value1, Integer value2) {
-            addCriterion("total not between", value1, value2, "total");
-            return (Criteria) this;
-        }
     }
 
     /**
      * 类注释
      * Criteria
-     * 数据库表：foodorderdetail
+     * 数据库表：foodorderrecords
      */
     public static class Criteria extends GeneratedCriteria {
 
@@ -926,7 +496,7 @@ public class FoodOrderRecordsExample {
     /**
      * 类注释
      * Criterion
-     * 数据库表：foodorderdetail
+     * 数据库表：foodorderrecords
      */
     public static class Criterion {
         private String condition;

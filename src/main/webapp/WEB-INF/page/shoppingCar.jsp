@@ -38,6 +38,37 @@ $(document).ready(function(){
         });
 	});
 });
+/* 执行支付 */
+$(document).ready(function(){
+	$("#doPay").click(function(){
+		var index = layer.open(
+				{	type : 1,
+					title : false,
+					closeBtn : false,
+					shadeClose : true,
+					offset : '25%',
+					content : "<div class='no_login_show'>"
+					+ "<h1>亲！请输入您的桌号！</h1>"
+					+ "<input type='text' style='text-align:center' id='myDeskNum'/>"
+					+ "<a href='javascript:layer.closeAll();' id='confirmDesk'>确定</a>"
+					+ "</div>"
+					});
+		if($("#confirmDesk").click(function (){
+			$.ajax({
+	            type: "POST",
+	            url:"doPay",
+	            data:{deskNum:$("#myDeskNum").val()},
+	            success: function(data) {	
+	            	alert(data);
+	            },
+	            error: function(){
+	            	console.log("请求失败");
+	            }
+	        });
+		})){		
+		}
+	});
+});
 
 
 </script>
@@ -86,7 +117,7 @@ $(document).ready(function(){
 				<td></td>
 				<td></td>
 				<td></td>
-				<td style="text-align: center;">150 ￥</td>	
+				<td style="text-align: center;">${money }</td>	
 			</tr>
 			<tr>
 				<td colspan="5"><hr></td>
@@ -94,7 +125,7 @@ $(document).ready(function(){
 		</table>
 
 		<div class="login_out">
-			<a href="javascript:void(0);"><i>立即支付</i></a>
+			<a href="javascript:void(0);" id="doPay"><i>立即支付</i></a>
 		</div>
 		<div class="copyright">Copyright © 2016-2017 点多多 www.bestcfm.com 版权所有</div>
 	</div>

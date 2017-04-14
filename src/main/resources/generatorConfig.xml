@@ -69,7 +69,7 @@
 		</table>
 		
 		<!-- foodorderrecords表 -->
-		<table tableName="foodorderdetail" domainObjectName="FoodOrderRecords">
+		<table tableName="foodOrderRecords" domainObjectName="FoodOrderRecords">
 			<property name="useActualColumnNames" value="true" />
 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
 		</table>

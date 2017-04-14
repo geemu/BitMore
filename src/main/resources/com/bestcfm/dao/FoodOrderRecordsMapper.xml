@@ -6,18 +6,11 @@
     @mbggenerated
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="recordsId" jdbcType="INTEGER" property="recordsId" />
     <result column="userId" jdbcType="INTEGER" property="userId" />
-    <result column="foodId" jdbcType="INTEGER" property="foodId" />
-    <result column="foodName" jdbcType="VARCHAR" property="foodName" />
-    <result column="orderCount" jdbcType="INTEGER" property="orderCount" />
-    <result column="orderState" jdbcType="INTEGER" property="orderState" />
-    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="recordsNo" jdbcType="VARCHAR" property="recordsNo" />
+    <result column="deskNo" jdbcType="INTEGER" property="deskNo" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="closeSpaceTime" jdbcType="INTEGER" property="closeSpaceTime" />
     <result column="dataFlag" jdbcType="INTEGER" property="dataFlag" />
-    <result column="singlePrice" jdbcType="INTEGER" property="singlePrice" />
-    <result column="total" jdbcType="INTEGER" property="total" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -87,8 +80,7 @@
     <!--
     @mbggenerated
     -->
-    id, recordsId, userId, foodId, foodName, orderCount, orderState, remark, createTime, 
-    closeSpaceTime, dataFlag, singlePrice, total
+    id, userId, recordsNo, deskNo, createTime, dataFlag
   </sql>
   <select id="selectByExample" parameterType="com.bestcfm.bean.FoodOrderRecordsExample" resultMap="BaseResultMap">
     <!--
@@ -99,7 +91,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from foodorderdetail
+    from foodorderrecords
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -113,21 +105,21 @@
     -->
     select 
     <include refid="Base_Column_List" />
-    from foodorderdetail
+    from foodorderrecords
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
     @mbggenerated
     -->
-    delete from foodorderdetail
+    delete from foodorderrecords
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.bestcfm.bean.FoodOrderRecordsExample">
     <!--
     @mbggenerated
     -->
-    delete from foodorderdetail
+    delete from foodorderrecords
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -139,16 +131,10 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into foodorderdetail (recordsId, userId, foodId, 
-      foodName, orderCount, orderState, 
-      remark, createTime, closeSpaceTime, 
-      dataFlag, singlePrice, total
-      )
-    values (#{recordsId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{foodId,jdbcType=INTEGER}, 
-      #{foodName,jdbcType=VARCHAR}, #{orderCount,jdbcType=INTEGER}, #{orderState,jdbcType=INTEGER}, 
-      #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{closeSpaceTime,jdbcType=INTEGER}, 
-      #{dataFlag,jdbcType=INTEGER}, #{singlePrice,jdbcType=INTEGER}, #{total,jdbcType=INTEGER}
-      )
+    insert into foodorderrecords (userId, recordsNo, deskNo, 
+      createTime, dataFlag)
+    values (#{userId,jdbcType=INTEGER}, #{recordsNo,jdbcType=VARCHAR}, #{deskNo,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{dataFlag,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.bestcfm.bean.FoodOrderRecords">
     <!--
@@ -157,81 +143,39 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into foodorderdetail
+    insert into foodorderrecords
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="recordsId != null">
-        recordsId,
-      </if>
       <if test="userId != null">
         userId,
       </if>
-      <if test="foodId != null">
-        foodId,
+      <if test="recordsNo != null">
+        recordsNo,
       </if>
-      <if test="foodName != null">
-        foodName,
-      </if>
-      <if test="orderCount != null">
-        orderCount,
-      </if>
-      <if test="orderState != null">
-        orderState,
-      </if>
-      <if test="remark != null">
-        remark,
+      <if test="deskNo != null">
+        deskNo,
       </if>
       <if test="createTime != null">
         createTime,
       </if>
-      <if test="closeSpaceTime != null">
-        closeSpaceTime,
-      </if>
       <if test="dataFlag != null">
         dataFlag,
       </if>
-      <if test="singlePrice != null">
-        singlePrice,
-      </if>
-      <if test="total != null">
-        total,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="recordsId != null">
-        #{recordsId,jdbcType=INTEGER},
-      </if>
       <if test="userId != null">
         #{userId,jdbcType=INTEGER},
       </if>
-      <if test="foodId != null">
-        #{foodId,jdbcType=INTEGER},
+      <if test="recordsNo != null">
+        #{recordsNo,jdbcType=VARCHAR},
       </if>
-      <if test="foodName != null">
-        #{foodName,jdbcType=VARCHAR},
-      </if>
-      <if test="orderCount != null">
-        #{orderCount,jdbcType=INTEGER},
-      </if>
-      <if test="orderState != null">
-        #{orderState,jdbcType=INTEGER},
-      </if>
-      <if test="remark != null">
-        #{remark,jdbcType=VARCHAR},
+      <if test="deskNo != null">
+        #{deskNo,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="closeSpaceTime != null">
-        #{closeSpaceTime,jdbcType=INTEGER},
-      </if>
       <if test="dataFlag != null">
         #{dataFlag,jdbcType=INTEGER},
-      </if>
-      <if test="singlePrice != null">
-        #{singlePrice,jdbcType=INTEGER},
-      </if>
-      <if test="total != null">
-        #{total,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -239,7 +183,7 @@
     <!--
     @mbggenerated
     -->
-    select count(*) from foodorderdetail
+    select count(*) from foodorderrecords
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -248,46 +192,25 @@
     <!--
     @mbggenerated
     -->
-    update foodorderdetail
+    update foodorderrecords
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.recordsId != null">
-        recordsId = #{record.recordsId,jdbcType=INTEGER},
-      </if>
       <if test="record.userId != null">
         userId = #{record.userId,jdbcType=INTEGER},
       </if>
-      <if test="record.foodId != null">
-        foodId = #{record.foodId,jdbcType=INTEGER},
+      <if test="record.recordsNo != null">
+        recordsNo = #{record.recordsNo,jdbcType=VARCHAR},
       </if>
-      <if test="record.foodName != null">
-        foodName = #{record.foodName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.orderCount != null">
-        orderCount = #{record.orderCount,jdbcType=INTEGER},
-      </if>
-      <if test="record.orderState != null">
-        orderState = #{record.orderState,jdbcType=INTEGER},
-      </if>
-      <if test="record.remark != null">
-        remark = #{record.remark,jdbcType=VARCHAR},
+      <if test="record.deskNo != null">
+        deskNo = #{record.deskNo,jdbcType=INTEGER},
       </if>
       <if test="record.createTime != null">
         createTime = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.closeSpaceTime != null">
-        closeSpaceTime = #{record.closeSpaceTime,jdbcType=INTEGER},
-      </if>
       <if test="record.dataFlag != null">
         dataFlag = #{record.dataFlag,jdbcType=INTEGER},
-      </if>
-      <if test="record.singlePrice != null">
-        singlePrice = #{record.singlePrice,jdbcType=INTEGER},
-      </if>
-      <if test="record.total != null">
-        total = #{record.total,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -298,20 +221,13 @@
     <!--
     @mbggenerated
     -->
-    update foodorderdetail
+    update foodorderrecords
     set id = #{record.id,jdbcType=INTEGER},
-      recordsId = #{record.recordsId,jdbcType=INTEGER},
       userId = #{record.userId,jdbcType=INTEGER},
-      foodId = #{record.foodId,jdbcType=INTEGER},
-      foodName = #{record.foodName,jdbcType=VARCHAR},
-      orderCount = #{record.orderCount,jdbcType=INTEGER},
-      orderState = #{record.orderState,jdbcType=INTEGER},
-      remark = #{record.remark,jdbcType=VARCHAR},
+      recordsNo = #{record.recordsNo,jdbcType=VARCHAR},
+      deskNo = #{record.deskNo,jdbcType=INTEGER},
       createTime = #{record.createTime,jdbcType=TIMESTAMP},
-      closeSpaceTime = #{record.closeSpaceTime,jdbcType=INTEGER},
-      dataFlag = #{record.dataFlag,jdbcType=INTEGER},
-      singlePrice = #{record.singlePrice,jdbcType=INTEGER},
-      total = #{record.total,jdbcType=INTEGER}
+      dataFlag = #{record.dataFlag,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -320,43 +236,22 @@
     <!--
     @mbggenerated
     -->
-    update foodorderdetail
+    update foodorderrecords
     <set>
-      <if test="recordsId != null">
-        recordsId = #{recordsId,jdbcType=INTEGER},
-      </if>
       <if test="userId != null">
         userId = #{userId,jdbcType=INTEGER},
       </if>
-      <if test="foodId != null">
-        foodId = #{foodId,jdbcType=INTEGER},
+      <if test="recordsNo != null">
+        recordsNo = #{recordsNo,jdbcType=VARCHAR},
       </if>
-      <if test="foodName != null">
-        foodName = #{foodName,jdbcType=VARCHAR},
-      </if>
-      <if test="orderCount != null">
-        orderCount = #{orderCount,jdbcType=INTEGER},
-      </if>
-      <if test="orderState != null">
-        orderState = #{orderState,jdbcType=INTEGER},
-      </if>
-      <if test="remark != null">
-        remark = #{remark,jdbcType=VARCHAR},
+      <if test="deskNo != null">
+        deskNo = #{deskNo,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
         createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="closeSpaceTime != null">
-        closeSpaceTime = #{closeSpaceTime,jdbcType=INTEGER},
-      </if>
       <if test="dataFlag != null">
         dataFlag = #{dataFlag,jdbcType=INTEGER},
-      </if>
-      <if test="singlePrice != null">
-        singlePrice = #{singlePrice,jdbcType=INTEGER},
-      </if>
-      <if test="total != null">
-        total = #{total,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -365,19 +260,12 @@
     <!--
     @mbggenerated
     -->
-    update foodorderdetail
-    set recordsId = #{recordsId,jdbcType=INTEGER},
-      userId = #{userId,jdbcType=INTEGER},
-      foodId = #{foodId,jdbcType=INTEGER},
-      foodName = #{foodName,jdbcType=VARCHAR},
-      orderCount = #{orderCount,jdbcType=INTEGER},
-      orderState = #{orderState,jdbcType=INTEGER},
-      remark = #{remark,jdbcType=VARCHAR},
+    update foodorderrecords
+    set userId = #{userId,jdbcType=INTEGER},
+      recordsNo = #{recordsNo,jdbcType=VARCHAR},
+      deskNo = #{deskNo,jdbcType=INTEGER},
       createTime = #{createTime,jdbcType=TIMESTAMP},
-      closeSpaceTime = #{closeSpaceTime,jdbcType=INTEGER},
-      dataFlag = #{dataFlag,jdbcType=INTEGER},
-      singlePrice = #{singlePrice,jdbcType=INTEGER},
-      total = #{total,jdbcType=INTEGER}
+      dataFlag = #{dataFlag,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
