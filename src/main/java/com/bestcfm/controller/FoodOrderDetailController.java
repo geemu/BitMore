@@ -34,4 +34,12 @@ public class FoodOrderDetailController {
 		 String data = result == true?"添加成功":"添加失败";
 		 return data;
 	 }
+	 
+	 @RequestMapping("/operateCar")
+	 @ResponseBody
+	 public String operateCar(@RequestParam("operateId") int operateId,@RequestParam("userId") int userId,@RequestParam("operate") int operate){
+		 boolean result = foodOrderDetailService.operateCar(operateId, userId, operate);
+		 String data = result == true?"操作成功":"操作失败";
+		 return data;
+	 }
 }

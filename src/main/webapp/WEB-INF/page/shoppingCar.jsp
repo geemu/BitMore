@@ -18,13 +18,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$(".reduceCar").click(function(){
+	$(".operateCar").click(function(){
 		$.ajax({
             type: "POST",
-            data:{foodId:$(this).data('foodid'),userId:'${loginUser.id}'},
-            url:"foodOrderDetail/doAddShoppingCar?",
+            data:{operate:$(this).data('operate'),userId:'${loginUser.id}',operateId:$(this).data('operateid')},
+            url:"operateCar?",
             success: function(data) {	
-            	alert(data)
+            	if('操作成功' == data){
+            		alert(2);
+            		window.location = "shoppingCar?userId=${loginUser.id }";
+            	}
+            	else{
+            		alert(data);
+            	}
             },
             error: function(){
             	console.log("请求失败");
@@ -32,6 +38,8 @@ $(document).ready(function(){
         });
 	});
 });
+
+
 </script>
 
 <title>购物车</title>
@@ -64,9 +72,9 @@ $(document).ready(function(){
 			<c:forEach var="myShoppingCarFood" items="${myShoppingCarFoodList }">
 				<tr>
 					<td style="padding-left: 40px">${myShoppingCarFood.foodName }</td>
-					<td style="text-align: center;"><a class="reduceCar" style="text-decoration: none" href="javascript:void(0)">-</a></td>
+					<td style="text-align: center;"><a class="operatecar" data-operate='-1' data-operateid ='${myShoppingCarFood.id}' style="text-decoration: none" href="javascript:void(0)">-</a></td>
 					<td style="text-align: center;">${myShoppingCarFood.orderCount }</td>
-					<td style="text-align: center;"><a style="text-decoration: none" href="javascript:void(0)">+</a></td>
+					<td style="text-align: center;"><a class="operatecar" data-operate='1' data-operateid ='${myShoppingCarFood.id}' style="text-decoration: none" href="javascript:void(0)">+</a></td>
 					<td style="text-align: center;">${myShoppingCarFood.total } ￥</td>
 				</tr>
 			</c:forEach>

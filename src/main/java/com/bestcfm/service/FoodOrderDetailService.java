@@ -74,5 +74,30 @@ public class FoodOrderDetailService {
 			return foodOrderDetailDao.updateByPrimaryKeySelective(record)>0 ? true:false;
 		}
 	}
+	/**
+	 * 操作购物车
+	 * @param operateId
+	 * @param userId
+	 * @param operate
+	 * @return
+	 */
+	public boolean operateCar( int operateId,int userId,int operate){
+		//查询当前操作的菜品
+		FoodOrderDetail foodfoodOrderDetail = foodOrderDetailDao.selectByPrimaryKey(operateId);
+		int num = foodfoodOrderDetail.getOrderCount();
+		if(num <= 1 && operate == -1){
+			FoodOrderDetail record = new FoodOrderDetail();
+			record.setId(operateId);
+			record.setOrderCount(0);
+			record.setDataFlag(1);
+			return foodOrderDetailDao.updateByPrimaryKeySelective(record) > 0 ?true:false;
+		}
+		else{
+			FoodOrderDetail record = new FoodOrderDetail();
+			record.setId(operateId);
+			record.setOrderCount(num+operate);
+			return foodOrderDetailDao.updateByPrimaryKeySelective(record) > 0 ?true:false;
+		}
+	}
 
 }
