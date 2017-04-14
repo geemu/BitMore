@@ -69,7 +69,11 @@ $(document).ready(function(){
 		}
 	});
 });
-
+$(document).ready(function(){
+	if('${money}' == 0 || '${money}' == null||  '${money}' ==''){
+		$(".needToDisPlay").hide();
+	}
+});
 
 </script>
 
@@ -90,7 +94,7 @@ $(document).ready(function(){
 			</div>
 		</header>
 
-		<table style="width: 96%;margin: auto;border: 0px">
+		<table style="width: 96%;margin: auto;border: 0px;" class="needToDisPlay">
 			<thead>
 				<tr>
 				<td style="width: 60%;height: 50px;padding-left: 40px">菜名</td>
@@ -124,7 +128,7 @@ $(document).ready(function(){
 			</tr>
 		</table>
 
-		<div class="login_out">
+		<div class="login_out needToDisPlay">
 			<a href="javascript:void(0);" id="doPay"><i>立即支付</i></a>
 		</div>
 		<div class="copyright">Copyright © 2016-2017 点多多 www.bestcfm.com 版权所有</div>

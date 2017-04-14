@@ -51,7 +51,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</form>
 		</div>
-<div id="error"></div>
 		<div class="copyright">Copyright © 2016-2017 点多多 www.bestcfm.com 版权所有</div>
 	</div>
 </body>

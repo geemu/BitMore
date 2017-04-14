@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bestcfm.dao.custom.FoodDaoCustom">
+  <resultMap id="BaseResultMap" type="com.bestcfm.bean.Food">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="foodName" jdbcType="VARCHAR" property="foodName" />
+    <result column="price" jdbcType="INTEGER" property="price" />
+    <result column="sales" jdbcType="INTEGER" property="sales" />
+    <result column="introduce" jdbcType="VARCHAR" property="introduce" />
+    <result column="typeId" jdbcType="INTEGER" property="typeId" />
+    <result column="signiture" jdbcType="INTEGER" property="signiture" />
+    <result column="recommend" jdbcType="INTEGER" property="recommend" />
+    <result column="foodImage" jdbcType="VARCHAR" property="foodImage" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="dataFlag" jdbcType="INTEGER" property="dataFlag" />
+  </resultMap>
+  
+  <sql id="Base_Column_List">
+    id, foodName, price, sales, introduce, typeId, signiture, recommend, foodImage, createTime, 
+    dataFlag
+  </sql>
+ 
+  <select id="selectByKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List" />
+  	from food
+  	where food.foodName like CONCAT('%',#{key},'%')
+  </select>
+</mapper>

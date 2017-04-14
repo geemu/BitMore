@@ -9,8 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <meta name="format-detection" content="telephone=no">
 <title>点多多</title>
 <link href="css/owl.carousel.css" rel="stylesheet">
@@ -67,6 +66,12 @@ $(document).ready(function() {$("#myShoppingCar").click(function() {
 		});
 });
 
+/* 用户搜索 */
+$(document).ready(function(){
+	$("#userSearch").click(function(){
+		window.location = "food/userSearch?key="+$('#key').val();
+	});
+});
 </script>
 </head>
 
@@ -74,9 +79,9 @@ $(document).ready(function() {$("#myShoppingCar").click(function() {
 	<div class="mobile">
 		<!--搜索栏-->
 		<div class="search w">
-			<form action="" method="post">
-				<input type="text" class="search_input" placeholder="请输入菜品名称">
-				<input type="button" class="search_submit" value="搜索">
+			<form method="post" id="userSearchForm">
+				<input type="text" name= 'key' id="key" class="search_input" placeholder="请输入菜品名称">
+				<input id="userSearch" type="button" class="search_submit" value="搜索">
 			</form>
 		</div>
 
@@ -98,7 +103,7 @@ $(document).ready(function() {$("#myShoppingCar").click(function() {
 		<!-- 食客最爱栏目 -->
 		<div class="m_mall w">
 			<div class="mall_title">
-				<span>食客最爱${loginUser.id }</span><em><a href="#">更多</a></em>
+				<span>食客最爱</span><em><a href="#">更多</a></em>
 			</div>
 			<div class="mall_list">
 				<c:forEach var="favouriteFood" items="${favouriteFoodList }">

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.bestcfm.bean.Food;
 import com.bestcfm.bean.FoodExample;
 import com.bestcfm.dao.FoodDao;
+import com.bestcfm.dao.custom.FoodDaoCustom;
 
 /**
  * Author:陈方明
@@ -19,6 +20,10 @@ public class FoodService {
 	
 	@Autowired
 	private FoodDao foodDao;
+	
+	@Autowired
+	private FoodDaoCustom foodDaoCustom;
+	
 	/**
 	 * @return
 	 */
@@ -30,7 +35,7 @@ public class FoodService {
 		return foodDao.selectByExample(example);
 	}
 	/**
-	 * recommen设置为1的对象
+	 * recommen设置为1的对象  小二推荐
 	 * @return
 	 */
 	public List<Food> queryRecommendFoodList(){
@@ -49,5 +54,14 @@ public class FoodService {
 	public Food queryFoodByFoodId(int id){
 		return foodDao.selectByPrimaryKey(id);
 	}
+	/**
+	 * 根据用户关键字查询
+	 * @param key
+	 * @return
+	 */
+	public List<Food> queryFoodByKey(String key){
+		return foodDaoCustom.selectByKey(key);
+	}
+	
 	
 }
