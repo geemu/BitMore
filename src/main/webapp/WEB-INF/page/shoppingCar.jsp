@@ -21,7 +21,7 @@ $(document).ready(function(){
 	$(".operateCar").click(function(){
 		$.ajax({
             type: "POST",
-            data:{operate:$(this).data('operate'),userId:'${loginUser.id}',operateId:$(this).data('operateid')},
+            data:{operate:$(this).data('operate'),operateId:$(this).data('operateid')},
             url:"operateCar?",
             success: function(data) {	
             	if('操作成功' == data){

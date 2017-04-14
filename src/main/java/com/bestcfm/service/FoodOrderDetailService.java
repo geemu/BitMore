@@ -58,9 +58,13 @@ public class FoodOrderDetailService {
 		criteria.andDataFlagEqualTo(0);
 		criteria.andFoodIdEqualTo(foodId);
 		criteria.andUserIdEqualTo(userId);
+		criteria.andOrderCountGreaterThanOrEqualTo(1);
+		criteria.andOrderStateEqualTo(0);
+		criteria.andRecordsIdEqualTo(0);
 		List<FoodOrderDetail> FoodOrderDetailList = foodOrderDetailDao.selectByExample(example);
 		if(FoodOrderDetailList.isEmpty() || FoodOrderDetailList.size() <= 0){
 			//不存在	直接新增
+			System.out.println("不存在");
 			FoodOrderDetail record = new FoodOrderDetail();
 			record.setUserId(userId);
 			record.setFoodId(foodId);
@@ -73,11 +77,13 @@ public class FoodOrderDetailService {
 		}
 		else{
 			//已经存在 更新
+			System.out.println("已经存在 更新");
 			FoodOrderDetail FoodOrderDetail = FoodOrderDetailList.get(0);//需要更新的对象
 			FoodOrderDetail record = new FoodOrderDetail();
 			record.setId(FoodOrderDetail.getId());
 			record.setOrderCount(FoodOrderDetail.getOrderCount()+1);
 			record.setTotal(FoodOrderDetail.getSinglePrice()+FoodOrderDetail.getTotal());
+			System.out.println(record.getTotal());
 			return foodOrderDetailDao.updateByPrimaryKeySelective(record)>0 ? true:false;
 		}
 	}
@@ -97,12 +103,14 @@ public class FoodOrderDetailService {
 			record.setId(operateId);
 			record.setOrderCount(0);
 			record.setDataFlag(1);
+			record.setTotal(0);
 			return foodOrderDetailDao.updateByPrimaryKeySelective(record) > 0 ?true:false;
 		}
 		else{
 			FoodOrderDetail record = new FoodOrderDetail();
 			record.setId(operateId);
 			record.setOrderCount(num+operate);
+			record.setTotal(foodfoodOrderDetail.getTotal()+foodfoodOrderDetail.getSinglePrice()*operate);
 			return foodOrderDetailDao.updateByPrimaryKeySelective(record) > 0 ?true:false;
 		}
 	}
@@ -150,6 +158,27 @@ public class FoodOrderDetailService {
 			}
 		}
 		return true;	
+	}
+	
+	/**
+	 * 计算总价
+	 * @param userId
+	 * @return
+	 */
+	public int sumMoney(int userId){
+		FoodOrderDetailExample example = new FoodOrderDetailExample();
+		FoodOrderDetailExample.Criteria criteria = example.createCriteria();
+		criteria.andDataFlagEqualTo(0);
+		criteria.andUserIdEqualTo(userId);
+		criteria.andOrderStateEqualTo(0);
+		criteria.andOrderCountGreaterThanOrEqualTo(1);
+		criteria.andRecordsIdEqualTo(0);
+		List<FoodOrderDetail> foodOrderDetailList = foodOrderDetailDao.selectByExample(example);
+		int sum = 0;
+		for(FoodOrderDetail e:foodOrderDetailList){
+			sum += e.getTotal();
+		}
+		return sum;
 	}
 
 }

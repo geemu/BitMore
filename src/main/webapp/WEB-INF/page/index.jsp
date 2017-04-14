@@ -62,7 +62,7 @@ $(document).ready(function() {$("#myShoppingCar").click(function() {
 				+ "</div>"
 				});
 	} else {
-		window.location = "foodOrderDetail/shoppingCar?userId=${loginUser.id }";
+		window.location = "foodOrderDetail/shoppingCar";
 			}
 		});
 });
@@ -135,7 +135,7 @@ $(document).ready(function(){
 	$(".doAddShoppingCar").click(function(){
 		$.ajax({
             type: "POST",
-            data:{foodId:$(this).data('foodid'),userId:'${loginUser.id}'},
+            data:{foodId:$(this).data('foodid')},
             url:"foodOrderDetail/doAddShoppingCar?",
             success: function(data) {	
             	alert(data)

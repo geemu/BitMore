@@ -26,37 +26,69 @@ import com.bestcfm.service.FoodOrderDetailService;
 public class FoodOrderDetailController {
 	 @Autowired
 	 private FoodOrderDetailService  foodOrderDetailService;
-	 
+	 /**
+	  * 进入购物车
+	  * @param userId
+	  * @param map
+	  * @return
+	  */
 	 @RequestMapping("/shoppingCar")
-	 public String ShoppingCar(@RequestParam("userId") int userId,ModelMap map){
+	 public String ShoppingCar(ModelMap map){
+		User loginUser = (User) map.get("loginUser");
+		int userId = loginUser.getId();
 		List<FoodOrderDetail> FoodOrderDetailList = foodOrderDetailService.queryFoodOrderDetailListByUserId(userId);
-		int sum = 0;
-		for(FoodOrderDetail e:FoodOrderDetailList){
-			sum += e.getTotal();
-		}
-		if(sum > 0){
-			map.put("money", sum+" ￥");
+		int money = foodOrderDetailService.sumMoney(userId);
+		if(money > 0){
+			map.put("money", money+" ￥");
 		}
 		map.put("myShoppingCarFoodList",FoodOrderDetailList);
 		return "shoppingCar";	 
 	 }
-	 
+	 /**
+	  * 加入购物车
+	  * @param foodId
+	  * @param map
+	  * @return
+	  */
 	 @RequestMapping("/doAddShoppingCar")
 	 @ResponseBody
-	 public String doAddShoppingCar(@RequestParam("foodId") int foodId,@RequestParam("userId") int userId){
+	 public String doAddShoppingCar(@RequestParam("foodId") int foodId,ModelMap map){
+		 User loginUser = (User) map.get("loginUser");
+		 int userId = loginUser.getId();
+		 int money = foodOrderDetailService.sumMoney(userId);
+			if(money > 0){
+				map.put("money", money+" ￥");
+			}
 		 boolean result = foodOrderDetailService.doAddShoppingCar(foodId, userId);
 		 String data = result == true?"添加成功":"添加失败";
 		 return data;
 	 }
-	 
+	 /**
+	  * 操作购物车
+	  * @param operateId
+	  * @param userId
+	  * @param operate
+	  * @return
+	  */
 	 @RequestMapping("/operateCar")
 	 @ResponseBody
-	 public String operateCar(@RequestParam("operateId") int operateId,@RequestParam("userId") int userId,@RequestParam("operate") int operate){
+	 public String operateCar(ModelMap map,@RequestParam("operateId") int operateId,@RequestParam("operate") int operate){
+		 User loginUser = (User) map.get("loginUser");
+		 int userId = loginUser.getId();
 		 boolean result = foodOrderDetailService.operateCar(operateId, userId, operate);
+		 int money = foodOrderDetailService.sumMoney(userId);
+			if(money > 0){
+				map.put("money", money+" ￥");
+			}
 		 String data = result == true?"操作成功":"操作失败";
 		 return data;
 	 }
-	 
+	 /**
+	  * 支付
+	  * @param map
+	  * @param deskNum
+	  * @return
+	  */
 	 @RequestMapping("/doPay")
 	 @ResponseBody
 	 public String doPay(ModelMap map,@RequestParam("deskNum") int deskNum){
