@@ -32,7 +32,6 @@ $(document).ready(function(){
 
 <body>
 	<div class="mobile">
-	
 		<header>
 			<div class="header">
 				<a class="new-a-back" href="javascript:history.back();"> 
