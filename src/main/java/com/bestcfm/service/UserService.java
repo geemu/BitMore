@@ -37,7 +37,8 @@ public class UserService {
 		User user = new User();
 		user.setPhone(phone);
 		user.setUserPassword(userPassword);
-		return userDao.insertSelective(user);
+		userDao.insertSelective(user);
+		return user.getId();
 	}
 	
 	public User queryUserByPhone(String phone){

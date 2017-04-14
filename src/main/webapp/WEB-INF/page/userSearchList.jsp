@@ -32,6 +32,18 @@ $(document).ready(function(){
 
 <body>
 	<div class="mobile">
+	
+		<header>
+			<div class="header">
+				<a class="new-a-back" href="javascript:history.back();"> 
+					<span><img src="../images/iconfont-fanhui.png"></span>
+				</a>
+				<h2>用户搜索</h2>
+				<div class="header_right shaixuan">
+					<a href="../"><img src="../images/iconfont-shouye.png"></a>
+				</div>
+			</div>
+		</header>
 		<!--搜索栏-->
 		<div class="search w">
 			<form method="post" id="userSearchForm">
@@ -59,18 +71,34 @@ $(document).ready(function(){
 <script type="text/javascript">
 /* 加入购物车 */
 $(document).ready(function(){
-	$(".doAddShoppingCar").click(function(){
-		$.ajax({
-            type: "POST",
-            data:{foodId:$(this).data('foodid')},
-            url:"foodOrderDetail/doAddShoppingCar?",
-            success: function(data) {	
-            	alert(data)
-            },
-            error: function(){
-            	console.log("请求失败");
-            }
-        });
+	$(".doAddShoppingCar").click(function(){	
+		if ('' == '${loginUser}' || '${loginUser}' == null) {
+			var index = layer.open(
+				{	type : 1,
+					title : false,
+					closeBtn : false,
+					shadeClose : true,
+					offset : '25%',
+					content : "<div class='no_login_show'>"
+					+ "<h1>亲！您还没登录点多多哦！</h1>"
+					+ "<a href='../skip/toUserLogin'>马上登录</a>"
+					+ "<a href='../skip/toRegister'>免费注册</a>"
+					+ "<a href='javascript:layer.closeAll();'>取消</a>"
+					+ "</div>"
+					});
+		} else {
+			$.ajax({
+	            type: "POST",
+	            data:{foodId:$(this).data('foodid')},
+	            url:"../foodOrderDetail/doAddShoppingCar?",
+	            success: function(data) {	
+	            	alert(data)
+	            },
+	            error: function(){
+	            	console.log("请求失败");
+	            }
+	        });
+				}
 	});
 });
 </script>
