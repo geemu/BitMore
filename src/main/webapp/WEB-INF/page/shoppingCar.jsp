@@ -60,6 +60,7 @@ $(document).ready(function(){
 	            data:{deskNum:$("#myDeskNum").val()},
 	            success: function(data) {	
 	            	alert(data);
+	            	window.location = "shoppingCar";
 	            },
 	            error: function(){
 	            	console.log("请求失败");
