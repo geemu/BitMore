@@ -1,7 +1,6 @@
 package com.bestcfm.bean;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class FoodOrderDetailExample {
@@ -620,52 +619,62 @@ public class FoodOrderDetailExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeEqualTo(Date value) {
+        public Criteria andCreateTimeEqualTo(String value) {
             addCriterion("createTime =", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeNotEqualTo(Date value) {
+        public Criteria andCreateTimeNotEqualTo(String value) {
             addCriterion("createTime <>", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeGreaterThan(Date value) {
+        public Criteria andCreateTimeGreaterThan(String value) {
             addCriterion("createTime >", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andCreateTimeGreaterThanOrEqualTo(String value) {
             addCriterion("createTime >=", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeLessThan(Date value) {
+        public Criteria andCreateTimeLessThan(String value) {
             addCriterion("createTime <", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+        public Criteria andCreateTimeLessThanOrEqualTo(String value) {
             addCriterion("createTime <=", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeIn(List<Date> values) {
+        public Criteria andCreateTimeLike(String value) {
+            addCriterion("createTime like", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotLike(String value) {
+            addCriterion("createTime not like", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIn(List<String> values) {
             addCriterion("createTime in", values, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeNotIn(List<Date> values) {
+        public Criteria andCreateTimeNotIn(List<String> values) {
             addCriterion("createTime not in", values, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+        public Criteria andCreateTimeBetween(String value1, String value2) {
             addCriterion("createTime between", value1, value2, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+        public Criteria andCreateTimeNotBetween(String value1, String value2) {
             addCriterion("createTime not between", value1, value2, "createTime");
             return (Criteria) this;
         }
@@ -907,6 +916,66 @@ public class FoodOrderDetailExample {
 
         public Criteria andTotalNotBetween(Integer value1, Integer value2) {
             addCriterion("total not between", value1, value2, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoIsNull() {
+            addCriterion("deskNo is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoIsNotNull() {
+            addCriterion("deskNo is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoEqualTo(Integer value) {
+            addCriterion("deskNo =", value, "deskNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoNotEqualTo(Integer value) {
+            addCriterion("deskNo <>", value, "deskNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoGreaterThan(Integer value) {
+            addCriterion("deskNo >", value, "deskNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoGreaterThanOrEqualTo(Integer value) {
+            addCriterion("deskNo >=", value, "deskNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoLessThan(Integer value) {
+            addCriterion("deskNo <", value, "deskNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoLessThanOrEqualTo(Integer value) {
+            addCriterion("deskNo <=", value, "deskNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoIn(List<Integer> values) {
+            addCriterion("deskNo in", values, "deskNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoNotIn(List<Integer> values) {
+            addCriterion("deskNo not in", values, "deskNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoBetween(Integer value1, Integer value2) {
+            addCriterion("deskNo between", value1, value2, "deskNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeskNoNotBetween(Integer value1, Integer value2) {
+            addCriterion("deskNo not between", value1, value2, "deskNo");
             return (Criteria) this;
         }
     }

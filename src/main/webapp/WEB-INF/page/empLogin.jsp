@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <link href="../static/css/empLogin.css" rel="stylesheet">
-
+<script src="../js/jquery-1.8.3.min.js"></script>
 
 <title>员工登陆</title>
 </head>
@@ -14,7 +14,7 @@
 		<div class="login_logo">
 			<img src="../static/images/web/logo.png" width="196" height="46">
 		</div>
-		<form id="empLoginForm" method="post" action="../emp/doEmpLogin" onsubmit="return empLoginValidate()">
+		<form id="empLoginForm" method="post" action="../emp/doEmpLogin">
 			<div class="login_boder">
 				<div class="login_padding">
 					<h2>用户名</h2>
@@ -39,8 +39,4 @@
 		</form>	
 	</div>
 </body>
-<script type="text/javascript">
-
-
-</script>
 </html>

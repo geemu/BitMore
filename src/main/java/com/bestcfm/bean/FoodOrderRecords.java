@@ -1,7 +1,5 @@
 package com.bestcfm.bean;
 
-import java.util.Date;
-
 public class FoodOrderRecords {
     /**
      * 主键 主表
@@ -31,7 +29,7 @@ public class FoodOrderRecords {
      * 创建时间
      * 表字段 : foodorderrecords.createTime
      */
-    private Date createTime;
+    private String createTime;
 
     /**
      * 是否有效 0有效 1无效
@@ -129,7 +127,7 @@ public class FoodOrderRecords {
      *
      * @return foodorderrecords.createTime：创建时间
      */
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
@@ -140,7 +138,7 @@ public class FoodOrderRecords {
      * @param createTime
      *            foodorderrecords.createTime：创建时间
      */
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 

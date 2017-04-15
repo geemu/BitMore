@@ -32,6 +32,7 @@ public class FoodController {
 	public String userSearch(@RequestParam("key") String key,ModelMap map){
 		List<Food> userSearchFoodList = foodService.queryFoodByKey(key);
 		map.put("userSearchFoodList", userSearchFoodList);
+		map.put("key", key);
 		return "userSearchList";
 	}
 }

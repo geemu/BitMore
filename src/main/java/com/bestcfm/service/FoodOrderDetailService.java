@@ -11,6 +11,7 @@ import com.bestcfm.bean.Food;
 import com.bestcfm.bean.FoodOrderDetail;
 import com.bestcfm.bean.FoodOrderDetailExample;
 import com.bestcfm.dao.FoodOrderDetailDao;
+import com.bestcfm.util.TimeUtil;
 
 /**
  * Author:陈方明
@@ -147,6 +148,8 @@ public class FoodOrderDetailService {
 				record.setRecordsId(recordsId);
 				record.setOrderState(4);
 				record.setId(existList.get(i).getId());
+				record.setDeskNo(deskNum);
+				record.setCreateTime(TimeUtil.convertCurrentTimeToDateType());
 				int result = foodOrderDetailDao.updateByPrimaryKeySelective(record);
 				if(result <= 0){
 					try {
@@ -179,6 +182,20 @@ public class FoodOrderDetailService {
 			sum += e.getTotal();
 		}
 		return sum;
+	}
+	/**
+	 * 查询需要制作的菜品
+	 * @return
+	 */
+	public List<FoodOrderDetail> cookCenter(){
+		FoodOrderDetailExample example = new FoodOrderDetailExample();
+		example.setOrderByClause("id asc");
+		FoodOrderDetailExample.Criteria criteria = example.createCriteria();
+		criteria.andDataFlagEqualTo(0);
+		criteria.andOrderStateEqualTo(4);
+		criteria.andOrderCountGreaterThanOrEqualTo(1);
+		criteria.andRecordsIdNotEqualTo(0);
+		return foodOrderDetailDao.selectByExample(example);
 	}
 
 }

@@ -13,11 +13,12 @@
     <result column="orderCount" jdbcType="INTEGER" property="orderCount" />
     <result column="orderState" jdbcType="INTEGER" property="orderState" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="createTime" jdbcType="VARCHAR" property="createTime" />
     <result column="closeSpaceTime" jdbcType="INTEGER" property="closeSpaceTime" />
     <result column="dataFlag" jdbcType="INTEGER" property="dataFlag" />
     <result column="singlePrice" jdbcType="INTEGER" property="singlePrice" />
     <result column="total" jdbcType="INTEGER" property="total" />
+    <result column="deskNo" jdbcType="INTEGER" property="deskNo" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -88,7 +89,7 @@
     @mbggenerated
     -->
     id, recordsId, userId, foodId, foodName, orderCount, orderState, remark, createTime, 
-    closeSpaceTime, dataFlag, singlePrice, total
+    closeSpaceTime, dataFlag, singlePrice, total, deskNo
   </sql>
   <select id="selectByExample" parameterType="com.bestcfm.bean.FoodOrderDetailExample" resultMap="BaseResultMap">
     <!--
@@ -142,13 +143,13 @@
     insert into foodorderdetail (recordsId, userId, foodId, 
       foodName, orderCount, orderState, 
       remark, createTime, closeSpaceTime, 
-      dataFlag, singlePrice, total
-      )
+      dataFlag, singlePrice, total, 
+      deskNo)
     values (#{recordsId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{foodId,jdbcType=INTEGER}, 
       #{foodName,jdbcType=VARCHAR}, #{orderCount,jdbcType=INTEGER}, #{orderState,jdbcType=INTEGER}, 
-      #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{closeSpaceTime,jdbcType=INTEGER}, 
-      #{dataFlag,jdbcType=INTEGER}, #{singlePrice,jdbcType=INTEGER}, #{total,jdbcType=INTEGER}
-      )
+      #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{closeSpaceTime,jdbcType=INTEGER}, 
+      #{dataFlag,jdbcType=INTEGER}, #{singlePrice,jdbcType=INTEGER}, #{total,jdbcType=INTEGER}, 
+      #{deskNo,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.bestcfm.bean.FoodOrderDetail">
     <!--
@@ -195,6 +196,9 @@
       <if test="total != null">
         total,
       </if>
+      <if test="deskNo != null">
+        deskNo,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="recordsId != null">
@@ -219,7 +223,7 @@
         #{remark,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=VARCHAR},
       </if>
       <if test="closeSpaceTime != null">
         #{closeSpaceTime,jdbcType=INTEGER},
@@ -232,6 +236,9 @@
       </if>
       <if test="total != null">
         #{total,jdbcType=INTEGER},
+      </if>
+      <if test="deskNo != null">
+        #{deskNo,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -275,7 +282,7 @@
         remark = #{record.remark,jdbcType=VARCHAR},
       </if>
       <if test="record.createTime != null">
-        createTime = #{record.createTime,jdbcType=TIMESTAMP},
+        createTime = #{record.createTime,jdbcType=VARCHAR},
       </if>
       <if test="record.closeSpaceTime != null">
         closeSpaceTime = #{record.closeSpaceTime,jdbcType=INTEGER},
@@ -288,6 +295,9 @@
       </if>
       <if test="record.total != null">
         total = #{record.total,jdbcType=INTEGER},
+      </if>
+      <if test="record.deskNo != null">
+        deskNo = #{record.deskNo,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -307,11 +317,12 @@
       orderCount = #{record.orderCount,jdbcType=INTEGER},
       orderState = #{record.orderState,jdbcType=INTEGER},
       remark = #{record.remark,jdbcType=VARCHAR},
-      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      createTime = #{record.createTime,jdbcType=VARCHAR},
       closeSpaceTime = #{record.closeSpaceTime,jdbcType=INTEGER},
       dataFlag = #{record.dataFlag,jdbcType=INTEGER},
       singlePrice = #{record.singlePrice,jdbcType=INTEGER},
-      total = #{record.total,jdbcType=INTEGER}
+      total = #{record.total,jdbcType=INTEGER},
+      deskNo = #{record.deskNo,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -344,7 +355,7 @@
         remark = #{remark,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        createTime = #{createTime,jdbcType=TIMESTAMP},
+        createTime = #{createTime,jdbcType=VARCHAR},
       </if>
       <if test="closeSpaceTime != null">
         closeSpaceTime = #{closeSpaceTime,jdbcType=INTEGER},
@@ -357,6 +368,9 @@
       </if>
       <if test="total != null">
         total = #{total,jdbcType=INTEGER},
+      </if>
+      <if test="deskNo != null">
+        deskNo = #{deskNo,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -373,11 +387,12 @@
       orderCount = #{orderCount,jdbcType=INTEGER},
       orderState = #{orderState,jdbcType=INTEGER},
       remark = #{remark,jdbcType=VARCHAR},
-      createTime = #{createTime,jdbcType=TIMESTAMP},
+      createTime = #{createTime,jdbcType=VARCHAR},
       closeSpaceTime = #{closeSpaceTime,jdbcType=INTEGER},
       dataFlag = #{dataFlag,jdbcType=INTEGER},
       singlePrice = #{singlePrice,jdbcType=INTEGER},
-      total = #{total,jdbcType=INTEGER}
+      total = #{total,jdbcType=INTEGER},
+      deskNo = #{deskNo,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

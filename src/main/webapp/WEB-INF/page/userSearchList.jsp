@@ -46,7 +46,7 @@ $(document).ready(function(){
 		<!--搜索栏-->
 		<div class="search w">
 			<form method="post" id="userSearchForm">
-				<input type="text" name= 'key' id='key' class="search_input" placeholder="请输入菜品名称">
+				<input type="text" value='${key }' name= 'key' id='key' class="search_input" placeholder="请输入菜品名称">
 				<input id="userSearch" type="button" class="search_submit" value="搜索">
 			</form>
 		</div>

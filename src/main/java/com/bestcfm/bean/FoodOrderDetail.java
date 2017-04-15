@@ -1,7 +1,5 @@
 package com.bestcfm.bean;
 
-import java.util.Date;
-
 public class FoodOrderDetail {
     /**
      * 主键
@@ -55,7 +53,7 @@ public class FoodOrderDetail {
      * 创建时间
      * 表字段 : foodorderdetail.createTime
      */
-    private Date createTime;
+    private String createTime;
 
     /**
      * 失效时长
@@ -80,6 +78,12 @@ public class FoodOrderDetail {
      * 表字段 : foodorderdetail.total
      */
     private Integer total;
+
+    /**
+     * 桌号
+     * 表字段 : foodorderdetail.deskNo
+     */
+    private Integer deskNo;
 
     /**
      * 获取：主键
@@ -255,7 +259,7 @@ public class FoodOrderDetail {
      *
      * @return foodorderdetail.createTime：创建时间
      */
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
@@ -266,7 +270,7 @@ public class FoodOrderDetail {
      * @param createTime
      *            foodorderdetail.createTime：创建时间
      */
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
@@ -352,5 +356,26 @@ public class FoodOrderDetail {
      */
     public void setTotal(Integer total) {
         this.total = total;
+    }
+
+    /**
+     * 获取：桌号
+     * 表字段：foodorderdetail.deskNo
+     *
+     * @return foodorderdetail.deskNo：桌号
+     */
+    public Integer getDeskNo() {
+        return deskNo;
+    }
+
+    /**
+     * 设置：桌号
+     * 表字段：foodorderdetail.deskNo
+     *
+     * @param deskNo
+     *            foodorderdetail.deskNo：桌号
+     */
+    public void setDeskNo(Integer deskNo) {
+        this.deskNo = deskNo;
     }
 }

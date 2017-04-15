@@ -9,7 +9,7 @@
     <result column="userId" jdbcType="INTEGER" property="userId" />
     <result column="recordsNo" jdbcType="VARCHAR" property="recordsNo" />
     <result column="deskNo" jdbcType="INTEGER" property="deskNo" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="createTime" jdbcType="VARCHAR" property="createTime" />
     <result column="dataFlag" jdbcType="INTEGER" property="dataFlag" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -134,7 +134,7 @@
     insert into foodorderrecords (userId, recordsNo, deskNo, 
       createTime, dataFlag)
     values (#{userId,jdbcType=INTEGER}, #{recordsNo,jdbcType=VARCHAR}, #{deskNo,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{dataFlag,jdbcType=INTEGER})
+      #{createTime,jdbcType=VARCHAR}, #{dataFlag,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.bestcfm.bean.FoodOrderRecords">
     <!--
@@ -172,7 +172,7 @@
         #{deskNo,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+        #{createTime,jdbcType=VARCHAR},
       </if>
       <if test="dataFlag != null">
         #{dataFlag,jdbcType=INTEGER},
@@ -207,7 +207,7 @@
         deskNo = #{record.deskNo,jdbcType=INTEGER},
       </if>
       <if test="record.createTime != null">
-        createTime = #{record.createTime,jdbcType=TIMESTAMP},
+        createTime = #{record.createTime,jdbcType=VARCHAR},
       </if>
       <if test="record.dataFlag != null">
         dataFlag = #{record.dataFlag,jdbcType=INTEGER},
@@ -226,7 +226,7 @@
       userId = #{record.userId,jdbcType=INTEGER},
       recordsNo = #{record.recordsNo,jdbcType=VARCHAR},
       deskNo = #{record.deskNo,jdbcType=INTEGER},
-      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      createTime = #{record.createTime,jdbcType=VARCHAR},
       dataFlag = #{record.dataFlag,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -248,7 +248,7 @@
         deskNo = #{deskNo,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
-        createTime = #{createTime,jdbcType=TIMESTAMP},
+        createTime = #{createTime,jdbcType=VARCHAR},
       </if>
       <if test="dataFlag != null">
         dataFlag = #{dataFlag,jdbcType=INTEGER},
@@ -264,7 +264,7 @@
     set userId = #{userId,jdbcType=INTEGER},
       recordsNo = #{recordsNo,jdbcType=VARCHAR},
       deskNo = #{deskNo,jdbcType=INTEGER},
-      createTime = #{createTime,jdbcType=TIMESTAMP},
+      createTime = #{createTime,jdbcType=VARCHAR},
       dataFlag = #{dataFlag,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

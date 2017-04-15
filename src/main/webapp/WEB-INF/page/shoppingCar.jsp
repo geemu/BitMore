@@ -25,7 +25,6 @@ $(document).ready(function(){
             url:"operateCar?",
             success: function(data) {	
             	if('操作成功' == data){
-            		alert(2);
             		window.location = "shoppingCar?userId=${loginUser.id }";
             	}
             	else{

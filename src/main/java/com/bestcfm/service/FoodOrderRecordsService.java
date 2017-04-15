@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.bestcfm.bean.FoodOrderRecords;
 import com.bestcfm.dao.FoodOrderRecordsDao;
 import com.bestcfm.util.OrderUtil;
+import com.bestcfm.util.TimeUtil;
 
 /**
  * Author:陈方明
@@ -30,7 +31,9 @@ public class FoodOrderRecordsService {
 		record.setDeskNo(deskNum);
 		record.setUserId(userId);
 		record.setRecordsNo(orderNum);
-		return foodOrderRecordsDao.insertSelective(record);
+		record.setCreateTime(TimeUtil.convertCurrentTimeToDateType());
+		foodOrderRecordsDao.insertSelective(record);
+		return record.getId();
 	}
 
 }
