@@ -1,54 +1,68 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.js"></script>
-<link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" rel="stylesheet">
-<link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap-reboot.css" rel="stylesheet">
-<link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css" rel="stylesheet">
-<title>厨师个人中心</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<script type="text/javascript">
-function myrefresh(){
-	window.location.reload();
-	}
-	setTimeout('myrefresh()',10000); //指定1秒刷新一次
-</script>
+<link rel="stylesheet" href="../static/common/css/sccl.css">
+<link rel="stylesheet" type="text/css" href="../static/common/skin/qingxin/skin.css" id="layout-skin"/>
+
+
+<title>厨师个人中心</title>
 </head>
 <body>
-<div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span12">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>编号</th>
-						<th>菜品</th>
-						<th>数量</th>
-						<th>下单时间</th>
-						<th>桌号</th>
-					</tr>
-				</thead>
-				<tbody>
-				
-				<c:forEach var="cookCenterFood" items="${cookCenterFoodList }" varStatus="status">
-					<tr>
-						<td>${status.index+1 }</td>
-						<td>${cookCenterFood.foodName }</td>
-						<td>${cookCenterFood.orderCount }</td>
-						<td>${cookCenterFood.createTime }</td>
-						<td>${cookCenterFood.deskNo }</td>
-					</tr>
-				</c:forEach>
-					
-					
-				</tbody>
-			</table>
-		</div>
+	<div class="layout-admin">
+		<header class="layout-header">
+			<span class="header-logo">系统框架</span> 
+			<a class="header-menu-btn" href="javascript:;"><i class="icon-font">&#xe600;</i></a>
+			<ul class="header-bar">
+				<li class="header-bar-role"><a href="javascript:;">厨师</a></li>
+				<li class="header-bar-nav">
+					<a href="javascript:;">厨师<i class="icon-font" style="margin-left:5px;">&#xe60c;</i></a>
+					<ul class="header-dropdown-menu">
+						<li><a href="javascript:;">切换账户</a></li>
+						<li><a href="javascript:;">退出</a></li>
+					</ul>
+				</li>
+				<li class="header-bar-nav"> 
+					<a href="javascript:;" title="换肤"><i class="icon-font">&#xe608;</i></a>
+					<ul class="header-dropdown-menu right dropdown-skin">
+						<li><a href="javascript:;" data-val="qingxin" title="清新">清新</a></li>
+						<li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
+						<li><a href="javascript:;" data-val="molv" title="墨绿">墨绿</a></li>
+						
+					</ul>
+				</li>
+			</ul>
+		</header>
+		<aside class="layout-side">
+			<ul class="side-menu">
+			  
+			</ul>
+		</aside>
+		
+		<div class="layout-side-arrow"><div class="layout-side-arrow-icon"><i class="icon-font">&#xe60d;</i></div></div>
+		
+		<section class="layout-main">
+			<div class="layout-main-tab">
+				<button class="tab-btn btn-left"><i class="icon-font">&#xe60e;</i></button>
+                <nav class="tab-nav">
+                    <div class="tab-nav-content">
+                        <a href="javascript:;" class="content-tab active" data-id="ss.jsp">待派送</a>
+                    </div>
+                </nav>
+                <button class="tab-btn btn-right"><i class="icon-font">&#xe60f;</i></button>
+			</div>
+			<div class="layout-main-body">
+				<iframe class="body-iframe" name="iframe0" width="100%" height="99%" src="/BitMore/foodOrderDetail/needToCook" frameborder="0" data-id="a.jsp" seamless></iframe>
+			</div>
+		</section>
+		<div class="layout-footer">Copyright © 2016-2017 点多多 www.bestcfm.com 版权所有</div>
 	</div>
-</div>
-
-</body>
-
+  </body>
+<script type="text/javascript" src="../static/common/lib/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="../static/common/js/waitersccl.js"></script>
 </html>
