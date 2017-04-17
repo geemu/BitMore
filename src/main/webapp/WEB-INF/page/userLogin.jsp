@@ -52,7 +52,6 @@
 					<input name="phone" onfocus="deleteErrorTips()" id="username" class="txt-input txt-username" type="text"placeholder="请输入手机号" value="" > 
 					<b class="input-close" style="display: none;"></b>
 				</div>
-				<span id ="errorTips">${error}</span>
 				<div class="item item-password">
 					<input name="userPassword" id="password" class="txt-input txt-password ciphertext" type="password" placeholder="请输入密码"  style="display: inline;"> 
 					<input id="ptext" class="txt-input txt-password plaintext" type="text" placeholder="请输入密码" style="display: none;" name="ptext"> 
@@ -89,10 +88,12 @@
 </body>
 </html>
 <script type="text/javascript">
-
-function deleteErrorTips(){
-	$("#errorTips").html("");
-}
+$(document).ready(function(){
+	
+	if(!('' == '${error}' || null == '${error}')){
+		layer.msg('${error}');
+	}
+})
 	$(function() {
 		$(".input-close").hide();
 		displayPwd();

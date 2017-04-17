@@ -94,7 +94,7 @@ $(document).ready(function(){
 			<div class="m_nav">
 				<a href="javascript:void(0)" id="customerCenter"><img src="images/m-index_27.png"><span>会员中心</span></a> 
 				<a id ="myShoppingCar" href="javascript:void(0)"><img src="images/m-index_26.png"><span>购物车</span></a>
-				<a href="skip/toFoodAssortment"><img src="images/m-index_26.png"><span>菜品分类</span></a>
+				<a href="foodType/fenleisousuo"><img src="images/m-index_26.png"><span>菜品分类</span></a>
 				<a href="skip/toNotice"><img src="images/m-index_26.png"><span>店铺公告</span></a>
 			</div>
 		</div>
@@ -102,7 +102,7 @@ $(document).ready(function(){
 		<!-- 食客最爱栏目 -->
 		<div class="m_mall w">
 			<div class="mall_title">
-				<span>食客最爱</span><em><a href="#">更多</a></em>
+				<span>食客最爱</span><em><a href="/BitMore/food/shikezuiai">更多</a></em>
 			</div>
 			<div class="mall_list">
 				<c:forEach var="favouriteFood" items="${favouriteFoodList }">

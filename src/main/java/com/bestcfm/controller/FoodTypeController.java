@@ -57,4 +57,16 @@ public class FoodTypeController {
 		System.out.println("addNewFoodType");
 		return foodTypeService.addNewFoodType(typeName)==true?"添加成功":"添加失败"; 
 	 }
+	 /**
+	  * 买家搜索分类
+	  * @param map
+	  * @return
+	  */
+	 @RequestMapping("/fenleisousuo")
+	 public String fenleisousuo(ModelMap map){
+		map.put("myAllTypeList", foodTypeService.queryAllFoodType());
+		return "foodAssortment"; 
+	 }
+	 
+	 
 }

@@ -116,4 +116,25 @@ public class FoodController {
 		return foodService.updateFood(food) == true?"删除成功":"删除失败";
 	}
 	
+	/**
+	 * 用户类别搜索
+	 * @param key
+	 * @param map
+	 * @return
+	 */
+	@RequestMapping("/leibiesousuo")
+	public String leibiesousu(@RequestParam("id") int id,ModelMap map){
+		List<Food> userSearchFoodList = foodService.leibiesousu(id);
+		map.put("userSearchFoodList", userSearchFoodList);
+		return "userSearchList";
+	}
+	
+	@RequestMapping("/shikezuiai")
+	public String shikezuiai(ModelMap map){
+		System.out.println("时刻最爱");
+		List<Food> userSearchFoodList = foodService.queryFavouriteFoodList();//食客最爱
+		map.put("userSearchFoodList", userSearchFoodList);
+		return "userSearchList";
+	}
+	
 }

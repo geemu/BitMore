@@ -31,7 +31,7 @@ public class FoodService {
 		FoodExample example = new FoodExample();
 		FoodExample.Criteria criteria = example.createCriteria();
 		criteria.andDataFlagEqualTo(0);
-		example.setOrderByClause("sales desc,sales Desc");
+		example.setOrderByClause("sales desc,id Desc");
 		return foodDao.selectByExample(example);
 	}
 	/**
@@ -87,6 +87,18 @@ public class FoodService {
 		exmaple.setOrderByClause("id desc");
 		FoodExample.Criteria criteria = exmaple.createCriteria();
 		criteria.andDataFlagEqualTo(0);
+		return foodDao.selectByExample(exmaple);
+	}
+	/**
+	 * 根据类别搜索
+	 * @param id
+	 * @return
+	 */
+	public List<Food> leibiesousu(int id){
+		FoodExample exmaple = new FoodExample();
+		FoodExample.Criteria criteria = exmaple.createCriteria();
+		criteria.andDataFlagEqualTo(0);
+		criteria.andTypeIdEqualTo(id);
 		return foodDao.selectByExample(exmaple);
 	}
 	

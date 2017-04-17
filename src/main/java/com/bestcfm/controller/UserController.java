@@ -32,6 +32,7 @@ public class UserController {
 	 */
 	@RequestMapping("/doUserLogin")
 	public String doUserLogin(@RequestParam("phone")String phone,@RequestParam("userPassword")String userPassword,ModelMap map) {
+		map.remove("error");
 		User loginUser = userService.queryUserByPhoneAndPassword(phone, userPassword);
 		if(loginUser == null){
 			map.put("error", "用户名或密码错误");

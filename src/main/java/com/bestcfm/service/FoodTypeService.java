@@ -26,6 +26,8 @@ public class FoodTypeService {
 	 */
 	public List<FoodType> queryAllFoodType(){
 		FoodTypeExample example = new FoodTypeExample();
+		FoodTypeExample.Criteria criteria = example.createCriteria();
+		criteria.andDataFlagEqualTo(0);
 		return foodTypeDao.selectByExample(example);
 	}
 	/**
