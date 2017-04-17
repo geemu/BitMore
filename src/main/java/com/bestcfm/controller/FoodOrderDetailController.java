@@ -88,7 +88,7 @@ public class FoodOrderDetailController {
 		boolean result = foodOrderDetailService.operateCar(operateId, userId, operate);
 		int money = foodOrderDetailService.sumMoney(userId);
 		if (money > 0) {
-			map.put("money", money + " ￥");
+			map.put("money555", money + " ￥");
 		}
 		String data = result == true ? "操作成功" : "操作失败";
 		return data;

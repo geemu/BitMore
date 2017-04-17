@@ -160,7 +160,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping("/toIndex")  
-	public String toIndex(ModelMap map) { 
+	public String toIndex(ModelMap map) {
 		List<Food> response = foodService.queryFavouriteFoodList();//食客最爱
 		List<Food> favouriteFoodList = new LinkedList<>();//食客最爱
 		if(response.size() >= 8){

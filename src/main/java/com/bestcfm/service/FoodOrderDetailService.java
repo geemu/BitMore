@@ -66,7 +66,6 @@ public class FoodOrderDetailService {
 		List<FoodOrderDetail> FoodOrderDetailList = foodOrderDetailDao.selectByExample(example);
 		if(FoodOrderDetailList.isEmpty() || FoodOrderDetailList.size() <= 0){
 			//不存在	直接新增
-			System.out.println("不存在");
 			FoodOrderDetail record = new FoodOrderDetail();
 			record.setUserId(userId);
 			record.setFoodId(foodId);
@@ -79,13 +78,11 @@ public class FoodOrderDetailService {
 		}
 		else{
 			//已经存在 更新
-			System.out.println("已经存在 更新");
 			FoodOrderDetail FoodOrderDetail = FoodOrderDetailList.get(0);//需要更新的对象
 			FoodOrderDetail record = new FoodOrderDetail();
 			record.setId(FoodOrderDetail.getId());
 			record.setOrderCount(FoodOrderDetail.getOrderCount()+1);
 			record.setTotal(FoodOrderDetail.getSinglePrice()+FoodOrderDetail.getTotal());
-			System.out.println(record.getTotal());
 			return foodOrderDetailDao.updateByPrimaryKeySelective(record)>0 ? true:false;
 		}
 	}
