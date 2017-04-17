@@ -65,7 +65,7 @@ if('' == '${loginEmp}' || null == '${loginEmp}' || '${loginEmp.empRoot}' != 2){
                 <button class="tab-btn btn-right"><i class="icon-font">&#xe60f;</i></button>
 			</div>
 			<div class="layout-main-body">
-				<iframe class="body-iframe" name="iframe0" width="100%" height="99%" src="/BitMore/skip/toEmptyHome" frameborder="0" data-id="" seamless></iframe>
+				<iframe class="body-iframe" name="iframe0" width="100%" height="99%" src="/BitMore/skip/toEmptyHome" frameborder="0" seamless></iframe>
 			</div>
 		</section>
 		<div class="layout-footer">Copyright © 2016-2017 点多多 www.bestcfm.com 版权所有</div>

@@ -1,13 +1,11 @@
 package com.bestcfm.controller;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.swing.plaf.synth.SynthSpinnerUI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,7 +58,6 @@ public class FoodController {
 	 */
 	@RequestMapping("/manageFood")
 	public String manageFood(ModelMap map){
-		System.out.println("菜品管理");
 		List<Food> allFoodList = foodService.queryAllFood();
 		map.put("allFoodList", allFoodList);
 		return "manageFood";
@@ -109,7 +106,6 @@ public class FoodController {
 	@RequestMapping("deleteFood")
 	@ResponseBody
 	public String doDeleteFood(@RequestParam("foodId") int foodId){
-		System.out.println("删除菜品");
 		Food food = new Food();
 		food.setId(foodId);
 		food.setDataFlag(1);
@@ -131,7 +127,6 @@ public class FoodController {
 	
 	@RequestMapping("/shikezuiai")
 	public String shikezuiai(ModelMap map){
-		System.out.println("时刻最爱");
 		List<Food> userSearchFoodList = foodService.queryFavouriteFoodList();//食客最爱
 		map.put("userSearchFoodList", userSearchFoodList);
 		return "userSearchList";

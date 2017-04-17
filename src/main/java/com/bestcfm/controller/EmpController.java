@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.bestcfm.bean.Emp;
 import com.bestcfm.service.EmpService;
-import com.bestcfm.service.FoodOrderDetailService;
 
 @Controller
 @RequestMapping("/emp")
@@ -55,7 +54,6 @@ public class EmpController {
 	 */
 	@RequestMapping("/zhuxiao")
 	public String empZhuXiao(ModelMap map){
-		System.out.println("注销");
 		map.remove("loginEmp");
 		return "empLogin";
 	}

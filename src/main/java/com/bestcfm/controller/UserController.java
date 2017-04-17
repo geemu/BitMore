@@ -1,15 +1,11 @@
 package com.bestcfm.controller;
 
-import java.io.UnsupportedEncodingException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.bestcfm.bean.User;
@@ -52,12 +48,10 @@ public class UserController {
 	@ResponseBody
 	public String doUserRegister(@RequestParam("username")String phone,@RequestParam("password")String password,@RequestParam("validateCode") int validateCode,ModelMap map) {
 		User user = userService.queryUserByPhone(phone);
-		System.out.println("session中的"+Integer.parseInt(map.get("code").toString())+"\n"+map.get("registerPhone").toString());
 		if(user != null){
 			return "该用户已被注册";
 		}
 		if(map.get("code") == null){
-			System.out.println(map.get("code"));
 			return "请先获取验证码";
 		}
 		if(Integer.parseInt(map.get("code").toString()) != validateCode){
@@ -85,8 +79,7 @@ public class UserController {
 	@RequestMapping("/ajaxGetVerifyCode")
 	@ResponseBody
 	public String ajaxGetVerifyCode(@RequestParam("username")String registerPhone,ModelMap map) {
-		//int validateCode = Sendsms.getPhoneValidateCode(userName);
-		int code = 2222;
+		int validateCode = Sendsms.getPhoneValidateCode(registerPhone);
 		//判断当前用户是否已经注册
 		User user = userService.queryUserByPhone(registerPhone);
 		if(user != null){
@@ -94,7 +87,7 @@ public class UserController {
 		}
 		//未注册
 		else{
-			map.put("code", code);//验证码
+			map.put("code", validateCode);//验证码
 			map.put("registerPhone", registerPhone);//验证码对应的手机号
 			return "";
 		}	
