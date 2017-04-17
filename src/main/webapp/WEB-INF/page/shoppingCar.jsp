@@ -19,7 +19,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".operateCar").click(function(){
-		window.location = "operateCar?operate="+$(this).data('operate')+"&operateId="+$(this).data('operateid');
+		$.ajax({
+            type: "POST",
+            data:{operate:$(this).data('operate'),operateId:$(this).data('operateid')},
+            url:"operateCar?",
+            success: function(data) {	
+            	if('操作成功' == data){
+            		window.location = "shoppingCar?userId=${loginUser.id }";
+            	}
+            	else{
+            		alert(data);
+            	}
+            },
+            error: function(){
+            	console.log("请求失败");
+            }
+        });
 	});
 });
 /* 执行支付 */
@@ -42,9 +57,10 @@ $(document).ready(function(){
 	            type: "POST",
 	            url:"doPay",
 	            data:{deskNum:$("#myDeskNum").val()},
-	            success: function(data) {	
-	            	alert(data);
-	            	window.location = "shoppingCar";
+	            success: function(data) {
+	            	layer.msg(data, function(){
+	            		 window.location = "shoppingCar";
+	            		}); 
 	            },
 	            error: function(){
 	            	console.log("请求失败");

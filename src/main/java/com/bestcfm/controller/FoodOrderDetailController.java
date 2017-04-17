@@ -35,7 +35,6 @@ public class FoodOrderDetailController {
 	 */
 	@RequestMapping("/shoppingCar")
 	public String ShoppingCar(ModelMap map) {
-		map.remove("money");
 		User loginUser = (User) map.get("loginUser");
 		if(loginUser == null){
 			return "userLogin";
@@ -58,14 +57,14 @@ public class FoodOrderDetailController {
 	 * @return
 	 */
 	@RequestMapping("/doAddShoppingCar")
+	@ResponseBody
 	public String doAddShoppingCar(@RequestParam("foodId") int foodId, ModelMap map) {
 		User loginUser = (User) map.get("loginUser");
 		if(loginUser == null){
 			return "userLogin";
 		}
 		int userId = loginUser.getId();
-		foodOrderDetailService.doAddShoppingCar(foodId, userId);
-		return "redirect:../";
+		return foodOrderDetailService.doAddShoppingCar(foodId, userId)==true?"加入成功":"加入失败";
 	}
 
 	/**
@@ -77,14 +76,14 @@ public class FoodOrderDetailController {
 	 * @return
 	 */
 	@RequestMapping("/operateCar")
-	public String operateCar(ModelMap map, @RequestParam("operateId") int operateId,@RequestParam("operate") int operate) {
+	@ResponseBody
+	public String operateCar(ModelMap map, @RequestParam("operateId") int operateId,
+			@RequestParam("operate") int operate) {
 		User loginUser = (User) map.get("loginUser");
-		if(loginUser == null){
-			return "userLogin";
-		}
 		int userId = loginUser.getId();
-		foodOrderDetailService.operateCar(operateId, userId, operate);
-		return "redirect:shoppingCar";
+		boolean result = foodOrderDetailService.operateCar(operateId, userId, operate);
+		String data = result == true ? "操作成功" : "操作失败";
+		return data;
 	}
 
 	/**
@@ -140,24 +139,6 @@ public class FoodOrderDetailController {
 	@ResponseBody
 	public String paiSongFood(ModelMap map,@RequestParam("id") int id) {
 		return foodOrderDetailService.paisong(id)==true?"派送成功":"派送失败";
-	}
-	
-	/**
-	 * 加入购物车
-	 * 
-	 * @param foodId
-	 * @param map
-	 * @return
-	 */
-	@RequestMapping("/doAddShoppingCar2")
-	public String doAddShoppingCar2(@RequestParam("foodId") int foodId, ModelMap map) {
-		User loginUser = (User) map.get("loginUser");
-		if(loginUser == null){
-			return "userLogin";
-		}
-		int userId = loginUser.getId();
-		foodOrderDetailService.doAddShoppingCar(foodId, userId);
-		return "redirect:../food/leibiesousuo?id="+foodId;
 	}
 	
 	
