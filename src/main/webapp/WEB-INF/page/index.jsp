@@ -20,51 +20,6 @@
 <script src="layer/layer.js"></script>
 
 <script type="text/javascript">
-/* 个人中心触发用户登录 */
-$(document).ready(function() {
-	$("#customerCenter").click(function() {
-		if ('' == '${loginUser}' || '${loginUser}' == null) {
-			var index = layer.open(
-			{	type : 1,
-				title : false,
-				closeBtn : false,
-				shadeClose : true,
-				offset : '25%',
-				content : "<div class='no_login_show'>"
-				+ "<h1>亲！您还没登录点多多哦！</h1>"
-				+ "<a href='skip/toUserLogin'>马上登录</a>"
-				+ "<a href='skip/toRegister'>免费注册</a>"
-				+ "<a href='javascript:layer.closeAll();'>取消</a>"
-				+ "</div>"
-				});
-	} else {
-			window.location = "skip/toCustomerCenter";
-			}
-		});
-});
-
-/* 购物车触发用户登录 */
-$(document).ready(function() {$("#myShoppingCar").click(function() {
-	if ('' == '${loginUser}' || '${loginUser}' == null) {
-		var index = layer.open(
-			{	type : 1,
-				title : false,
-				closeBtn : false,
-				shadeClose : true,
-				offset : '25%',
-				content : "<div class='no_login_show'>"
-				+ "<h1>亲！您还没登录点多多哦！</h1>"
-				+ "<a href='skip/toUserLogin'>马上登录</a>"
-				+ "<a href='skip/toRegister'>免费注册</a>"
-				+ "<a href='javascript:layer.closeAll();'>取消</a>"
-				+ "</div>"
-				});
-	} else {
-		window.location = "foodOrderDetail/shoppingCar";
-			}
-		});
-});
-
 /* 用户搜索 */
 $(document).ready(function(){
 	$("#userSearch").click(function(){
@@ -92,10 +47,10 @@ $(document).ready(function(){
 			</div>
 			<!-- 类目栏 -->
 			<div class="m_nav">
-				<a href="javascript:void(0)" id="customerCenter"><img src="images/m-index_27.png"><span>会员中心</span></a> 
-				<a id ="myShoppingCar" href="javascript:void(0)"><img src="images/m-index_26.png"><span>购物车</span></a>
+				<a href="user/toCustomerCenter" id="customerCenter"><img src="images/m-index_27.png"><span>会员中心</span></a> 
+				<a id ="myShoppingCar" href="foodOrderDetail/shoppingCar"><img src="images/m-index_26.png"><span>购物车</span></a>
 				<a href="foodType/fenleisousuo"><img src="images/m-index_26.png"><span>菜品分类</span></a>
-				<a href="skip/toNotice"><img src="images/m-index_26.png"><span>店铺公告</span></a>
+				<a href="user/toNotice"><img src="images/m-index_26.png"><span>店铺公告</span></a>
 			</div>
 		</div>
 
@@ -123,8 +78,8 @@ $(document).ready(function(){
 			<div class="mall_list">
 				<c:forEach var="recomendFood" items="${recomendFoodList }">
 					<a href="#" class="mall"><span class="mall_logo"><img src="${recomendFood.foodImage}" /></span><br /> <span>${recomendFood.foodName}</span><br />
-					<span><i class="doAddShoppingCar" data-foodid ='${recomendFood.id}'>加入购物车</i></span>
-				</a>
+						<span><i class="doAddShoppingCar" data-foodid ='${recomendFood.id}'>加入购物车</i></span>
+					</a>
 				</c:forEach>
 
 			</div>
@@ -136,35 +91,10 @@ $(document).ready(function(){
 <script type="text/javascript">
 /* 加入购物车 */
 $(document).ready(function(){
-	$(".doAddShoppingCar").click(function(){	
-		if ('' == '${loginUser}' || '${loginUser}' == null) {
-			var index = layer.open(
-				{	type : 1,
-					title : false,
-					closeBtn : false,
-					shadeClose : true,
-					offset : '25%',
-					content : "<div class='no_login_show'>"
-					+ "<h1>亲！您还没登录点多多哦！</h1>"
-					+ "<a href='skip/toUserLogin'>马上登录</a>"
-					+ "<a href='skip/toRegister'>免费注册</a>"
-					+ "<a href='javascript:layer.closeAll();'>取消</a>"
-					+ "</div>"
-					});
-		} else {
-			$.ajax({
-	            type: "POST",
-	            data:{foodId:$(this).data('foodid')},
-	            url:"foodOrderDetail/doAddShoppingCar?",
-	            success: function(data) {	
-	            	alert(data)
-	            },
-	            error: function(){
-	            	console.log("请求失败");
-	            }
-	        });
-				}
+	$(".doAddShoppingCar").click(function(){
+		window.location = "foodOrderDetail/doAddShoppingCar?foodId="+$(this).data('foodid');
 	});
-});
+});	
+	
 </script>
 </html>

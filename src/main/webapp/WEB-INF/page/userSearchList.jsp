@@ -79,8 +79,8 @@ $(document).ready(function(){
 					offset : '25%',
 					content : "<div class='no_login_show'>"
 					+ "<h1>亲！您还没登录点多多哦！</h1>"
-					+ "<a href='../skip/toUserLogin'>马上登录</a>"
-					+ "<a href='../skip/toRegister'>免费注册</a>"
+					+ "<a href='../user/toUserLogin'>马上登录</a>"
+					+ "<a href='../user/toRegister'>免费注册</a>"
 					+ "<a href='javascript:layer.closeAll();'>取消</a>"
 					+ "</div>"
 					});

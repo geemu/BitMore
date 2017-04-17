@@ -71,7 +71,7 @@
 					<input type="submit" value="用户登录" class="ui-btn-lg ui-btn-primary"/>
 				</div>
 				<div class="ui-btn-wrap">
-					<a class="ui-btn-lg ui-btn-danger" href="../skip/toRegister">没有账号？立即注册</a>
+					<a class="ui-btn-lg ui-btn-danger" href="../user/toRegister">没有账号？立即注册</a>
 				</div>
 				<div class="item item-login-other">
 					<dl>

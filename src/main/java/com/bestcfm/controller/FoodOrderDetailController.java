@@ -36,6 +36,9 @@ public class FoodOrderDetailController {
 	@RequestMapping("/shoppingCar")
 	public String ShoppingCar(ModelMap map) {
 		User loginUser = (User) map.get("loginUser");
+		if(loginUser == null){
+			return "userLogin";
+		}
 		int userId = loginUser.getId();
 		List<FoodOrderDetail> FoodOrderDetailList = foodOrderDetailService.queryFoodOrderDetailListByUserId(userId);
 		int money = foodOrderDetailService.sumMoney(userId);
@@ -54,17 +57,18 @@ public class FoodOrderDetailController {
 	 * @return
 	 */
 	@RequestMapping("/doAddShoppingCar")
-	@ResponseBody
 	public String doAddShoppingCar(@RequestParam("foodId") int foodId, ModelMap map) {
 		User loginUser = (User) map.get("loginUser");
+		if(loginUser == null){
+			return "userLogin";
+		}
 		int userId = loginUser.getId();
 		int money = foodOrderDetailService.sumMoney(userId);
 		if (money > 0) {
 			map.put("money", money + " ￥");
 		}
-		boolean result = foodOrderDetailService.doAddShoppingCar(foodId, userId);
-		String data = result == true ? "添加成功" : "添加失败";
-		return data;
+		foodOrderDetailService.doAddShoppingCar(foodId, userId);
+		return "redirect:/";
 	}
 
 	/**

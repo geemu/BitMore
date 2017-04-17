@@ -18,7 +18,7 @@
 <script type="text/javascript">
 /* 触发用户登录 */
 if('' == '${loginEmp}' || null == '${loginEmp}' || '${loginEmp.empRoot}' != 2){
-	window.location = "../skip/toEmpLogin";
+	window.location = "../emp/toEmpLogin";
 }
 </script>
 <style type="text/css">

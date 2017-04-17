@@ -17,6 +17,15 @@ public class EmpController {
 	
 	@Autowired
 	private EmpService empService;
+	
+	/**
+	 * 员工登陆页面
+	 * @return
+	 */
+	@RequestMapping("/toEmpLogin")  
+	public String toEmpLogin() { 
+	    return "empLogin";  
+	} 
 	/**
 	 * 员工登录
 	 * @param phone

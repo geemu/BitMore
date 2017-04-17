@@ -124,7 +124,11 @@ public class FoodController {
 		map.put("userSearchFoodList", userSearchFoodList);
 		return "userSearchList";
 	}
-	
+	/**
+	 * 食客最爱
+	 * @param map
+	 * @return
+	 */
 	@RequestMapping("/shikezuiai")
 	public String shikezuiai(ModelMap map){
 		List<Food> userSearchFoodList = foodService.queryFavouriteFoodList();//食客最爱

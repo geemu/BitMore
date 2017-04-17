@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>BitMore</display-name>
 	<welcome-file-list>
-		<welcome-file>skip/toIndex</welcome-file>
+		<welcome-file>user/toIndex</welcome-file>
 	</welcome-file-list>
 	
 	<servlet>
@@ -68,7 +68,7 @@
 	<servlet-mapping>
 		<servlet-name>springMVC</servlet-name>
 		<url-pattern>/</url-pattern>
-		<url-pattern>/skip/toIndex</url-pattern>
+		<url-pattern>/user/toIndex</url-pattern>
 	</servlet-mapping>
 
 </web-app>

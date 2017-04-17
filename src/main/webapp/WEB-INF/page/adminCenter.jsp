@@ -29,8 +29,8 @@ if('' == '${loginEmp}' || null == '${loginEmp}' || '${loginEmp.empRoot}' != 2){
 				<li class="header-bar-nav">
 					<a href="javascript:;">admin<i class="icon-font" style="margin-left:5px;">&#xe60c;</i></a>
 					<ul class="header-dropdown-menu">
-						<li><a href="zhuxiao">切换账户</a></li>
-						<li><a href="zhuxiao">退出</a></li>
+						<li><a href="../emp/zhuxiao">切换账户</a></li>
+						<li><a href="../emp/zhuxiao">退出</a></li>
 					</ul>
 				</li>
 				<li class="header-bar-nav"> 

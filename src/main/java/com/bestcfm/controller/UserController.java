@@ -1,5 +1,8 @@
 package com.bestcfm.controller;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -8,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.bestcfm.bean.Food;
 import com.bestcfm.bean.User;
+import com.bestcfm.service.FoodService;
 import com.bestcfm.service.UserService;
 import com.bestcfm.util.Sendsms;
 
@@ -19,6 +24,18 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private FoodService foodService;
+	
+	/**
+	 * 公告
+	 * @return
+	 */
+	@RequestMapping("/toNotice")  
+	public String toNotice() { 
+	    return "notice";  
+	}
 	/**
 	 * 用户登录
 	 * @param phone
@@ -98,10 +115,68 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping("/zhuxiao")
-	public String empZhuXiao(ModelMap map){
-		System.out.println("用户注销");
+	public String userZhuXiao(ModelMap map){
 		map.remove("loginUser");
 		return "userLogin";
 	}
+	
+	@RequestMapping("/toMMIndex")
+	public String toIndex(){
+		return "redirect:/";
+	}
+	
+	/**
+	 * 客户中心
+	 * @return
+	 */
+	@RequestMapping("/toCustomerCenter")
+	public String toCustomerCenter(ModelMap map){
+		if(map.get("loginUser") == null){
+			return "userLogin";
+		}
+		return "customerCenter";
+	}
+	
+	/**
+	 * 客户登录页面
+	 * @return
+	 */
+	@RequestMapping("/toUserLogin")  
+	public String toUserLogin() { 
+	    return "userLogin";  
+	} 
+	
+	/**
+	 * 注册页面
+	 * @return
+	 */
+	@RequestMapping("/toRegister")  
+	public String toRegister() { 
+	    return "register";  
+	} 
+	
+	/**
+	 * 首页
+	 * @return
+	 */
+	@RequestMapping("/toIndex")  
+	public String toIndex(ModelMap map) { 
+		List<Food> response = foodService.queryFavouriteFoodList();//食客最爱
+		List<Food> favouriteFoodList = new LinkedList<>();//食客最爱
+		if(response.size() >= 8){
+			for(int i = 0;i<=7;i++){
+				favouriteFoodList.add(response.get(i));
+			}
+		}
+		else{
+			for(int i = 0;i<response.size();i++){
+				response.add(response.get(i));
+			}
+		}
+		List<Food> recomendFoodList = foodService.queryRecommendFoodList();//小二推荐
+		map.put("favouriteFoodList", favouriteFoodList);
+		map.put("recomendFoodList", recomendFoodList);
+	    return "index";  
+	} 
 
 }

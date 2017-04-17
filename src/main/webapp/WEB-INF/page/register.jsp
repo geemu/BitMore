@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a id="doUserRegister"  class="ui-btn-lg ui-btn-primary" href="javacsript:void(0)">注册</a>
 				</div>
 				<div class="ui-btn-wrap">
-					<a class="ui-btn-lg ui-btn-danger" href="../skip/toUserLogin">已有账号？立即登录</a>
+					<a class="ui-btn-lg ui-btn-danger" href="../emp/toUserLogin">已有账号？立即登录</a>
 				</div>
 			</form>
 		</div>

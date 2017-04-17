@@ -81,7 +81,6 @@ $(document).ready(function(){
 </head>
 <body>
 	<div class="mobile">
-
 		<header>
 			<div class="header">
 				<a class="new-a-back" href="javascript:history.back();"> 

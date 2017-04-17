@@ -20,7 +20,7 @@
 <script type="text/javascript">
 /* 触发用户登录 */
 if('' == '${loginEmp}' || null == '${loginEmp}' || '${loginEmp.empRoot}' != 2){
-	window.location = "/BitMore/skip/toEmpLogin";
+	window.location = "/BitMore/emp/toEmpLogin";
 }
 </script>
 <script type="text/javascript">

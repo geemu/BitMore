@@ -12,7 +12,7 @@
 <script type="text/javascript">
 /* 触发用户登录 */
 if('' == '${loginEmp}' || null == '${loginEmp}' || '${loginEmp.empRoot}' != 0){
-	window.location = "../skip/toEmpLogin";
+	window.location = "../emp/toEmpLogin";
 }
 </script>
 <script type="text/javascript">

@@ -19,10 +19,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 /* 退出时的确认弹框 */
 $(document).ready(function(){
 	$(".login_out").click(function(){
-		layer.confirm('您确定要退出吗？',  {skin: 'layui-layer-molv',offset: '30%'}, function(index){
+		layer.confirm('您确定要退出吗？',  function(index){
 			layer.close(index);
 			layer.msg('拜拜！欢迎下次光临！', {shift: 6, time: 1500},function(){
-				window.location='../';
+				window.location='/BitMore/user/zhuxiao';
 			});
 		});
 	});
@@ -41,7 +41,7 @@ $(document).ready(function(){
 				</a>
 				<h2>会员中心</h2>
 				<div class="header_right shaixuan">
-					<a href="../"><img src="../images/iconfont-shouye.png"></a>
+					<a href="../user/toMMIndex"><img src="../images/iconfont-shouye.png"></a>
 				</div>
 			</div>
 		</header>
