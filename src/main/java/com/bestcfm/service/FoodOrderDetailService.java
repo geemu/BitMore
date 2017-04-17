@@ -1,5 +1,6 @@
 package com.bestcfm.service;
 
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -150,6 +151,7 @@ public class FoodOrderDetailService {
 				record.setId(existList.get(i).getId());
 				record.setDeskNo(deskNum);
 				record.setCreateTime(TimeUtil.convertCurrentTimeToDateType());
+				record.setUpdateTime(new Date());
 				int result = foodOrderDetailDao.updateByPrimaryKeySelective(record);
 				if(result <= 0){
 					try {
@@ -196,6 +198,16 @@ public class FoodOrderDetailService {
 		criteria.andOrderCountGreaterThanOrEqualTo(1);
 		criteria.andRecordsIdNotEqualTo(0);
 		return foodOrderDetailDao.selectByExample(example);
+	}
+	/**
+	 * 派送菜品
+	 */
+	public boolean paisong(int id){
+		FoodOrderDetail record = new FoodOrderDetail();
+		record.setId(id);
+		record.setUpdateTime(new Date());
+		record.setOrderState(5);
+		return foodOrderDetailDao.updateByPrimaryKeySelective(record)>0?true:false;
 	}
 
 }

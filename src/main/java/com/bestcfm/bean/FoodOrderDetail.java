@@ -1,5 +1,7 @@
 package com.bestcfm.bean;
 
+import java.util.Date;
+
 public class FoodOrderDetail {
     /**
      * 主键
@@ -84,6 +86,12 @@ public class FoodOrderDetail {
      * 表字段 : foodorderdetail.deskNo
      */
     private Integer deskNo;
+
+    /**
+     * 更新时间
+     * 表字段 : foodorderdetail.updateTime
+     */
+    private Date updateTime;
 
     /**
      * 获取：主键
@@ -377,5 +385,26 @@ public class FoodOrderDetail {
      */
     public void setDeskNo(Integer deskNo) {
         this.deskNo = deskNo;
+    }
+
+    /**
+     * 获取：更新时间
+     * 表字段：foodorderdetail.updateTime
+     *
+     * @return foodorderdetail.updateTime：更新时间
+     */
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    /**
+     * 设置：更新时间
+     * 表字段：foodorderdetail.updateTime
+     *
+     * @param updateTime
+     *            foodorderdetail.updateTime：更新时间
+     */
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

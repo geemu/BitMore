@@ -1,5 +1,7 @@
 package com.bestcfm.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +34,7 @@ public class FoodOrderRecordsService {
 		record.setUserId(userId);
 		record.setRecordsNo(orderNum);
 		record.setCreateTime(TimeUtil.convertCurrentTimeToDateType());
+		record.setUpdateTime(new Date());
 		foodOrderRecordsDao.insertSelective(record);
 		return record.getId();
 	}

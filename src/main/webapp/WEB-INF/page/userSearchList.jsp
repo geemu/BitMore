@@ -50,12 +50,11 @@ $(document).ready(function(){
 				<input id="userSearch" type="button" class="search_submit" value="搜索">
 			</form>
 		</div>
-
 		<div class="m_mall w">
 			<div class="mall_list">
 				<c:forEach var="userSearchFood" items="${userSearchFoodList }">
 					<a href="#" class="mall"> 
-					<span class="mall_logo"><img src="../images/foodImages/www.jd.com.png" /></span><br /> 
+					<span class="mall_logo"><img src="${userSearchFood.foodImage}" /></span><br /> 
 					<span>${userSearchFood.foodName}</span><br />
 					<span><i class="doAddShoppingCar" data-foodid ='${userSearchFood.id}' >加入购物车</i></span>
 				</a>

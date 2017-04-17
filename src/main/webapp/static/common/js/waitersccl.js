@@ -427,14 +427,25 @@ $(function() {
 		"isHeader" : "1",
 		"childMenus" : [{
 			"id" : "1",
-			"name" : "个人信息",
+			"name" : "待派送",
 			"parentId" : "1",
-			"url" : "dada.jsp",
+			"url" : "/BitMore/foodOrderDetail/needToSend",
 			"icon" : "&#xe602;",
 			"order" : "1",
 			"isHeader" : "0",
 			"childMenus" :""
-		}]
+		},
+		{
+			"id" : "2",
+			"name" : "个人信息",
+			"parentId" : "1",
+			"url" : "personInformation.jsp",
+			"icon" : "&#xe602;",
+			"order" : "1",
+			"isHeader" : "0",
+			"childMenus" :""
+		}
+		]
 	} ];
 	initMenu(menu, $(".side-menu"));
 	$(".side-menu > li").addClass("menu-item");

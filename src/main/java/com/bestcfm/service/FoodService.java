@@ -31,7 +31,7 @@ public class FoodService {
 		FoodExample example = new FoodExample();
 		FoodExample.Criteria criteria = example.createCriteria();
 		criteria.andDataFlagEqualTo(0);
-		example.setOrderByClause("sales Desc");
+		example.setOrderByClause("sales desc,sales Desc");
 		return foodDao.selectByExample(example);
 	}
 	/**
@@ -62,6 +62,32 @@ public class FoodService {
 	public List<Food> queryFoodByKey(String key){
 		return foodDaoCustom.selectByKey(key);
 	}
-	
+	/**
+	 * 添加菜品
+	 * @param food
+	 * @return
+	 */
+	public int addNewFood(Food food){
+		return foodDao.insertSelective(food) > 0?food.getId():0;
+	}
+	/**
+	 * 更新菜品
+	 * @param food
+	 * @return
+	 */
+	public boolean updateFood(Food food){
+		return foodDao.updateByPrimaryKeySelective(food)>0?true:false;
+	}
+	/**
+	 * 查询所有菜品
+	 * @return
+	 */
+	public List<Food> queryAllFood(){
+		FoodExample exmaple = new FoodExample();
+		exmaple.setOrderByClause("id desc");
+		FoodExample.Criteria criteria = exmaple.createCriteria();
+		criteria.andDataFlagEqualTo(0);
+		return foodDao.selectByExample(exmaple);
+	}
 	
 }

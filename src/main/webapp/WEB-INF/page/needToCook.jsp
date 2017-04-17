@@ -14,7 +14,7 @@
 function myrefresh(){
 	window.location.reload();
 	}
-	setTimeout('myrefresh()',50000); //指定5分钟刷新一次
+	setTimeout('myrefresh()',5000); //指定5分钟刷新一次
 </script>
 </head>
 <body>

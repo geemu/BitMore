@@ -19,6 +19,7 @@
     <result column="singlePrice" jdbcType="INTEGER" property="singlePrice" />
     <result column="total" jdbcType="INTEGER" property="total" />
     <result column="deskNo" jdbcType="INTEGER" property="deskNo" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -89,7 +90,7 @@
     @mbggenerated
     -->
     id, recordsId, userId, foodId, foodName, orderCount, orderState, remark, createTime, 
-    closeSpaceTime, dataFlag, singlePrice, total, deskNo
+    closeSpaceTime, dataFlag, singlePrice, total, deskNo, updateTime
   </sql>
   <select id="selectByExample" parameterType="com.bestcfm.bean.FoodOrderDetailExample" resultMap="BaseResultMap">
     <!--
@@ -144,12 +145,12 @@
       foodName, orderCount, orderState, 
       remark, createTime, closeSpaceTime, 
       dataFlag, singlePrice, total, 
-      deskNo)
+      deskNo, updateTime)
     values (#{recordsId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{foodId,jdbcType=INTEGER}, 
       #{foodName,jdbcType=VARCHAR}, #{orderCount,jdbcType=INTEGER}, #{orderState,jdbcType=INTEGER}, 
       #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{closeSpaceTime,jdbcType=INTEGER}, 
       #{dataFlag,jdbcType=INTEGER}, #{singlePrice,jdbcType=INTEGER}, #{total,jdbcType=INTEGER}, 
-      #{deskNo,jdbcType=INTEGER})
+      #{deskNo,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.bestcfm.bean.FoodOrderDetail">
     <!--
@@ -199,6 +200,9 @@
       <if test="deskNo != null">
         deskNo,
       </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="recordsId != null">
@@ -239,6 +243,9 @@
       </if>
       <if test="deskNo != null">
         #{deskNo,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -299,6 +306,9 @@
       <if test="record.deskNo != null">
         deskNo = #{record.deskNo,jdbcType=INTEGER},
       </if>
+      <if test="record.updateTime != null">
+        updateTime = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -322,7 +332,8 @@
       dataFlag = #{record.dataFlag,jdbcType=INTEGER},
       singlePrice = #{record.singlePrice,jdbcType=INTEGER},
       total = #{record.total,jdbcType=INTEGER},
-      deskNo = #{record.deskNo,jdbcType=INTEGER}
+      deskNo = #{record.deskNo,jdbcType=INTEGER},
+      updateTime = #{record.updateTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -372,6 +383,9 @@
       <if test="deskNo != null">
         deskNo = #{deskNo,jdbcType=INTEGER},
       </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -392,7 +406,8 @@
       dataFlag = #{dataFlag,jdbcType=INTEGER},
       singlePrice = #{singlePrice,jdbcType=INTEGER},
       total = #{total,jdbcType=INTEGER},
-      deskNo = #{deskNo,jdbcType=INTEGER}
+      deskNo = #{deskNo,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

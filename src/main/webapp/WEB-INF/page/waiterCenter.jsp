@@ -51,13 +51,13 @@
 				<button class="tab-btn btn-left"><i class="icon-font">&#xe60e;</i></button>
                 <nav class="tab-nav">
                     <div class="tab-nav-content">
-                        <a href="javascript:;" class="content-tab active" data-id="ss.jsp">待派送</a>
+                        <a href="javascript:;" class="content-tab active" data-id="/BitMore/skip/toEmptyHome">首页</a>
                     </div>
                 </nav>
                 <button class="tab-btn btn-right"><i class="icon-font">&#xe60f;</i></button>
 			</div>
 			<div class="layout-main-body">
-				<iframe class="body-iframe" name="iframe0" width="100%" height="99%" src="/BitMore/foodOrderDetail/needToSend" frameborder="0" data-id="a.jsp" seamless></iframe>
+				<iframe class="body-iframe" name="iframe0" width="100%" height="99%" src="/BitMore/skip/toEmptyHome" frameborder="0" data-id="" seamless></iframe>
 			</div>
 		</section>
 		<div class="layout-footer">Copyright © 2016-2017 点多多 www.bestcfm.com 版权所有</div>

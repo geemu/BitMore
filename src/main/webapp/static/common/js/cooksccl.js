@@ -427,6 +427,16 @@ $(function() {
 		"isHeader" : "1",
 		"childMenus" : [{
 			"id" : "1",
+			"name" : "待制作",
+			"parentId" : "1",
+			"url" : "/BitMore/foodOrderDetail/needToCook",
+			"icon" : "&#xe602;",
+			"order" : "1",
+			"isHeader" : "0",
+			"childMenus" :""
+		}
+			,{
+			"id" : "2",
 			"name" : "个人信息",
 			"parentId" : "1",
 			"url" : "dada.jsp",

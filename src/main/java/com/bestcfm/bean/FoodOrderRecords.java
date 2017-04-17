@@ -1,5 +1,7 @@
 package com.bestcfm.bean;
 
+import java.util.Date;
+
 public class FoodOrderRecords {
     /**
      * 主键 主表
@@ -36,6 +38,12 @@ public class FoodOrderRecords {
      * 表字段 : foodorderrecords.dataFlag
      */
     private Integer dataFlag;
+
+    /**
+     * 更新时间
+     * 表字段 : foodorderrecords.updateTime
+     */
+    private Date updateTime;
 
     /**
      * 获取：主键 主表
@@ -161,5 +169,26 @@ public class FoodOrderRecords {
      */
     public void setDataFlag(Integer dataFlag) {
         this.dataFlag = dataFlag;
+    }
+
+    /**
+     * 获取：更新时间
+     * 表字段：foodorderrecords.updateTime
+     *
+     * @return foodorderrecords.updateTime：更新时间
+     */
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    /**
+     * 设置：更新时间
+     * 表字段：foodorderrecords.updateTime
+     *
+     * @param updateTime
+     *            foodorderrecords.updateTime：更新时间
+     */
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

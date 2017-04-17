@@ -111,7 +111,6 @@ public class FoodOrderDetailController {
 	 */
 	@RequestMapping("/needToSend")
 	public String needToSend(ModelMap map) {
-		System.out.println("needToSend");
 		List<FoodOrderDetail> needToSendFoodList = foodOrderDetailService.cookCenter();
 		for (int i = 0; i < needToSendFoodList.size(); i++) {
 			needToSendFoodList.get(i).setCreateTime(TimeUtil.convertParamDateTypeToDateOnlyDay(needToSendFoodList.get(i).getCreateTime()));
@@ -127,7 +126,6 @@ public class FoodOrderDetailController {
 	 */
 	@RequestMapping("/needToCook")
 	public String needToCook(ModelMap map) {
-		System.out.println("needToCook");
 		List<FoodOrderDetail> needToCookFoodList = foodOrderDetailService.cookCenter();
 		for (int i = 0; i < needToCookFoodList.size(); i++) {
 			needToCookFoodList.get(i).setCreateTime(TimeUtil.convertParamDateTypeToDateOnlyDay(needToCookFoodList.get(i).getCreateTime()));
@@ -135,4 +133,17 @@ public class FoodOrderDetailController {
 		map.put("needToCookFoodList", needToCookFoodList);
 		return "needToCook";
 	}
+	/**
+	 * 派送
+	 * @param map
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/paiSongFood")
+	@ResponseBody
+	public String paiSongFood(ModelMap map,@RequestParam("id") int id) {
+		return foodOrderDetailService.paisong(id)==true?"派送成功":"派送失败";
+	}
+	
+	
 }

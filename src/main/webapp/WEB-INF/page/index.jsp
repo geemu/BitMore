@@ -20,12 +20,11 @@
 <script src="layer/layer.js"></script>
 
 <script type="text/javascript">
-
-
 /* 个人中心触发用户登录 */
-$(document).ready(function() {$("#customerCenter").click(function() {
-	if ('' == '${loginUser}' || '${loginUser}' == null) {
-		var index = layer.open(
+$(document).ready(function() {
+	$("#customerCenter").click(function() {
+		if ('' == '${loginUser}' || '${loginUser}' == null) {
+			var index = layer.open(
 			{	type : 1,
 				title : false,
 				closeBtn : false,
@@ -108,7 +107,7 @@ $(document).ready(function(){
 			<div class="mall_list">
 				<c:forEach var="favouriteFood" items="${favouriteFoodList }">
 					<a href="#" class="mall"> 
-					<span class="mall_logo"><img src="images/foodImages/www.jd.com.png" /></span><br /> 
+					<span class="mall_logo"><img src="${favouriteFood.foodImage}" /></span><br /> 
 					<span>${favouriteFood.foodName}</span><br />
 					<span><i class="doAddShoppingCar" data-foodid ='${favouriteFood.id}' >加入购物车</i></span>
 				</a>
@@ -123,7 +122,7 @@ $(document).ready(function(){
 			</div>
 			<div class="mall_list">
 				<c:forEach var="recomendFood" items="${recomendFoodList }">
-					<a href="#" class="mall"><span class="mall_logo"><img src="images/foodImages/www.jd.com.png" /></span><br /> <span>${recomendFood.foodName}</span><br />
+					<a href="#" class="mall"><span class="mall_logo"><img src="${recomendFood.foodImage}" /></span><br /> <span>${recomendFood.foodName}</span><br />
 					<span><i class="doAddShoppingCar" data-foodid ='${recomendFood.id}'>加入购物车</i></span>
 				</a>
 				</c:forEach>

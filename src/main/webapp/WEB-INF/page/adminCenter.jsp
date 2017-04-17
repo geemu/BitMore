@@ -33,7 +33,6 @@
 						<li><a href="javascript:;" data-val="qingxin" title="清新">清新</a></li>
 						<li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
 						<li><a href="javascript:;" data-val="molv" title="墨绿">墨绿</a></li>
-						
 					</ul>
 				</li>
 			</ul>
@@ -60,13 +59,12 @@
                 <button class="tab-btn btn-right"><i class="icon-font">&#xe60f;</i></button>
 			</div>
 			<div class="layout-main-body">
-				<iframe class="body-iframe" name="iframe0" width="100%" height="99%" src="home.html" frameborder="0" data-id="home.html" seamless></iframe>
+				<iframe class="body-iframe" name="iframe0" width="100%" height="99%" src="/BitMore/skip/toEmptyHome" frameborder="0" data-id="" seamless></iframe>
 			</div>
 		</section>
-		<div class="layout-footer">Copyright © 2012-2015 点多多 www.bestcfm.com 版权所有</div>
+		<div class="layout-footer">Copyright © 2016-2017 点多多 www.bestcfm.com 版权所有</div>
 	</div>
   </body>
 <script type="text/javascript" src="../static/common/lib/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="../static/common/js/adminsccl.js"></script>
-<script type="text/javascript" src="../static/common/js/sccl-util.js"></script>
 </html>

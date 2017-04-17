@@ -13,8 +13,26 @@
 <script type="text/javascript">
 function myrefresh(){
 	window.location.reload();
-	}
-	setTimeout('myrefresh()',50000); //指定5分钟刷新一次
+}
+setTimeout('myrefresh()',50000); //指定5分钟刷新一次
+
+	/* 删除菜品 */
+	$(document).ready(function(){
+		$(".paisong").click(function(){
+			$.ajax({
+	            type: "POST",
+	            data:{id:$(this).data('id')},
+	            url:"paiSongFood",
+	            success: function(data) {	
+	            	alert(data);
+	            	window.location.reload();
+	            },
+	            error: function(){
+	            	console.log("请求失败");
+	            }
+	        });
+		});
+	});
 </script>
 </head>
 <body>
@@ -29,6 +47,7 @@ function myrefresh(){
 						<th>数量</th>
 						<th>下单时间</th>
 						<th>桌号</th>
+						<th>派送</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -40,6 +59,7 @@ function myrefresh(){
 						<td>${needToSendFood.orderCount }</td>
 						<td>${needToSendFood.createTime }</td>
 						<td>${needToSendFood.deskNo }</td>
+						<td><button data-id='${needToSendFood.id }' type="button" style="cursor: pointer;" class="btn btn-info paisong">派送</button></td>
 					</tr>
 				</c:forEach>	
 				</tbody>

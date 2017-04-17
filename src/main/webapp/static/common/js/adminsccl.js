@@ -425,54 +425,19 @@ $(function() {
 		"icon" : "",
 		"order" : "1",
 		"isHeader" : "1",
-		"childMenus" : [ {
-			"id" : "1",
-			"name" : "仓储管理",
-			"parentId" : "1",
-			"url" : "",
-			"icon" : "&#xe604;",
-			"order" : "1",
-			"isHeader" : "0",
-			"childMenus" : [ {
+		"childMenus" : [  
+			{
 				"id" : "1",
 				"name" : "菜品管理",
-				"parentId" : "3",
-				"url" : "test1.jsp",
-				"icon" : "",
+				"parentId" : "1",
+				"url" : "/BitMore/food/manageFood",
+				"icon" : "&#xe602;",
 				"order" : "1",
 				"isHeader" : "0",
 				"childMenus" : ""
-			}, {
-				"id" : "2",
-				"name" : "类别管理",
-				"parentId" : "3",
-				"url" : "test2.jsp",
-				"icon" : "",
-				"order" : "1",
-				"isHeader" : "0",
-				"childMenus" : ""
-			} ]
-		}, {
-			"id" : "2",
-			"name" : "员工管理",
-			"parentId" : "",
-			"url" : "test9.jsp",
-			"icon" : "&#xe602;",
-			"order" : "1",
-			"isHeader" : "0",
-			"childMenus" : ""
-		},
+			},
 		{
-			"id" : "3",
-			"name" : "座位管理",
-			"parentId" : "1",
-			"url" : "dadas.jsp",
-			"icon" : "&#xe602;",
-			"order" : "1",
-			"isHeader" : "0",
-			"childMenus" :""
-		},{
-			"id" : "4",
+			"id" : "2",
 			"name" : "绩效统计",
 			"parentId" : "1",
 			"url" : "dadas4545.jsp",
@@ -481,7 +446,7 @@ $(function() {
 			"isHeader" : "0",
 			"childMenus" :""
 		},{
-			"id" : "5",
+			"id" : "3",
 			"name" : "个人信息",
 			"parentId" : "1",
 			"url" : "dada.jsp",

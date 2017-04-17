@@ -136,5 +136,14 @@ public class InitController {
 	    return "notice";  
 	}
 	
+	/**
+	 * 空的首页
+	 * @return
+	 */
+	@RequestMapping("/toEmptyHome")
+	public String toEmptyHome(){
+		return "emptyHome";
+	}
+	
 
 }

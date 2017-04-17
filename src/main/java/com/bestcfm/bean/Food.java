@@ -40,6 +40,12 @@ public class Food {
     private Integer typeId;
 
     /**
+     * 类别名称
+     * 表字段 : food.typeName
+     */
+    private String typeName;
+
+    /**
      * 招牌菜 0不是 1是
      * 表字段 : food.signiture
      */
@@ -193,6 +199,27 @@ public class Food {
      */
     public void setTypeId(Integer typeId) {
         this.typeId = typeId;
+    }
+
+    /**
+     * 获取：类别名称
+     * 表字段：food.typeName
+     *
+     * @return food.typeName：类别名称
+     */
+    public String getTypeName() {
+        return typeName;
+    }
+
+    /**
+     * 设置：类别名称
+     * 表字段：food.typeName
+     *
+     * @param typeName
+     *            food.typeName：类别名称
+     */
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
     }
 
     /**

@@ -490,6 +490,76 @@ public class FoodExample {
             return (Criteria) this;
         }
 
+        public Criteria andTypeNameIsNull() {
+            addCriterion("typeName is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameIsNotNull() {
+            addCriterion("typeName is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameEqualTo(String value) {
+            addCriterion("typeName =", value, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameNotEqualTo(String value) {
+            addCriterion("typeName <>", value, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameGreaterThan(String value) {
+            addCriterion("typeName >", value, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameGreaterThanOrEqualTo(String value) {
+            addCriterion("typeName >=", value, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameLessThan(String value) {
+            addCriterion("typeName <", value, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameLessThanOrEqualTo(String value) {
+            addCriterion("typeName <=", value, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameLike(String value) {
+            addCriterion("typeName like", value, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameNotLike(String value) {
+            addCriterion("typeName not like", value, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameIn(List<String> values) {
+            addCriterion("typeName in", values, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameNotIn(List<String> values) {
+            addCriterion("typeName not in", values, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameBetween(String value1, String value2) {
+            addCriterion("typeName between", value1, value2, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNameNotBetween(String value1, String value2) {
+            addCriterion("typeName not between", value1, value2, "typeName");
+            return (Criteria) this;
+        }
+
         public Criteria andSignitureIsNull() {
             addCriterion("signiture is null");
             return (Criteria) this;
