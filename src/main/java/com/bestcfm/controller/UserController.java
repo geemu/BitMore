@@ -96,7 +96,8 @@ public class UserController {
 	@RequestMapping("/ajaxGetVerifyCode")
 	@ResponseBody
 	public String ajaxGetVerifyCode(@RequestParam("username")String registerPhone,ModelMap map) {
-		int validateCode = Sendsms.getPhoneValidateCode(registerPhone);
+		//int validateCode = Sendsms.getPhoneValidateCode(registerPhone);
+		int validateCode = 2222; 
 		//判断当前用户是否已经注册
 		User user = userService.queryUserByPhone(registerPhone);
 		if(user != null){

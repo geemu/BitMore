@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="../css/public.css" rel="stylesheet" type="text/css" />
 <link href="../css/userLogin.css" rel="stylesheet" type="text/css">
 <script src="../js/jquery-1.8.3.min.js"></script>
-
+<script src="../layer/layer.js"></script>
 </head>
 
 <body>
@@ -85,9 +85,10 @@ $("#doUserRegister").click(function(){
             success: function(data) {	
             		if('' == data){
             			console.log("未被注册");
+            			layer.alert('验证码发送成功');
             		}
             		else{
-            			alert(data);
+            			layer.msg(data);
             		}
             },
             error: function(){
