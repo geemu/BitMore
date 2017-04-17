@@ -19,22 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".operateCar").click(function(){
-		$.ajax({
-            type: "POST",
-            data:{operate:$(this).data('operate'),operateId:$(this).data('operateid')},
-            url:"operateCar?",
-            success: function(data) {	
-            	if('操作成功' == data){
-            		window.location = "shoppingCar?userId=${loginUser.id }";
-            	}
-            	else{
-            		alert(data);
-            	}
-            },
-            error: function(){
-            	console.log("请求失败");
-            }
-        });
+		window.location = "operateCar?operate="+$(this).data('operate')+"&operateId="+$(this).data('operateid');
 	});
 });
 /* 执行支付 */

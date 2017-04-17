@@ -35,6 +35,7 @@ public class FoodOrderDetailController {
 	 */
 	@RequestMapping("/shoppingCar")
 	public String ShoppingCar(ModelMap map) {
+		map.remove("money");
 		User loginUser = (User) map.get("loginUser");
 		if(loginUser == null){
 			return "userLogin";
@@ -76,14 +77,14 @@ public class FoodOrderDetailController {
 	 * @return
 	 */
 	@RequestMapping("/operateCar")
-	@ResponseBody
-	public String operateCar(ModelMap map, @RequestParam("operateId") int operateId,
-			@RequestParam("operate") int operate) {
+	public String operateCar(ModelMap map, @RequestParam("operateId") int operateId,@RequestParam("operate") int operate) {
 		User loginUser = (User) map.get("loginUser");
+		if(loginUser == null){
+			return "userLogin";
+		}
 		int userId = loginUser.getId();
-		boolean result = foodOrderDetailService.operateCar(operateId, userId, operate);
-		String data = result == true ? "操作成功" : "操作失败";
-		return data;
+		foodOrderDetailService.operateCar(operateId, userId, operate);
+		return "redirect:shoppingCar";
 	}
 
 	/**
