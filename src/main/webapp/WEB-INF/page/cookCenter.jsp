@@ -9,7 +9,12 @@
 
 <link rel="stylesheet" href="../static/common/css/sccl.css">
 <link rel="stylesheet" type="text/css" href="../static/common/skin/qingxin/skin.css" id="layout-skin"/>
-
+<script type="text/javascript">
+/* 触发用户登录 */
+if('' == '${loginEmp}' || null == '${loginEmp}' || '${loginEmp.empRoot}' != 0){
+	window.location = "toEmpLogin";
+}
+</script>
 
 <title>厨师个人中心</title>
 </head>
@@ -23,8 +28,8 @@
 				<li class="header-bar-nav">
 					<a href="javascript:;">厨师<i class="icon-font" style="margin-left:5px;">&#xe60c;</i></a>
 					<ul class="header-dropdown-menu">
-						<li><a href="javascript:;">切换账户</a></li>
-						<li><a href="javascript:;">退出</a></li>
+						<li><a href="zhuxiao">切换账户</a></li>
+						<li><a href="zhuxiao">退出</a></li>
 					</ul>
 				</li>
 				<li class="header-bar-nav"> 

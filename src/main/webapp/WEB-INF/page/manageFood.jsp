@@ -10,6 +10,12 @@
 <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css" rel="stylesheet">
 <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.js"></script>
 <script src="../layer/layer.js"></script>
+<script type="text/javascript">
+/* 触发用户登录 */
+if('' == '${loginEmp}' || null == '${loginEmp}' || '${loginEmp.empRoot}' != 2){
+	window.location = "../skip/toEmpLogin";
+}
+</script>
 <title>菜品管理</title>
 <script type="text/javascript">
 /* 添加菜品 */

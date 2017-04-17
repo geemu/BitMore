@@ -18,6 +18,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>添加菜品类别</title>
 <script type="text/javascript">
+/* 触发用户登录 */
+if('' == '${loginEmp}' || null == '${loginEmp}' || '${loginEmp.empRoot}' != 2){
+	window.location = "/BitMore/skip/toEmpLogin";
+}
+</script>
+<script type="text/javascript">
 layer.config({
 	extend: [
 	'extend/layer.ext.js', 'skin/layer.ext.css'

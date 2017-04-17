@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -9,7 +10,12 @@
 
 <link rel="stylesheet" href="../static/common/css/sccl.css">
 <link rel="stylesheet" type="text/css" href="../static/common/skin/qingxin/skin.css" id="layout-skin"/>
-
+<script type="text/javascript">
+/* 触发用户登录 */
+if('' == '${loginEmp}' || null == '${loginEmp}' || '${loginEmp.empRoot}' != 2){
+	window.location = "toEmpLogin";
+}
+</script>
 
 <title>管理员个人中心</title>
 </head>
@@ -23,8 +29,8 @@
 				<li class="header-bar-nav">
 					<a href="javascript:;">admin<i class="icon-font" style="margin-left:5px;">&#xe60c;</i></a>
 					<ul class="header-dropdown-menu">
-						<li><a href="javascript:;">切换账户</a></li>
-						<li><a href="javascript:;">退出</a></li>
+						<li><a href="zhuxiao">切换账户</a></li>
+						<li><a href="zhuxiao">退出</a></li>
 					</ul>
 				</li>
 				<li class="header-bar-nav"> 
@@ -67,4 +73,5 @@
   </body>
 <script type="text/javascript" src="../static/common/lib/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="../static/common/js/adminsccl.js"></script>
+
 </html>

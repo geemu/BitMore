@@ -9,7 +9,12 @@
 <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css" rel="stylesheet">
 <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.js"></script>
 <title>待制作</title>
-
+<script type="text/javascript">
+/* 触发用户登录 */
+if('' == '${loginEmp}' || null == '${loginEmp}' || '${loginEmp.empRoot}' != 0){
+	window.location = "../skip/toEmpLogin";
+}
+</script>
 <script type="text/javascript">
 function myrefresh(){
 	window.location.reload();

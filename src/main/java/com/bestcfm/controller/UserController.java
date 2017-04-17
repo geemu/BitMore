@@ -97,9 +97,18 @@ public class UserController {
 			map.put("code", code);//验证码
 			map.put("registerPhone", registerPhone);//验证码对应的手机号
 			return "";
-		}
-		
-		
+		}	
+	}
+	/**
+	 * 用户注销
+	 * @param map
+	 * @return
+	 */
+	@RequestMapping("/zhuxiao")
+	public String empZhuXiao(ModelMap map){
+		System.out.println("用户注销");
+		map.remove("loginUser");
+		return "userLogin";
 	}
 
 }

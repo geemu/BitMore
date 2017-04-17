@@ -15,6 +15,12 @@
 <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.js"></script>
 <script src="../layer/layer.js"></script>
 <title>添加菜品</title>
+<script type="text/javascript">
+/* 触发用户登录 */
+if('' == '${loginEmp}' || null == '${loginEmp}' || '${loginEmp.empRoot}' != 2){
+	window.location = "../skip/toEmpLogin";
+}
+</script>
 <style type="text/css">
 #addFoodTable td{
 	height:35px

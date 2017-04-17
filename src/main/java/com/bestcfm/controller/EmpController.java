@@ -48,5 +48,16 @@ public class EmpController {
 			}
 		}	
 	} 
+	/**
+	 * 员工注销
+	 * @param map
+	 * @return
+	 */
+	@RequestMapping("/zhuxiao")
+	public String empZhuXiao(ModelMap map){
+		System.out.println("注销");
+		map.remove("loginEmp");
+		return "empLogin";
+	}
 
 }

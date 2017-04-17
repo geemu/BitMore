@@ -89,7 +89,6 @@
 </html>
 <script type="text/javascript">
 $(document).ready(function(){
-	
 	if(!('' == '${error}' || null == '${error}')){
 		layer.msg('${error}');
 	}
