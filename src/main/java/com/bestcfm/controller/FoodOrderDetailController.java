@@ -63,12 +63,8 @@ public class FoodOrderDetailController {
 			return "userLogin";
 		}
 		int userId = loginUser.getId();
-		int money = foodOrderDetailService.sumMoney(userId);
-		if (money > 0) {
-			map.put("money", money + " ￥");
-		}
 		foodOrderDetailService.doAddShoppingCar(foodId, userId);
-		return "redirect:/";
+		return "redirect:../";
 	}
 
 	/**
@@ -86,10 +82,6 @@ public class FoodOrderDetailController {
 		User loginUser = (User) map.get("loginUser");
 		int userId = loginUser.getId();
 		boolean result = foodOrderDetailService.operateCar(operateId, userId, operate);
-		int money = foodOrderDetailService.sumMoney(userId);
-		if (money > 0) {
-			map.put("money555", money + " ￥");
-		}
 		String data = result == true ? "操作成功" : "操作失败";
 		return data;
 	}

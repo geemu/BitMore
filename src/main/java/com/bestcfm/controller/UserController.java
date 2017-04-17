@@ -120,11 +120,6 @@ public class UserController {
 		return "userLogin";
 	}
 	
-	@RequestMapping("/toMMIndex")
-	public String toIndex(){
-		return "redirect:/";
-	}
-	
 	/**
 	 * 客户中心
 	 * @return
@@ -161,6 +156,7 @@ public class UserController {
 	 */
 	@RequestMapping("/toIndex")  
 	public String toIndex(ModelMap map) {
+		System.out.println("用户主页");
 		List<Food> response = foodService.queryFavouriteFoodList();//食客最爱
 		List<Food> favouriteFoodList = new LinkedList<>();//食客最爱
 		if(response.size() >= 8){

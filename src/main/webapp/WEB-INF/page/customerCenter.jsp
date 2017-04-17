@@ -41,7 +41,7 @@ $(document).ready(function(){
 				</a>
 				<h2>会员中心</h2>
 				<div class="header_right shaixuan">
-					<a href="../user/toMMIndex"><img src="../images/iconfont-shouye.png"></a>
+					<a href="../"><img src="../images/iconfont-shouye.png"></a>
 				</div>
 			</div>
 		</header>
