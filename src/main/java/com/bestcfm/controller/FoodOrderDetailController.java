@@ -142,5 +142,23 @@ public class FoodOrderDetailController {
 		return foodOrderDetailService.paisong(id)==true?"派送成功":"派送失败";
 	}
 	
+	/**
+	 * 加入购物车
+	 * 
+	 * @param foodId
+	 * @param map
+	 * @return
+	 */
+	@RequestMapping("/doAddShoppingCar2")
+	public String doAddShoppingCar2(@RequestParam("foodId") int foodId, ModelMap map) {
+		User loginUser = (User) map.get("loginUser");
+		if(loginUser == null){
+			return "userLogin";
+		}
+		int userId = loginUser.getId();
+		foodOrderDetailService.doAddShoppingCar(foodId, userId);
+		return "redirect:../food/leibiesousuo?id="+foodId;
+	}
+	
 	
 }
