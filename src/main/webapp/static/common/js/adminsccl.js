@@ -440,7 +440,7 @@ $(function() {
 			"id" : "2",
 			"name" : "绩效统计",
 			"parentId" : "1",
-			"url" : "dadas4545.jsp",
+			"url" : "/BitMore/foodOrderDetail/echarts",
 			"icon" : "&#xe602;",
 			"order" : "1",
 			"isHeader" : "0",
