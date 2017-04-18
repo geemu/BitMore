@@ -141,5 +141,14 @@ public class FoodOrderDetailController {
 		return foodOrderDetailService.paisong(id)==true?"派送成功":"派送失败";
 	}
 	
+	/**
+	 * echarts
+	 * @return
+	 */
+	@RequestMapping("/echarts")  
+	public String echarts() { 
+		System.out.println("echarts");
+	    return "echarts";  
+	} 
 	
 }
