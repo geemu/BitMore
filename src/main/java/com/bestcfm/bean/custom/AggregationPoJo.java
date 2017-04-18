@@ -1,7 +1,5 @@
 package com.bestcfm.bean.custom;
 
-import java.util.Date;
-
 import lombok.Data;
 
 /**

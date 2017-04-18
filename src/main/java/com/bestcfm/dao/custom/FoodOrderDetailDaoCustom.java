@@ -15,9 +15,9 @@ import com.bestcfm.bean.custom.AggregationPoJo;
 public interface FoodOrderDetailDaoCustom {
 	/**
 	 * 根据时间聚合
-	 * @param startTime @Param("startTime")Date startTime,@Param("endTime")Date endTime
+	 * @param startTime
 	 * @param endTime
 	 * @return
 	 */
-	List<AggregationPoJo> aggregationByTime();
+	List<AggregationPoJo> aggregationByTime(@Param("startTime")Date startTime,@Param("endTime")Date endTime);
 }

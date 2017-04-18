@@ -218,8 +218,8 @@ public class FoodOrderDetailService {
 	 * @param endTime
 	 * @return
 	 */
-	public List<AggregationPoJo> aggregationByTime(){
-		List<AggregationPoJo> aggregationPojoList = foodOrderDetailDaoCustom.aggregationByTime();
+	public List<AggregationPoJo> aggregationByTime(Date startTime,Date endTime){
+		List<AggregationPoJo> aggregationPojoList = foodOrderDetailDaoCustom.aggregationByTime(startTime,endTime);
 		return aggregationPojoList;
 	}
 

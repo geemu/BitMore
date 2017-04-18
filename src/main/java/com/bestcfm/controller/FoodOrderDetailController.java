@@ -1,8 +1,12 @@
 package com.bestcfm.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -158,9 +162,21 @@ public class FoodOrderDetailController {
 	 */
 	@RequestMapping("/doEcharts") 
 	@ResponseBody
-	public String doEcharts(ModelMap map) { 
-		System.out.println("doEcharts");
-		List<AggregationPoJo> aggregationPojoList = foodOrderDetailService.aggregationByTime();
+	public String doEcharts(ModelMap map,@RequestParam("startTime")@DateTimeFormat(pattern="yyyy-MM-dd HH") Date startTime,@RequestParam("endTime")@DateTimeFormat(pattern="yyyy-MM-dd HH") Date endTime ) { 
+		if(startTime == null || endTime == null){
+			try {
+				startTime = new  SimpleDateFormat("yyyy-MM-dd HH").parse("1970-01-01 00");
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			endTime = new Date();
+		}
+		if(startTime.after(endTime)){
+			Date temp = endTime;
+			endTime = startTime;
+			startTime = temp;
+		}
+		List<AggregationPoJo> aggregationPojoList = foodOrderDetailService.aggregationByTime(startTime,endTime);
 		map.put("aggregationPojoList", aggregationPojoList);
 	    return "doEcharts";  
 	}

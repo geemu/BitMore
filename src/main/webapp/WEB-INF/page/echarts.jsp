@@ -53,8 +53,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#aggregation").click(function(){
+		alert($("#datetimepicker1").val());
+		alert($("#datetimepicker2").val());
 		$.ajax({
             type: "POST",
+            data:{startTime:$("#datetimepicker1").val(),endTime:$("#datetimepicker2").val()},
             url:"/BitMore/foodOrderDetail/doEcharts",
             success: function(data) {	
             	alert(data);

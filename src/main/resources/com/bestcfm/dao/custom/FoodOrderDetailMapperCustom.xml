@@ -11,7 +11,13 @@
 		SUM(total) AS yAxis,
 		DATE_FORMAT(updateTime, '%Y-%m-%d %H') AS xAxis  
 	FROM  foodOrderdetail 
-	WHERE updateTime BETWEEN '2010-08-01' AND '2018-08-19'
+	WHERE (updateTime BETWEEN #{startTime} AND #{endTime}) 
+	AND recordsId != 0 
+	AND userId != 0
+	AND FoodId != 0
+	AND orderCount > 0
+	AND orderState = 5
+	AND dataFlag = 0
 	GROUP BY  xAxis 
 	ORDER BY xAxis ASC
   </select>
