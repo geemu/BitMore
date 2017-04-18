@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bestcfm.dao.custom.FoodOrderDetailDaoCustom">
+  <resultMap id="BaseResultMap" type="com.bestcfm.bean.custom.AggregationPoJo">
+    <id column="yAxis" jdbcType="INTEGER" property="yAxis" />
+    <result column="xAxis" jdbcType="TIMESTAMP" property="xAxis" />
+  </resultMap>
+  
+  <select id="aggregationByTime" parameterType="java.util.Date" resultMap="BaseResultMap">
+  	SELECT  
+		SUM(total) AS yAxis,
+		DATE_FORMAT(updateTime, '%Y-%m-%d %H') AS xAxis  
+	FROM  foodOrderdetail 
+	WHERE updateTime BETWEEN '2010-08-01' AND '2018-08-19'
+	GROUP BY  xAxis 
+	ORDER BY xAxis ASC
+  </select>
+</mapper>
