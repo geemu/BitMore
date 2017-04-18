@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.bestcfm.bean.FoodOrderDetail;
 import com.bestcfm.bean.User;
+import com.bestcfm.bean.custom.AggregationPoJo;
 import com.bestcfm.service.FoodOrderDetailService;
 import com.bestcfm.util.TimeUtil;
 
@@ -159,6 +160,8 @@ public class FoodOrderDetailController {
 	@ResponseBody
 	public String doEcharts(ModelMap map) { 
 		System.out.println("doEcharts");
+		List<AggregationPoJo> aggregationPojoList = foodOrderDetailService.aggregationByTime();
+		map.put("aggregationPojoList", aggregationPojoList);
 	    return "doEcharts";  
 	}
 	

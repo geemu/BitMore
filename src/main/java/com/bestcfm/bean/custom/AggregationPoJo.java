@@ -14,5 +14,5 @@ import lombok.Data;
 public class AggregationPoJo {
 	
 	private int  yAxis;
-	private Date  xAxis;
+	private String  xAxis;
 }

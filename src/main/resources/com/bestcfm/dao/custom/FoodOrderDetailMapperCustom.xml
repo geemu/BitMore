@@ -3,7 +3,7 @@
 <mapper namespace="com.bestcfm.dao.custom.FoodOrderDetailDaoCustom">
   <resultMap id="BaseResultMap" type="com.bestcfm.bean.custom.AggregationPoJo">
     <id column="yAxis" jdbcType="INTEGER" property="yAxis" />
-    <result column="xAxis" jdbcType="TIMESTAMP" property="xAxis" />
+    <result column="xAxis" jdbcType="VARCHAR" property="xAxis" />
   </resultMap>
   
   <select id="aggregationByTime" parameterType="java.util.Date" resultMap="BaseResultMap">
