@@ -3,6 +3,7 @@ package com.bestcfm.controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.bestcfm.bean.FoodOrderDetail;
 import com.bestcfm.bean.User;
 import com.bestcfm.bean.custom.AggregationPoJo;
+import com.bestcfm.bean.custom.EchartsConfig;
 import com.bestcfm.service.FoodOrderDetailService;
 import com.bestcfm.util.TimeUtil;
 
@@ -162,7 +166,7 @@ public class FoodOrderDetailController {
 	 */
 	@RequestMapping("/doEcharts") 
 	@ResponseBody
-	public String doEcharts(ModelMap map,@RequestParam("startTime")@DateTimeFormat(pattern="yyyy-MM-dd HH") Date startTime,@RequestParam("endTime")@DateTimeFormat(pattern="yyyy-MM-dd HH") Date endTime ) { 
+	public String doEcharts(@RequestParam("startTime")@DateTimeFormat(pattern="yyyy-MM-dd HH") Date startTime,@RequestParam("endTime")@DateTimeFormat(pattern="yyyy-MM-dd HH") Date endTime ) { 
 		if(startTime == null || endTime == null){
 			try {
 				startTime = new  SimpleDateFormat("yyyy-MM-dd HH").parse("1970-01-01 00");
@@ -176,9 +180,23 @@ public class FoodOrderDetailController {
 			endTime = startTime;
 			startTime = temp;
 		}
+		String s = new SimpleDateFormat("yyyy-MM-dd HH").format(startTime);
+		String e = new SimpleDateFormat("yyyy-MM-dd HH").format(endTime);
+		String titleText = s+" 时   至  "+e+" 时 销售额统计";
 		List<AggregationPoJo> aggregationPojoList = foodOrderDetailService.aggregationByTime(startTime,endTime);
-		map.put("aggregationPojoList", aggregationPojoList);
-	    return "doEcharts";  
+	    System.out.println(aggregationPojoList);
+	    EchartsConfig config = new EchartsConfig();
+	    config.setTitleText(titleText);
+	    List<String> xAxisData = new LinkedList<>();
+	    List<Integer> yAxisData = new LinkedList<>();
+	    for(int i = 0;i<aggregationPojoList.size();i++){
+	    	xAxisData.add(aggregationPojoList.get(i).getXAxis());//日期
+	    	yAxisData.add(aggregationPojoList.get(i).getYAxis());//销售额
+	    }
+	    config.setXAxisData(xAxisData);
+	    config.setYAxisData(yAxisData);
+	    String response = JSONObject.toJSONString(config);
+		return response;  
 	}
 	
 }

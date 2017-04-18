@@ -51,16 +51,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 </body>
 <script type="text/javascript">
+var myChart = echarts.init(document.getElementById('main'));
+
 $(document).ready(function(){
 	$("#aggregation").click(function(){
-		alert($("#datetimepicker1").val());
-		alert($("#datetimepicker2").val());
 		$.ajax({
             type: "POST",
             data:{startTime:$("#datetimepicker1").val(),endTime:$("#datetimepicker2").val()},
             url:"/BitMore/foodOrderDetail/doEcharts",
-            success: function(data) {	
-            	alert(data);
+            success: function(data) {
+            	data = JSON.parse(data);
+            	alert(data.titleText);
+            	alert(typeof(data));
+            	var option = {
+            	        title: {
+            	            text: data.titleText
+            	        },
+            	        tooltip: {},
+            	        xAxis: {
+            	            data: data.xAxisData
+            	        },
+            	        yAxis: {},
+            	        series: [{
+            	            name: '销售额',
+            	            type: 'bar',
+            	            data: data.yAxisData
+            	        }]
+            	    };
+            	myChart.setOption(option);
             },
             error: function(){
             	console.log("请求失败");
@@ -68,26 +86,7 @@ $(document).ready(function(){
         });
 	});
 });
-var myChart = echarts.init(document.getElementById('main'));
-var option = {
-        title: {
-            text: 'ECharts 入门示例'
-        },
-        tooltip: {},
-        legend: {
-            data:['销量']
-        },
-        xAxis: {
-            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-        },
-        yAxis: {},
-        series: [{
-            name: '销量',
-            type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
-        }]
-    };
-myChart.setOption(option);
+
 /* 时间选择 */
 $(function () {  
     $('#datetimepicker1').datetimepicker({  
