@@ -11,7 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.bestcfm.bean.Food;
 import com.bestcfm.bean.FoodOrderDetail;
 import com.bestcfm.bean.FoodOrderDetailExample;
+import com.bestcfm.bean.custom.AggregationPoJo;
 import com.bestcfm.dao.FoodOrderDetailDao;
+import com.bestcfm.dao.custom.FoodOrderDetailDaoCustom;
 import com.bestcfm.util.TimeUtil;
 
 /**
@@ -30,6 +32,9 @@ public class FoodOrderDetailService {
 	
 	@Autowired
 	private FoodService foodService;
+	
+	@Autowired
+	private FoodOrderDetailDaoCustom foodOrderDetailDaoCustom;
 	/**
 	 * 根据用户编号查询用户的购物车信息
 	 * @param userId
@@ -205,6 +210,17 @@ public class FoodOrderDetailService {
 		record.setUpdateTime(new Date());
 		record.setOrderState(5);
 		return foodOrderDetailDao.updateByPrimaryKeySelective(record)>0?true:false;
+	}
+	
+	/**
+	 * 根据时间聚合
+	 * @param startTime
+	 * @param endTime
+	 * @return
+	 */
+	public List<AggregationPoJo> aggregationByTime(){
+		List<AggregationPoJo> aggregationPojoList = foodOrderDetailDaoCustom.aggregationByTime();
+		return aggregationPojoList;
 	}
 
 }
