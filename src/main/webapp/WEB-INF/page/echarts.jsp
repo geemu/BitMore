@@ -44,7 +44,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       		<h3 class="panel-title">统计结果</h3>
    		</div>
    		<div class="panel-body" id="main" style="width: 100%;height: 400px">
-      		This is a Basic panel
    		</div>
 	</div>
 
@@ -61,17 +60,29 @@ $(document).ready(function(){
             url:"/BitMore/foodOrderDetail/doEcharts",
             success: function(data) {
             	data = JSON.parse(data);
-            	alert(data.titleText);
-            	alert(typeof(data));
             	var option = {
             	        title: {
             	            text: data.titleText
             	        },
             	        tooltip: {},
-            	        xAxis: {
-            	            data: data.xAxisData
+            	        toolbox: {
+            	            feature: {
+            	                magicType: {
+            	                    type: ['line']
+            	                },
+            	                dataView: {},
+            	                saveAsImage: {
+            	                    pixelRatio: 2
+            	                }
+            	            }
             	        },
-            	        yAxis: {},
+            	        xAxis: {
+            	            data: data.xAxisData,
+            	            name:'时间',
+            	        },
+            	        yAxis: {    	
+            	        	name:'销售额/元',
+            	        },
             	        series: [{
             	            name: '销售额',
             	            type: 'bar',
