@@ -151,4 +151,15 @@ public class FoodOrderDetailController {
 	    return "echarts";  
 	} 
 	
+	/**
+	 * doEcharts
+	 * @return
+	 */
+	@RequestMapping("/doEcharts") 
+	@ResponseBody
+	public String doEcharts(ModelMap map) { 
+		System.out.println("doEcharts");
+	    return "doEcharts";  
+	}
+	
 }

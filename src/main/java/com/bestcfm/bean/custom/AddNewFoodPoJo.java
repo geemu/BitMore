@@ -8,7 +8,7 @@ import lombok.Data;
  * Created on 2017 	下午7:35:18
  */
 @Data
-public class AddNewFoodPoJO {
+public class AddNewFoodPoJo {
   
 	private int foodTypeId;
 	private String foodName;

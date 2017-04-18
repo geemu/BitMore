@@ -20,7 +20,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.bestcfm.bean.Food;
 import com.bestcfm.bean.FoodType;
-import com.bestcfm.bean.custom.AddNewFoodPoJO;
+import com.bestcfm.bean.custom.AddNewFoodPoJo;
 import com.bestcfm.service.FoodService;
 import com.bestcfm.service.FoodTypeService;
 import com.bestcfm.util.OrderUtil;
@@ -64,7 +64,7 @@ public class FoodController {
 	}
 	@RequestMapping("/addNewFood")
 	@ResponseBody
-	public String addNewFood(HttpServletRequest request,@ModelAttribute AddNewFoodPoJO addNewFoodPoJO){
+	public String addNewFood(HttpServletRequest request,@ModelAttribute AddNewFoodPoJo addNewFoodPoJO){
 		CommonsMultipartResolver multipartResolver=new CommonsMultipartResolver(request.getSession().getServletContext());
 		if(multipartResolver.isMultipart(request)){
 			 MultipartHttpServletRequest multiRequest=(MultipartHttpServletRequest)request;
